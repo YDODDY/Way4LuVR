@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TestingVRModuleRules
-build_property.ProjectDir = C:\Users\admin\Desktop\TestingVR\Intermediate\Build\BuildRulesProjects\TestingVRModuleRules\
+build_property.ProjectDir = C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\BuildRulesProjects\TestingVRModuleRules\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

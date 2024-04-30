@@ -258,6 +258,8 @@
 /I "Developer\WidgetRegistration\Public"
 /I "C:\Users\admin\Desktop\TestingVR\Intermediate\Build\Win64\UnrealEditor\Inc\TestingVR\UHT"
 /I "C:\Users\admin\Desktop\TestingVR\Source"
+/I "..\Plugins\EnhancedInput\Intermediate\Build\Win64\UnrealEditor\Inc\EnhancedInput\UHT"
+/I "..\Plugins\EnhancedInput\Source\EnhancedInput\Public"
 /external:W0
 /external:I "ThirdParty\mimalloc\include"
 /external:I "ThirdParty\LibTiff\Source\Win64"

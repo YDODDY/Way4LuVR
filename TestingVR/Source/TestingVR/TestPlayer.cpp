@@ -27,11 +27,13 @@ ATestPlayer::ATestPlayer()
 
 	leftHand = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Left Hand"));
 	leftHand->SetupAttachment(leftMotion);
+	leftHand->SetRelativeLocationAndRotation(FVector(-2.98126f, -3.5f, 4.561753f), FRotator(-25, -180, 90));
 	rightHand = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Right Hand"));
 	rightHand->SetupAttachment(rightMotion);
+	rightHand->SetRelativeLocationAndRotation(FVector(-2.98126f, 3.5f, 4.561753f), FRotator(25, 0, 90));
 
-	GetCharacterMovement()->bOrientRotationToMovement = false;
-	GetCharacterMovement()->bUseControllerDesiredRotation = true;
+	//GetCharacterMovement()->bOrientRotationToMovement = false;
+	//GetCharacterMovement()->bUseControllerDesiredRotation = true;
 
 }
 
@@ -89,6 +91,8 @@ void ATestPlayer::OnIAShooting(const FInputActionValue& value)
 {	
 	FHitResult hitInfo;
 	FVector startLoc = rightHand->GetComponentLocation();
+	//FVector forwardVector = rightHand->GetForwardVector();
+	//FVector endLoc = startLoc + forwardVector * 1000;
 	FVector endLoc = startLoc + rightHand->GetForwardVector() * 1000;
 	FCollisionObjectQueryParams objQueryParams;
 	objQueryParams.AddObjectTypesToQuery(ECC_WorldStatic);

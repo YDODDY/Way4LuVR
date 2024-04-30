@@ -1,8 +1,8 @@
-"C:\Users\admin\Desktop\TestingVR\Source\TestingVR\TestPlayer.cpp"
-/FI"C:\Users\admin\Desktop\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\Definitions.TestingVR.h"
-/Fo"C:\Users\admin\Desktop\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\SingleFile\TestPlayer.cpp.obj"
-/sourceDependencies "C:\Users\admin\Desktop\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\SingleFile\TestPlayer.cpp.dep.json"
-@"C:\Users\admin\Desktop\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\TestingVR.Shared.rsp"
+"C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Source\TestingVR\TestPlayer.cpp"
+/FI"C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\Definitions.TestingVR.h"
+/Fo"C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\SingleFile\TestPlayer.cpp.obj"
+/sourceDependencies "C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\SingleFile\TestPlayer.cpp.dep.json"
+@"C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\TestingVR.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi
