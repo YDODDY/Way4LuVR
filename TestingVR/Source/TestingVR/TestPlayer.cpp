@@ -13,6 +13,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Camera/PlayerCameraManager.h"
 #include "NiagaraComponent.h"
+#include "Components/AudioComponent.h"
 
 ATestPlayer::ATestPlayer()
 {
@@ -49,6 +50,14 @@ ATestPlayer::ATestPlayer()
 	boostComp -> SetupAttachment(RootComponent);
 	boostComp -> SetAutoActivate(false);
 	boostComp -> SetAutoDestroy(false);
+	//바람 이펙트
+	windEffectComp = CreateDefaultSubobject<UNiagaraComponent>(TEXT("Wind Effect Component"));
+	windEffectComp->SetupAttachment(RootComponent);
+	windEffectComp->SetAutoActivate(false);
+	windEffectComp->SetAutoDestroy(false);
+	//바람효과음 
+	windSoundComp = CreateDefaultSubobject<UAudioComponent>(TEXT("Wind Sound Effect"));
+	windSoundComp->SetupAttachment(RootComponent);
 
 }
 
@@ -80,7 +89,15 @@ void ATestPlayer::Tick(float DeltaTime)
  	{
   		LcableComp->EndLocation = GetActorTransform().InverseTransformPosition(grabPointL);
  	}
-
+	//캐릭터 무브먼트 모드가 falling 혹은 flying 일 경우 바람효과음 출력
+	if (GetCharacterMovement()->IsFalling() || GetCharacterMovement()->IsFlying())
+	{
+		windSoundComp->Play();
+	}
+	else
+	{
+		windSoundComp->Stop();
+	}
 }
 
 void ATestPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -130,6 +147,7 @@ void ATestPlayer::OnIATurnUpDown(const FInputActionValue& value)
 void ATestPlayer::OnIAJump(const FInputActionValue& value)
 {
 	Jump();
+	UGameplayStatics::PlaySound2D(GetWorld(), jumpSound);
 }
 
 //오른손 그래플링 훅
@@ -149,12 +167,26 @@ void ATestPlayer::OnRightShooting(const FInputActionValue& value)
 		bIsGrapplingR = true;
 		//케이블 컴포넌트 Visibility 킴
 		RcableComp->SetVisibility(true);
+		if (bSoundR == false)
+		{	
+			bSoundR = true;
+			//효과음
+			UGameplayStatics::PlaySound2D(GetWorld(), shootingSound);
+		}
 		grabPointR = hitInfo.ImpactPoint;
 		if (bIsGrapplingR)
 		{	
 			GetCharacterMovement()->SetMovementMode(MOVE_Flying);
  			RcableComp->EndLocation = GetActorTransform().InverseTransformPosition(grabPointR);
 			LaunchCharacter((grabPointR-GetActorLocation()), true, true);
+			//바람효과
+			windEffectComp->Activate();
+			windEffectComp->SetVisibility(true);
+			//3초 뒤 바람효과 끔
+			FTimerHandle boostHandle;
+			GetWorldTimerManager().SetTimer(boostHandle, FTimerDelegate::CreateLambda([&]() {
+				windEffectComp->SetVisibility(false);
+				}), 2.0f, false);
 		}
 	}
 }
@@ -175,6 +207,12 @@ void ATestPlayer::OnLeftShooting(const FInputActionValue& value)
 		bIsGrapplingL = true;
 		//왼손 케이블 컴포넌트 Visibility 킴
 		LcableComp->SetVisibility(true);
+		if (bSoundL == false)
+		{
+			bSoundL = true;
+			//효과음
+			UGameplayStatics::PlaySound2D(GetWorld(), shootingSound);
+		}
 		grabPointL = hitInfo.ImpactPoint;
 		if (bIsGrapplingL)
 		{	
@@ -182,12 +220,21 @@ void ATestPlayer::OnLeftShooting(const FInputActionValue& value)
 
 			LcableComp->EndLocation = GetActorTransform().InverseTransformPosition(grabPointL);
 			LaunchCharacter((grabPointL - GetActorLocation()), true, true);
+			//바람효과
+			windEffectComp->Activate();
+			windEffectComp->SetVisibility(true);
+			//3초 뒤 바람효과 끔
+			FTimerHandle boostHandle;
+			GetWorldTimerManager().SetTimer(boostHandle, FTimerDelegate::CreateLambda([&]() {
+				windEffectComp->SetVisibility(false);
+				}), 2.0f, false);
 		}
 	}
 }
 
 void ATestPlayer::StopRightShooting(const FInputActionValue& value)
 {	
+	bSoundR = false;
 	bIsGrapplingR = false;
 	if (!GetCharacterMovement()->IsFalling())
 	{
@@ -198,6 +245,7 @@ void ATestPlayer::StopRightShooting(const FInputActionValue& value)
 
 void ATestPlayer::StopLeftShooting(const FInputActionValue& value)
 {
+	bSoundL = false;
 	bIsGrapplingL = false;
 	if (!GetCharacterMovement()->IsFalling())
 	{
@@ -213,13 +261,18 @@ void ATestPlayer::OnBoost(const FInputActionValue& value)
 		GetCharacterMovement()->SetMovementMode(MOVE_Flying);
 		LaunchCharacter(GetActorForwardVector() * 5000, true, true);
 		
+		//바람이펙트+부스트이펙트 둘다 킴
 		boostComp->Activate();
 		boostComp->SetVisibility(true);
+		windEffectComp->Activate();
+		windEffectComp->SetVisibility(true);
+		UGameplayStatics::PlaySound2D(GetWorld(), boostingSound);
 
+		//부스트 이펙트는 1.5초 뒤 끔
 		FTimerHandle boostHandle;
 		GetWorldTimerManager().SetTimer(boostHandle, FTimerDelegate::CreateLambda([&]() {
 			boostComp->SetVisibility(false);
-			}), 1.0f, false);
+			}), 1.5f, false);
 	}
 }
 

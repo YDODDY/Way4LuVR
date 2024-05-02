@@ -1,0 +1,88 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+#include "UObject/GeneratedCppIncludes.h"
+#include "TestingVR/Public/FocusPointWidgetActor.h"
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+void EmptyLinkFunctionForGeneratedCodeFocusPointWidgetActor() {}
+// Cross Module References
+	ENGINE_API UClass* Z_Construct_UClass_AActor();
+	TESTINGVR_API UClass* Z_Construct_UClass_AFocusPointWidgetActor();
+	TESTINGVR_API UClass* Z_Construct_UClass_AFocusPointWidgetActor_NoRegister();
+	UPackage* Z_Construct_UPackage__Script_TestingVR();
+// End Cross Module References
+	void AFocusPointWidgetActor::StaticRegisterNativesAFocusPointWidgetActor()
+	{
+	}
+	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(AFocusPointWidgetActor);
+	UClass* Z_Construct_UClass_AFocusPointWidgetActor_NoRegister()
+	{
+		return AFocusPointWidgetActor::StaticClass();
+	}
+	struct Z_Construct_UClass_AFocusPointWidgetActor_Statics
+	{
+		static UObject* (*const DependentSingletons[])();
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
+#endif
+		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
+		static const UECodeGen_Private::FClassParams ClassParams;
+	};
+	UObject* (*const Z_Construct_UClass_AFocusPointWidgetActor_Statics::DependentSingletons[])() = {
+		(UObject* (*)())Z_Construct_UClass_AActor,
+		(UObject* (*)())Z_Construct_UPackage__Script_TestingVR,
+	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AFocusPointWidgetActor_Statics::DependentSingletons) < 16);
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFocusPointWidgetActor_Statics::Class_MetaDataParams[] = {
+		{ "IncludePath", "FocusPointWidgetActor.h" },
+		{ "ModuleRelativePath", "Public/FocusPointWidgetActor.h" },
+	};
+#endif
+	const FCppClassTypeInfoStatic Z_Construct_UClass_AFocusPointWidgetActor_Statics::StaticCppClassTypeInfo = {
+		TCppClassTypeTraits<AFocusPointWidgetActor>::IsAbstract,
+	};
+	const UECodeGen_Private::FClassParams Z_Construct_UClass_AFocusPointWidgetActor_Statics::ClassParams = {
+		&AFocusPointWidgetActor::StaticClass,
+		"Engine",
+		&StaticCppClassTypeInfo,
+		DependentSingletons,
+		nullptr,
+		nullptr,
+		nullptr,
+		UE_ARRAY_COUNT(DependentSingletons),
+		0,
+		0,
+		0,
+		0x009000A4u,
+		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AFocusPointWidgetActor_Statics::Class_MetaDataParams), Z_Construct_UClass_AFocusPointWidgetActor_Statics::Class_MetaDataParams)
+	};
+	UClass* Z_Construct_UClass_AFocusPointWidgetActor()
+	{
+		if (!Z_Registration_Info_UClass_AFocusPointWidgetActor.OuterSingleton)
+		{
+			UECodeGen_Private::ConstructUClass(Z_Registration_Info_UClass_AFocusPointWidgetActor.OuterSingleton, Z_Construct_UClass_AFocusPointWidgetActor_Statics::ClassParams);
+		}
+		return Z_Registration_Info_UClass_AFocusPointWidgetActor.OuterSingleton;
+	}
+	template<> TESTINGVR_API UClass* StaticClass<AFocusPointWidgetActor>()
+	{
+		return AFocusPointWidgetActor::StaticClass();
+	}
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AFocusPointWidgetActor);
+	AFocusPointWidgetActor::~AFocusPointWidgetActor() {}
+	struct Z_CompiledInDeferFile_FID_Users_USER_Desktop_Way4LuVR_TestingVR_Source_TestingVR_Public_FocusPointWidgetActor_h_Statics
+	{
+		static const FClassRegisterCompiledInInfo ClassInfo[];
+	};
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Desktop_Way4LuVR_TestingVR_Source_TestingVR_Public_FocusPointWidgetActor_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_AFocusPointWidgetActor, AFocusPointWidgetActor::StaticClass, TEXT("AFocusPointWidgetActor"), &Z_Registration_Info_UClass_AFocusPointWidgetActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFocusPointWidgetActor), 767532937U) },
+	};
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_USER_Desktop_Way4LuVR_TestingVR_Source_TestingVR_Public_FocusPointWidgetActor_h_1856312389(TEXT("/Script/TestingVR"),
+		Z_CompiledInDeferFile_FID_Users_USER_Desktop_Way4LuVR_TestingVR_Source_TestingVR_Public_FocusPointWidgetActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_USER_Desktop_Way4LuVR_TestingVR_Source_TestingVR_Public_FocusPointWidgetActor_h_Statics::ClassInfo),
+		nullptr, 0,
+		nullptr, 0);
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

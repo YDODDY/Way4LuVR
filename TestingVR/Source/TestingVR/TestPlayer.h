@@ -69,9 +69,25 @@ public:
 	class UInputAction* ia_boost;
 
 	//부스터 이펙트
-	UPROPERTY(EditAnywhere, Category = "VR")
+	UPROPERTY(EditAnywhere)
 	class UNiagaraComponent* boostComp;
+	//바람 이펙트
+	UPROPERTY(EditAnywhere)
+	class UNiagaraComponent* windEffectComp;
 
+	//소리
+	UPROPERTY(EditAnywhere, Category = "VR|Sounds")
+	class USoundBase* jumpSound;
+	UPROPERTY(EditAnywhere, Category = "VR|Sounds")
+	class USoundBase* shootingSound;
+	UPROPERTY(EditAnywhere, Category = "VR|Sounds")
+	class USoundBase* boostingSound;
+	UPROPERTY(EditAnywhere, Category = "VR|Sounds")
+	class UAudioComponent* windSoundComp;
+
+	//임시 그래플링 사운드 제어용 
+	bool bSoundR = false;
+	bool bSoundL = false;
 
 
 	//이동방향 변수
