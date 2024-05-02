@@ -48,6 +48,7 @@
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\InputCore\UnrealEditor-InputCore.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\HeadMountedDisplay\UnrealEditor-HeadMountedDisplay.lib"
 "..\Plugins\EnhancedInput\Intermediate\Build\Win64\x64\UnrealEditor\Development\EnhancedInput\UnrealEditor-EnhancedInput.lib"
+"..\Plugins\Runtime\CableComponent\Intermediate\Build\Win64\x64\UnrealEditor\Development\CableComponent\UnrealEditor-CableComponent.lib"
 "delayimp.lib"
 "wininet.lib"
 "rpcrt4.lib"

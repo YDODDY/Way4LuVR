@@ -20,7 +20,13 @@ struct FInputActionValue;
 #define FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestPlayer_h_11_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestPlayer_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execOnIAShooting); \
+	DECLARE_FUNCTION(execOnBoost); \
+	DECLARE_FUNCTION(execStopLeftShooting); \
+	DECLARE_FUNCTION(execStopRightShooting); \
+	DECLARE_FUNCTION(execOnLeftShooting); \
+	DECLARE_FUNCTION(execOnRightShooting); \
+	DECLARE_FUNCTION(execOnIATurnUpDown); \
+	DECLARE_FUNCTION(execOnIATurn); \
 	DECLARE_FUNCTION(execOnIAJump); \
 	DECLARE_FUNCTION(execOnIAMove);
 

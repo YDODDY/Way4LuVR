@@ -20,7 +20,9 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-		UPROPERTY(EditDefaultsOnly)
+
+	//컴포넌트
+	UPROPERTY(EditDefaultsOnly)
 	class UCameraComponent* VRcamera;
 
 	UPROPERTY(EditDefaultsOnly)
@@ -35,30 +37,74 @@ public:
 	UPROPERTY(EditDefaultsOnly)
 	class USkeletalMeshComponent* rightHand;
 
-	UPROPERTY(EditDefaultsOnly , Category = "VR")
+	UPROPERTY(EditDefaultsOnly)
+	class UCableComponent* RcableComp;
+
+	UPROPERTY(EditDefaultsOnly)
+	class UCableComponent* LcableComp;
+
+	//인풋
+	UPROPERTY(EditDefaultsOnly , Category = "VR|Inputs")
 	class UInputMappingContext* imc_VRPlayer;
 
-	UPROPERTY(EditDefaultsOnly , Category = "VR")
+	UPROPERTY(EditDefaultsOnly , Category = "VR|Inputs")
 	class UInputAction* ia_move;
+
+	UPROPERTY(EditDefaultsOnly, Category = "VR|Inputs")
+	class UInputAction* ia_turnLR;
 	
-	UPROPERTY(EditDefaultsOnly , Category = "VR")
+	UPROPERTY(EditDefaultsOnly, Category = "VR|Inputs")
+	class UInputAction* ia_turnUD;
+	
+	UPROPERTY(EditDefaultsOnly , Category = "VR|Inputs")
 	class UInputAction* ia_jump;
 
-	UPROPERTY(EditDefaultsOnly , Category = "VR")
-	class UInputAction* ia_shooting;
+	UPROPERTY(EditDefaultsOnly , Category = "VR|Inputs")
+	class UInputAction* ia_Rshot;
+
+	UPROPERTY(EditDefaultsOnly, Category = "VR|Inputs")
+	class UInputAction* ia_Lshot;
+
+	UPROPERTY(EditDefaultsOnly, Category = "VR|Inputs")
+	class UInputAction* ia_boost;
 
 
-
-
-
+	//이동방향 변수
 	FVector moveDir;
+	//회전방향 변수
+	FRotator deltaRot;
 
+		
+	//케이블 컴포넌트 Visibility 제어변수 
+	bool bIsGrapplingR = false;
+	bool bIsGrapplingL = false;
+
+
+	//케이블 꽂히는 위치변수
+	FVector grabPointR;
+	FVector grabPointL;
+
+	//인풋함수
 	UFUNCTION()
 	void OnIAMove(const FInputActionValue& value);
-
 	UFUNCTION()
 	void OnIAJump(const FInputActionValue& value);
+	UFUNCTION()
+	void OnIATurn(const FInputActionValue& value);
+	UFUNCTION()
+	void OnIATurnUpDown(const FInputActionValue& value);
 
 	UFUNCTION()
-	void OnIAShooting(const FInputActionValue& value);
+	void OnRightShooting(const FInputActionValue& value);
+	UFUNCTION()
+	void OnLeftShooting(const FInputActionValue& value);
+	UFUNCTION()
+	void StopRightShooting(const FInputActionValue& value);
+	UFUNCTION()
+	void StopLeftShooting(const FInputActionValue& value);
+	UFUNCTION()
+	void OnBoost(const FInputActionValue& value);
+
+
+
 };

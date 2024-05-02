@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TestingVRModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da9cdbd71ddb8a1ce553eb6a3751153f3b47c4cf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2195d3ea1b95c9f5be45ee7dd22b8244ef730a3c")]
 [assembly: System.Reflection.AssemblyProductAttribute("TestingVRModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TestingVRModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

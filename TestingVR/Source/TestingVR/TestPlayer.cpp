@@ -8,8 +8,10 @@
 #include <../../../../../../../Plugins/EnhancedInput/Source/EnhancedInput/Public/EnhancedInputComponent.h>
 #include <../../../../../../../Plugins/EnhancedInput/Source/EnhancedInput/Public/InputActionValue.h>
 #include "GameFramework/CharacterMovementComponent.h"
-
-
+#include "CableComponent.h"
+#include "Kismet/KismetMathLibrary.h"
+#include "Kismet/GameplayStatics.h"
+#include "Camera/PlayerCameraManager.h"
 
 ATestPlayer::ATestPlayer()
 {
@@ -17,29 +19,37 @@ ATestPlayer::ATestPlayer()
 
 	VRcamera = CreateDefaultSubobject<UCameraComponent>(TEXT("VR Camera"));
 	VRcamera->SetupAttachment(RootComponent);
-
+	//모션컨트롤러
 	leftMotion = CreateDefaultSubobject<UMotionControllerComponent>(TEXT("Left Motion Controller"));
 	leftMotion->SetupAttachment(RootComponent);
 	leftMotion->SetTrackingMotionSource(TEXT("Left"));
 	rightMotion = CreateDefaultSubobject<UMotionControllerComponent>(TEXT("Right Motion Controller"));
 	rightMotion->SetupAttachment(RootComponent);
 	rightMotion->SetTrackingMotionSource(TEXT("Right"));
-
+	//스켈레탈 매시
 	leftHand = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Left Hand"));
 	leftHand->SetupAttachment(leftMotion);
 	leftHand->SetRelativeLocationAndRotation(FVector(-2.98126f, -3.5f, 4.561753f), FRotator(-25, -180, 90));
 	rightHand = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Right Hand"));
 	rightHand->SetupAttachment(rightMotion);
 	rightHand->SetRelativeLocationAndRotation(FVector(-2.98126f, 3.5f, 4.561753f), FRotator(25, 0, 90));
-
-	//GetCharacterMovement()->bOrientRotationToMovement = false;
-	//GetCharacterMovement()->bUseControllerDesiredRotation = true;
-
+	//오른손 케이블
+	RcableComp = CreateDefaultSubobject<UCableComponent>(TEXT("Right Cable Component"));
+	RcableComp->SetupAttachment(rightHand);
+	RcableComp->SetRelativeScale3D(FVector(0.7f));
+	RcableComp->SetVisibility(false);
+	//왼손 케이블
+	LcableComp = CreateDefaultSubobject<UCableComponent>(TEXT("Left Cable Component"));
+	LcableComp->SetupAttachment(leftHand);
+	LcableComp->SetRelativeScale3D(FVector(0.7f));
+	LcableComp->SetVisibility(false);
 }
 
 void ATestPlayer::BeginPlay()
 {
 	Super::BeginPlay();
+
+	//컨트롤러 받아둠
 	auto* pc = Cast<APlayerController>(Controller);
 	if (pc)
 	{
@@ -55,9 +65,17 @@ void ATestPlayer::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	//FVector localMoveDir = GetActorForwardVector() * moveDir.X + GetActorRightVector() * moveDir.Y;
-	FVector localMoveDir = GetTransform().TransformVector(moveDir);
-	AddMovementInput(localMoveDir.GetSafeNormal());
+	float currentTime = 0;
+ 	if (bIsGrapplingR)
+ 	{
+  		RcableComp->EndLocation = GetActorTransform().InverseTransformPosition(grabPointR);
+   		GetCharacterMovement()->AddForce((grabPointR - GetActorLocation()).GetSafeNormal() * 100000);
+ 	}
+ 	if (bIsGrapplingL)
+ 	{
+  		LcableComp->EndLocation = GetActorTransform().InverseTransformPosition(grabPointL);
+  		GetCharacterMovement()->AddForce((grabPointL - GetActorLocation()).GetSafeNormal() * 100000);
+ 	}
 }
 
 void ATestPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -68,44 +86,124 @@ void ATestPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 
 	if (input)
 	{
+		//기본이동 
 		input->BindAction(ia_move, ETriggerEvent::Triggered, this, &ATestPlayer::OnIAMove);
 		input->BindAction(ia_move, ETriggerEvent::Completed, this, &ATestPlayer::OnIAMove);
 		input->BindAction(ia_jump, ETriggerEvent::Started, this, &ATestPlayer::OnIAJump);
-		input->BindAction(ia_shooting, ETriggerEvent::Started, this, &ATestPlayer::OnIAShooting);
+		input->BindAction(ia_turnLR, ETriggerEvent::Triggered, this, &ATestPlayer::OnIATurn);
+		input->BindAction(ia_turnUD, ETriggerEvent::Triggered, this, &ATestPlayer::OnIATurnUpDown);
+		//그래플링훅 발사
+		input->BindAction(ia_Rshot, ETriggerEvent::Started, this, &ATestPlayer::OnRightShooting);
+		input->BindAction(ia_Rshot, ETriggerEvent::Completed, this, &ATestPlayer::StopRightShooting);
+		input->BindAction(ia_Lshot, ETriggerEvent::Started, this, &ATestPlayer::OnLeftShooting);
+		input->BindAction(ia_Lshot, ETriggerEvent::Completed, this, &ATestPlayer::StopLeftShooting);
+		input->BindAction(ia_boost, ETriggerEvent::Started, this, &ATestPlayer::OnBoost);
 	}
 }
-
+//이동
 void ATestPlayer::OnIAMove(const FInputActionValue& value)
 {
 	FVector2D v = value.Get<FVector2D>();
 
-	moveDir = FVector(v.Y, v.X, 0);
+	AddMovementInput(GetActorForwardVector(), v.Y);
+	AddMovementInput(GetActorRightVector(), v.X);
 }
+//시야 회전 좌우
+void ATestPlayer::OnIATurn(const FInputActionValue& value)
+{
+	float v = value.Get<float>();
 
+	AddControllerYawInput(v);
+}
+//시야 회전 위아래
+void ATestPlayer::OnIATurnUpDown(const FInputActionValue& value)
+{
+	float v = value.Get<float>();
+	AddControllerPitchInput(v);
+}
+//점프
 void ATestPlayer::OnIAJump(const FInputActionValue& value)
 {
 	Jump();
 }
-//그래플링훅
-void ATestPlayer::OnIAShooting(const FInputActionValue& value)
+
+//오른손 그래플링 훅
+void ATestPlayer::OnRightShooting(const FInputActionValue& value)
 {	
 	FHitResult hitInfo;
 	FVector startLoc = rightHand->GetComponentLocation();
-	//FVector forwardVector = rightHand->GetForwardVector();
-	//FVector endLoc = startLoc + forwardVector * 1000;
-	FVector endLoc = startLoc + rightHand->GetForwardVector() * 1000;
+	FVector endLoc = startLoc + rightHand->GetRightVector() * 50000;
 	FCollisionObjectQueryParams objQueryParams;
 	objQueryParams.AddObjectTypesToQuery(ECC_WorldStatic);
 	objQueryParams.AddObjectTypesToQuery(ECC_WorldDynamic);
 
-	//오른손컴포넌트 위치에서 라인트레이스 발사
+	//라인트레이스 발사
 	bool bResult = GetWorld()->LineTraceSingleByObjectType(hitInfo, startLoc, endLoc, objQueryParams);
 	if (bResult)
 	{
-		DrawDebugLine(GetWorld(), startLoc, hitInfo.ImpactPoint, FColor::Red, false, 2.0f, 0, 1.0f);
-	}
-	else
-	{
-		DrawDebugLine(GetWorld(), startLoc, endLoc, FColor::Green, false, 2.0f, 0, 1.0f);
+		bIsGrapplingR = true;
+		//케이블 컴포넌트 Visibility 킴
+		RcableComp->SetVisibility(true);
+		grabPointR = hitInfo.ImpactPoint;
+		if (bIsGrapplingR)
+		{
+ 			RcableComp->EndLocation = GetActorTransform().InverseTransformPosition(grabPointR);
+			GetCharacterMovement()->AddForce((grabPointR - GetActorLocation()).GetSafeNormal() * 100000);
+		}
 	}
 }
+//왼손 그래플링 훅 
+void ATestPlayer::OnLeftShooting(const FInputActionValue& value)
+{
+	FHitResult hitInfo;
+	FVector startLoc = leftHand->GetComponentLocation();
+	FVector endLoc = startLoc + leftHand->GetRightVector() * 50000;
+	FCollisionObjectQueryParams objQueryParams;
+	objQueryParams.AddObjectTypesToQuery(ECC_WorldStatic);
+	objQueryParams.AddObjectTypesToQuery(ECC_WorldDynamic);
+
+	//왼손컴포넌트 위치에서 라인트레이스 발사
+	bool bResult = GetWorld()->LineTraceSingleByObjectType(hitInfo, startLoc, endLoc, objQueryParams);
+	if (bResult)
+	{
+		bIsGrapplingL = true;
+		//왼손 케이블 컴포넌트 Visibility 킴
+		LcableComp->SetVisibility(true);
+		grabPointL = hitInfo.ImpactPoint;
+		if (bIsGrapplingL)
+		{
+			LcableComp->EndLocation = GetActorTransform().InverseTransformPosition(grabPointL);
+			GetCharacterMovement()->AddForce((grabPointL - GetActorLocation()).GetSafeNormal() * 100000);
+		}
+	}
+}
+
+void ATestPlayer::StopRightShooting(const FInputActionValue& value)
+{	
+	bIsGrapplingR = false;
+	if (!GetCharacterMovement()->IsFalling())
+	{
+		GetCharacterMovement()->SetMovementMode(MOVE_Falling);
+	}
+	RcableComp->SetVisibility(false);
+}
+
+void ATestPlayer::StopLeftShooting(const FInputActionValue& value)
+{
+	bIsGrapplingL = false;
+	if (!GetCharacterMovement()->IsFalling())
+	{
+		GetCharacterMovement()->SetMovementMode(MOVE_Falling);
+	}
+	LcableComp->SetVisibility(false);
+}
+//부스트
+void ATestPlayer::OnBoost(const FInputActionValue& value)
+{	
+	if (GetCharacterMovement()->IsFalling() || GetCharacterMovement()->IsFlying())
+	{	
+		GetCharacterMovement()->SetMovementMode(MOVE_Flying);
+		LaunchCharacter(GetActorForwardVector() * 10000, true, true);
+	}
+}
+

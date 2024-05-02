@@ -256,8 +256,8 @@
 /I "Developer\PhysicsUtilities\Public"
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\WidgetRegistration\UHT"
 /I "Developer\WidgetRegistration\Public"
-/I "C:\Users\admin\Desktop\TestingVR\Intermediate\Build\Win64\UnrealEditor\Inc\TestingVR\UHT"
-/I "C:\Users\admin\Desktop\TestingVR\Source"
+/I "C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\UnrealEditor\Inc\TestingVR\UHT"
+/I "C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Source"
 /I "..\Plugins\EnhancedInput\Intermediate\Build\Win64\UnrealEditor\Inc\EnhancedInput\UHT"
 /I "..\Plugins\EnhancedInput\Source\EnhancedInput\Public"
 /external:W0
