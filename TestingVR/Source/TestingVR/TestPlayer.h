@@ -68,6 +68,11 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "VR|Inputs")
 	class UInputAction* ia_boost;
 
+	//부스터 이펙트
+	UPROPERTY(EditAnywhere, Category = "VR")
+	class UNiagaraComponent* boostComp;
+
+
 
 	//이동방향 변수
 	FVector moveDir;

@@ -18,6 +18,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputMappingContext_NoRegister();
 	ENHANCEDINPUT_API UScriptStruct* Z_Construct_UScriptStruct_FInputActionValue();
 	HEADMOUNTEDDISPLAY_API UClass* Z_Construct_UClass_UMotionControllerComponent_NoRegister();
+	NIAGARA_API UClass* Z_Construct_UClass_UNiagaraComponent_NoRegister();
 	TESTINGVR_API UClass* Z_Construct_UClass_ATestPlayer();
 	TESTINGVR_API UClass* Z_Construct_UClass_ATestPlayer_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_TestingVR();
@@ -566,6 +567,10 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_ia_boost_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_ia_boost;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_boostComp_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_boostComp;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -718,6 +723,20 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_boost = { "ia_boost", nullptr, (EPropertyFlags)0x0010000000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, ia_boost), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_boost_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_boost_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_boostComp_MetaData[] = {
+		{ "Category", "VR" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//\xef\xbf\xbd\xce\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc6\xae\n" },
+#endif
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "TestPlayer.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xef\xbf\xbd\xce\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc6\xae" },
+#endif
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_boostComp = { "boostComp", nullptr, (EPropertyFlags)0x0010000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, boostComp), Z_Construct_UClass_UNiagaraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_boostComp_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_boostComp_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATestPlayer_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_VRcamera,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_leftMotion,
@@ -734,6 +753,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_Rshot,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_Lshot,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_boost,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_boostComp,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ATestPlayer_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ATestPlayer>::IsAbstract,
@@ -773,9 +793,9 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestPlayer_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATestPlayer, ATestPlayer::StaticClass, TEXT("ATestPlayer"), &Z_Registration_Info_UClass_ATestPlayer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATestPlayer), 2609156036U) },
+		{ Z_Construct_UClass_ATestPlayer, ATestPlayer::StaticClass, TEXT("ATestPlayer"), &Z_Registration_Info_UClass_ATestPlayer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATestPlayer), 2610668502U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestPlayer_h_1940408311(TEXT("/Script/TestingVR"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestPlayer_h_3616239955(TEXT("/Script/TestingVR"),
 		Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestPlayer_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestPlayer_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

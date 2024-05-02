@@ -260,6 +260,8 @@
 /I "C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Source"
 /I "..\Plugins\EnhancedInput\Intermediate\Build\Win64\UnrealEditor\Inc\EnhancedInput\UHT"
 /I "..\Plugins\EnhancedInput\Source\EnhancedInput\Public"
+/I "..\Plugins\Runtime\CableComponent\Intermediate\Build\Win64\UnrealEditor\Inc\CableComponent\UHT"
+/I "..\Plugins\Runtime\CableComponent\Source\CableComponent\Classes"
 /external:W0
 /external:I "ThirdParty\mimalloc\include"
 /external:I "ThirdParty\LibTiff\Source\Win64"

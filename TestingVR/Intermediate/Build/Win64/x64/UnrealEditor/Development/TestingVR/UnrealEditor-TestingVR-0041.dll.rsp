@@ -34,6 +34,7 @@
 /NODEFAULTLIB:"LIBCD"
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN:6
+/NATVIS:"..\Plugins\FX\Niagara\Intermediate\Build\Win64\x64\UnrealEditor\Development\Niagara\Niagara.natvis"
 "C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\TestingVREditor\Development\Engine\SharedPCH.Engine.Cpp20.InclOrderUnreal5_0.h.obj"
 "C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\TestingGameModeBase.gen.cpp.obj"
 "C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\TestingVR.init.gen.cpp.obj"
@@ -49,6 +50,7 @@
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\HeadMountedDisplay\UnrealEditor-HeadMountedDisplay.lib"
 "..\Plugins\EnhancedInput\Intermediate\Build\Win64\x64\UnrealEditor\Development\EnhancedInput\UnrealEditor-EnhancedInput.lib"
 "..\Plugins\Runtime\CableComponent\Intermediate\Build\Win64\x64\UnrealEditor\Development\CableComponent\UnrealEditor-CableComponent.lib"
+"..\Plugins\FX\Niagara\Intermediate\Build\Win64\x64\UnrealEditor\Development\Niagara\UnrealEditor-Niagara.lib"
 "delayimp.lib"
 "wininet.lib"
 "rpcrt4.lib"

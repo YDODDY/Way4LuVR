@@ -12,6 +12,7 @@
 #include "Kismet/KismetMathLibrary.h"
 #include "Kismet/GameplayStatics.h"
 #include "Camera/PlayerCameraManager.h"
+#include "NiagaraComponent.h"
 
 ATestPlayer::ATestPlayer()
 {
@@ -43,6 +44,12 @@ ATestPlayer::ATestPlayer()
 	LcableComp->SetupAttachment(leftHand);
 	LcableComp->SetRelativeScale3D(FVector(0.7f));
 	LcableComp->SetVisibility(false);
+	//부스트 이펙트
+	boostComp = CreateDefaultSubobject<UNiagaraComponent>(TEXT("Boost Effect Component"));
+	boostComp -> SetupAttachment(RootComponent);
+	boostComp -> SetAutoActivate(false);
+	boostComp -> SetAutoDestroy(false);
+
 }
 
 void ATestPlayer::BeginPlay()
@@ -65,17 +72,15 @@ void ATestPlayer::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	float currentTime = 0;
  	if (bIsGrapplingR)
  	{
   		RcableComp->EndLocation = GetActorTransform().InverseTransformPosition(grabPointR);
-   		GetCharacterMovement()->AddForce((grabPointR - GetActorLocation()).GetSafeNormal() * 100000);
  	}
  	if (bIsGrapplingL)
  	{
   		LcableComp->EndLocation = GetActorTransform().InverseTransformPosition(grabPointL);
-  		GetCharacterMovement()->AddForce((grabPointL - GetActorLocation()).GetSafeNormal() * 100000);
  	}
+
 }
 
 void ATestPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -146,9 +151,10 @@ void ATestPlayer::OnRightShooting(const FInputActionValue& value)
 		RcableComp->SetVisibility(true);
 		grabPointR = hitInfo.ImpactPoint;
 		if (bIsGrapplingR)
-		{
+		{	
+			GetCharacterMovement()->SetMovementMode(MOVE_Flying);
  			RcableComp->EndLocation = GetActorTransform().InverseTransformPosition(grabPointR);
-			GetCharacterMovement()->AddForce((grabPointR - GetActorLocation()).GetSafeNormal() * 100000);
+			LaunchCharacter((grabPointR-GetActorLocation()), true, true);
 		}
 	}
 }
@@ -171,9 +177,11 @@ void ATestPlayer::OnLeftShooting(const FInputActionValue& value)
 		LcableComp->SetVisibility(true);
 		grabPointL = hitInfo.ImpactPoint;
 		if (bIsGrapplingL)
-		{
+		{	
+			GetCharacterMovement()->SetMovementMode(MOVE_Flying);
+
 			LcableComp->EndLocation = GetActorTransform().InverseTransformPosition(grabPointL);
-			GetCharacterMovement()->AddForce((grabPointL - GetActorLocation()).GetSafeNormal() * 100000);
+			LaunchCharacter((grabPointL - GetActorLocation()), true, true);
 		}
 	}
 }
@@ -203,7 +211,15 @@ void ATestPlayer::OnBoost(const FInputActionValue& value)
 	if (GetCharacterMovement()->IsFalling() || GetCharacterMovement()->IsFlying())
 	{	
 		GetCharacterMovement()->SetMovementMode(MOVE_Flying);
-		LaunchCharacter(GetActorForwardVector() * 10000, true, true);
+		LaunchCharacter(GetActorForwardVector() * 5000, true, true);
+		
+		boostComp->Activate();
+		boostComp->SetVisibility(true);
+
+		FTimerHandle boostHandle;
+		GetWorldTimerManager().SetTimer(boostHandle, FTimerDelegate::CreateLambda([&]() {
+			boostComp->SetVisibility(false);
+			}), 1.0f, false);
 	}
 }
 
