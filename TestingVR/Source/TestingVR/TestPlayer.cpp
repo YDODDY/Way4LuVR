@@ -15,6 +15,8 @@
 #include "NiagaraComponent.h"
 #include "Components/AudioComponent.h"
 #include "FocusPointWidgetActor.h"
+#include "LeftFocusPointWidgetActor.h"
+#include "Components/WidgetComponent.h"
 
 ATestPlayer::ATestPlayer()
 {
@@ -70,9 +72,6 @@ void ATestPlayer::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	//조준점 받아둠
-	crossHair = Cast<AFocusPointWidgetActor>(GetWorld());
-
 	//컨트롤러 받아둠
 	auto* pc = Cast<APlayerController>(Controller);
 	if (pc)
@@ -83,12 +82,24 @@ void ATestPlayer::BeginPlay()
 			subsystem->AddMappingContext(imc_VRPlayer, 0);
 		}
 	}
+	FVector startLocR = rightHand->GetComponentLocation();
+	FVector endLocR = startLocR + rightHand->GetRightVector() * 50000;
+	FVector startLocL = leftHand->GetComponentLocation();
+	FVector endLocL = startLocL + leftHand->GetRightVector() * 50000;
+
+	FActorSpawnParameters paramsR;
+	paramsR.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+	crossHairR_inst = GetWorld()->SpawnActor<AFocusPointWidgetActor>(crossHairR_bp,endLocR, FRotator::ZeroRotator, paramsR);
+
+	FActorSpawnParameters paramsL;
+	paramsL.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+	crossHairL_inst = GetWorld()->SpawnActor<ALeftFocusPointWidgetActor>(crossHairL_bp, endLocL, FRotator::ZeroRotator, paramsL);
 }
 
 void ATestPlayer::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	//인풋 받는동안 그래플링훅 꼽은 지점 계속 기억
  	if (bIsGrapplingR)
  	{
   		RcableComp->EndLocation = GetActorTransform().InverseTransformPosition(grabPointR);
@@ -106,6 +117,10 @@ void ATestPlayer::Tick(float DeltaTime)
 	{
 		windSoundComp->Stop();
 	}
+
+	//양 손 조준점 띄우기
+	ShowCrossHairR();
+	ShowCrossHairL();
 }
 
 void ATestPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -143,13 +158,13 @@ void ATestPlayer::OnIATurn(const FInputActionValue& value)
 {
 	float v = value.Get<float>();
 
-	AddControllerYawInput(v);
+	AddControllerYawInput(v * sensivility);
 }
 //시야 회전 위아래
 void ATestPlayer::OnIATurnUpDown(const FInputActionValue& value)
 {
 	float v = value.Get<float>();
-	AddControllerPitchInput(v);
+	AddControllerPitchInput(v * sensivility);
 }
 //점프
 void ATestPlayer::OnIAJump(const FInputActionValue& value)
@@ -161,15 +176,14 @@ void ATestPlayer::OnIAJump(const FInputActionValue& value)
 //오른손 그래플링 훅
 void ATestPlayer::OnRightShooting(const FInputActionValue& value)
 {	
+	FVector startLocR = rightHand->GetComponentLocation();
+	FVector endLocR = startLocR + rightHand->GetRightVector() * 50000;
 	FHitResult hitInfo;
-	FVector startLoc = rightHand->GetComponentLocation();
-	FVector endLoc = startLoc + rightHand->GetRightVector() * 50000;
 	FCollisionObjectQueryParams objQueryParams;
 	objQueryParams.AddObjectTypesToQuery(ECC_WorldStatic);
 	objQueryParams.AddObjectTypesToQuery(ECC_WorldDynamic);
-
 	//라인트레이스 발사
-	bool bResult = GetWorld()->LineTraceSingleByObjectType(hitInfo, startLoc, endLoc, objQueryParams);
+	bool bResult = GetWorld()->LineTraceSingleByObjectType(hitInfo, startLocR, endLocR, objQueryParams);
 	if (bResult)
 	{
 		bIsGrapplingR = true;
@@ -185,7 +199,7 @@ void ATestPlayer::OnRightShooting(const FInputActionValue& value)
 
 		grabPointR = hitInfo.ImpactPoint;
 		if (bIsGrapplingR)
-		{	
+		{	//라인트레이스 충돌지점 위치값 저장 + 캐릭터무브먼트모드 Flying 으로 전환 > LaunchCharacter, AddForce 적용
 			GetCharacterMovement()->SetMovementMode(MOVE_Flying);
  			RcableComp->EndLocation = GetActorTransform().InverseTransformPosition(grabPointR);
 		//	LaunchCharacter((grabPointR-GetActorLocation()) * 0.2f, true, true);
@@ -203,15 +217,15 @@ void ATestPlayer::OnRightShooting(const FInputActionValue& value)
 //왼손 그래플링 훅 
 void ATestPlayer::OnLeftShooting(const FInputActionValue& value)
 {
+	FVector startLocL = leftHand->GetComponentLocation();
+	FVector endLocL = startLocL + leftHand->GetRightVector() * 50000;
 	FHitResult hitInfo;
-	FVector startLoc = leftHand->GetComponentLocation();
-	FVector endLoc = startLoc + leftHand->GetRightVector() * 50000;
 	FCollisionObjectQueryParams objQueryParams;
 	objQueryParams.AddObjectTypesToQuery(ECC_WorldStatic);
 	objQueryParams.AddObjectTypesToQuery(ECC_WorldDynamic);
 
 	//왼손컴포넌트 위치에서 라인트레이스 발사
-	bool bResult = GetWorld()->LineTraceSingleByObjectType(hitInfo, startLoc, endLoc, objQueryParams);
+	bool bResult = GetWorld()->LineTraceSingleByObjectType(hitInfo, startLocL, endLocL, objQueryParams);
 	if (bResult)
 	{
 		bIsGrapplingL = true;
@@ -226,7 +240,7 @@ void ATestPlayer::OnLeftShooting(const FInputActionValue& value)
 		}
 		grabPointL = hitInfo.ImpactPoint;
 		if (bIsGrapplingL)
-		{	
+		{	//라인트레이스 충돌지점 위치값 저장 + 캐릭터무브먼트모드 Flying 으로 전환 > LaunchCharacter, AddForce 적용
 			GetCharacterMovement()->SetMovementMode(MOVE_Flying);
 
 			LcableComp->EndLocation = GetActorTransform().InverseTransformPosition(grabPointL);
@@ -242,7 +256,7 @@ void ATestPlayer::OnLeftShooting(const FInputActionValue& value)
 		}
 	}
 }
-
+//훅 쏘는 키 뗐을 때 
 void ATestPlayer::StopRightShooting(const FInputActionValue& value)
 {	
 	bSoundR = false;
@@ -254,7 +268,7 @@ void ATestPlayer::StopRightShooting(const FInputActionValue& value)
 	}
 	RcableComp->SetVisibility(false);
 }
-
+//훅 쏘는 키 뗐을 때 
 void ATestPlayer::StopLeftShooting(const FInputActionValue& value)
 {
 	bSoundL = false;
@@ -286,6 +300,55 @@ void ATestPlayer::OnBoost(const FInputActionValue& value)
 		GetWorldTimerManager().SetTimer(boostHandle, FTimerDelegate::CreateLambda([&]() {
 			boostComp->SetVisibility(false);
 			}), 1.5f, false);
+	}
+}
+//오른손 조준점 UI 띄우기
+void ATestPlayer::ShowCrossHairR()
+{
+	if(crossHairR_inst != nullptr)
+	{ 
+		FVector startLocR = rightHand->GetComponentLocation();
+		FVector endLocR = startLocR + rightHand->GetRightVector() * 50000;
+		FHitResult hitInfo;
+		FCollisionObjectQueryParams objQueryParams;
+		objQueryParams.AddObjectTypesToQuery(ECC_WorldStatic);
+		objQueryParams.AddObjectTypesToQuery(ECC_WorldDynamic);
+
+		//라인트레이스 발사
+		bool bResult = GetWorld()->LineTraceSingleByObjectType(hitInfo, startLocR, endLocR, objQueryParams);
+		if (bResult)
+		{ 
+			crossHairR_inst->SetActorLocation(hitInfo.ImpactPoint + FVector(1));
+		}
+		else
+		{
+			crossHairR_inst->SetActorLocation((rightHand->GetRightVector()) * 50000);
+		}
+	}
+}
+
+//왼손 조준점 UI 띄우기
+void ATestPlayer::ShowCrossHairL()
+{
+	if(crossHairL_inst != nullptr)
+	{ 
+		FVector startLocL = leftHand->GetComponentLocation();
+		FVector endLocL = startLocL + leftHand->GetRightVector() * 50000;
+		FHitResult hitInfo;
+		FCollisionObjectQueryParams objQueryParams;
+		objQueryParams.AddObjectTypesToQuery(ECC_WorldStatic);
+		objQueryParams.AddObjectTypesToQuery(ECC_WorldDynamic);
+
+		//라인트레이스 발사
+		bool bResult = GetWorld()->LineTraceSingleByObjectType(hitInfo, startLocL, endLocL, objQueryParams);
+		if (bResult)
+		{	
+			crossHairL_inst->SetActorLocation(hitInfo.ImpactPoint + FVector(1));
+		}
+		else
+		{
+			crossHairL_inst->SetActorLocation((leftHand->GetRightVector()) * 50000);
+		}
 	}
 }
 

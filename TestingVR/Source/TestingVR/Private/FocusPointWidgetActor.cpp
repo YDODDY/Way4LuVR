@@ -6,10 +6,11 @@
 AFocusPointWidgetActor::AFocusPointWidgetActor()
 {
 	PrimaryActorTick.bCanEverTick = true;
-// 	widgetComp = CreateDefaultSubobject<UWidgetComponent>(TEXT("CrossHair Widget Component"));
-// 	widgetComp -> SetupAttachment(RootComponent);
-// 	widgetComp -> SetRelativeScale3D(FVector(0.5f));
-// 	widgetComp -> SetVisibility(false);
+ 	widgetComp = CreateDefaultSubobject<UWidgetComponent>(TEXT("CrossHair Widget Component"));
+ 	widgetComp -> SetupAttachment(RootComponent);
+ 	widgetComp -> SetRelativeScale3D(FVector(0.5f));
+	widgetComp -> SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
 }
 
 void AFocusPointWidgetActor::BeginPlay()

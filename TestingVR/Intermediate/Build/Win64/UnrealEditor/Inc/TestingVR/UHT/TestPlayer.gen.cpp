@@ -11,6 +11,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 // Cross Module References
 	CABLECOMPONENT_API UClass* Z_Construct_UClass_UCableComponent_NoRegister();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	ENGINE_API UClass* Z_Construct_UClass_UAudioComponent_NoRegister();
@@ -23,10 +24,25 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	HEADMOUNTEDDISPLAY_API UClass* Z_Construct_UClass_UMotionControllerComponent_NoRegister();
 	NIAGARA_API UClass* Z_Construct_UClass_UNiagaraComponent_NoRegister();
 	TESTINGVR_API UClass* Z_Construct_UClass_AFocusPointWidgetActor_NoRegister();
+	TESTINGVR_API UClass* Z_Construct_UClass_ALeftFocusPointWidgetActor_NoRegister();
 	TESTINGVR_API UClass* Z_Construct_UClass_ATestPlayer();
 	TESTINGVR_API UClass* Z_Construct_UClass_ATestPlayer_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_TestingVR();
 // End Cross Module References
+	DEFINE_FUNCTION(ATestPlayer::execShowCrossHairL)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->ShowCrossHairL();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ATestPlayer::execShowCrossHairR)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->ShowCrossHairR();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ATestPlayer::execOnBoost)
 	{
 		P_GET_STRUCT_REF(FInputActionValue,Z_Param_Out_value);
@@ -110,6 +126,8 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 			{ "OnIATurnUpDown", &ATestPlayer::execOnIATurnUpDown },
 			{ "OnLeftShooting", &ATestPlayer::execOnLeftShooting },
 			{ "OnRightShooting", &ATestPlayer::execOnRightShooting },
+			{ "ShowCrossHairL", &ATestPlayer::execShowCrossHairL },
+			{ "ShowCrossHairR", &ATestPlayer::execShowCrossHairR },
 			{ "StopLeftShooting", &ATestPlayer::execStopLeftShooting },
 			{ "StopRightShooting", &ATestPlayer::execStopRightShooting },
 		};
@@ -415,6 +433,50 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_ATestPlayer_ShowCrossHairL_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATestPlayer_ShowCrossHairL_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "TestPlayer.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATestPlayer_ShowCrossHairL_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATestPlayer, nullptr, "ShowCrossHairL", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_ShowCrossHairL_Statics::Function_MetaDataParams), Z_Construct_UFunction_ATestPlayer_ShowCrossHairL_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_ATestPlayer_ShowCrossHairL()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATestPlayer_ShowCrossHairL_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ATestPlayer_ShowCrossHairR_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATestPlayer_ShowCrossHairR_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "TestPlayer.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATestPlayer_ShowCrossHairR_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATestPlayer, nullptr, "ShowCrossHairR", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_ShowCrossHairR_Statics::Function_MetaDataParams), Z_Construct_UFunction_ATestPlayer_ShowCrossHairR_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_ATestPlayer_ShowCrossHairR()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATestPlayer_ShowCrossHairR_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_ATestPlayer_StopLeftShooting_Statics
 	{
 		struct TestPlayer_eventStopLeftShooting_Parms
@@ -540,9 +602,13 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_LcableComp;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_crossHair_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_crossHairR_bp_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_crossHair;
+		static const UECodeGen_Private::FClassPropertyParams NewProp_crossHairR_bp;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_crossHairL_bp_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_crossHairL_bp;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_imc_VRPlayer_MetaData[];
 #endif
@@ -575,6 +641,10 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_ia_boost_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_ia_boost;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_sensivility_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_sensivility;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_boostComp_MetaData[];
 #endif
@@ -643,6 +713,8 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 		{ &Z_Construct_UFunction_ATestPlayer_OnIATurnUpDown, "OnIATurnUpDown" }, // 2424206905
 		{ &Z_Construct_UFunction_ATestPlayer_OnLeftShooting, "OnLeftShooting" }, // 1521864508
 		{ &Z_Construct_UFunction_ATestPlayer_OnRightShooting, "OnRightShooting" }, // 3535832395
+		{ &Z_Construct_UFunction_ATestPlayer_ShowCrossHairL, "ShowCrossHairL" }, // 125642367
+		{ &Z_Construct_UFunction_ATestPlayer_ShowCrossHairR, "ShowCrossHairR" }, // 1957738921
 		{ &Z_Construct_UFunction_ATestPlayer_StopLeftShooting, "StopLeftShooting" }, // 2241838669
 		{ &Z_Construct_UFunction_ATestPlayer_StopRightShooting, "StopRightShooting" }, // 3519944959
 	};
@@ -723,8 +795,8 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_LcableComp = { "LcableComp", nullptr, (EPropertyFlags)0x001000000008001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, LcableComp), Z_Construct_UClass_UCableComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_LcableComp_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_LcableComp_MetaData) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_crossHair_MetaData[] = {
-		{ "Category", "TestPlayer" },
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_crossHairR_bp_MetaData[] = {
+		{ "Category", "VR|UI" },
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "//\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd UI \n" },
 #endif
@@ -734,7 +806,14 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 #endif
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_crossHair = { "crossHair", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, crossHair), Z_Construct_UClass_AFocusPointWidgetActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_crossHair_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_crossHair_MetaData) };
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_crossHairR_bp = { "crossHairR_bp", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, crossHairR_bp), Z_Construct_UClass_UClass, Z_Construct_UClass_AFocusPointWidgetActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_crossHairR_bp_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_crossHairR_bp_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_crossHairL_bp_MetaData[] = {
+		{ "Category", "VR|UI" },
+		{ "ModuleRelativePath", "TestPlayer.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_crossHairL_bp = { "crossHairL_bp", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, crossHairL_bp), Z_Construct_UClass_UClass, Z_Construct_UClass_ALeftFocusPointWidgetActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_crossHairL_bp_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_crossHairL_bp_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_imc_VRPlayer_MetaData[] = {
 		{ "Category", "VR|Inputs" },
@@ -797,6 +876,19 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_boost = { "ia_boost", nullptr, (EPropertyFlags)0x0010000000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, ia_boost), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_boost_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_boost_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_sensivility_MetaData[] = {
+		{ "Category", "VR|Inputs" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//\xc8\xb8\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \n" },
+#endif
+		{ "ModuleRelativePath", "TestPlayer.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xc8\xb8\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd" },
+#endif
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_sensivility = { "sensivility", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, sensivility), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_sensivility_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_sensivility_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_boostComp_MetaData[] = {
 		{ "Category", "TestPlayer" },
@@ -935,7 +1027,8 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_rightHand,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_RcableComp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_LcableComp,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_crossHair,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_crossHairR_bp,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_crossHairL_bp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_imc_VRPlayer,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_move,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_turnLR,
@@ -944,6 +1037,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_Rshot,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_Lshot,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_boost,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_sensivility,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_boostComp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_windEffectComp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_jumpSound,
@@ -995,9 +1089,9 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestPlayer_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATestPlayer, ATestPlayer::StaticClass, TEXT("ATestPlayer"), &Z_Registration_Info_UClass_ATestPlayer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATestPlayer), 1551941527U) },
+		{ Z_Construct_UClass_ATestPlayer, ATestPlayer::StaticClass, TEXT("ATestPlayer"), &Z_Registration_Info_UClass_ATestPlayer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATestPlayer), 2554740344U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestPlayer_h_4233264906(TEXT("/Script/TestingVR"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestPlayer_h_1661408808(TEXT("/Script/TestingVR"),
 		Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestPlayer_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestPlayer_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -53,6 +53,7 @@
 "..\Plugins\EnhancedInput\Intermediate\Build\Win64\x64\UnrealEditor\Development\EnhancedInput\UnrealEditor-EnhancedInput.lib"
 "..\Plugins\Runtime\CableComponent\Intermediate\Build\Win64\x64\UnrealEditor\Development\CableComponent\UnrealEditor-CableComponent.lib"
 "..\Plugins\FX\Niagara\Intermediate\Build\Win64\x64\UnrealEditor\Development\Niagara\UnrealEditor-Niagara.lib"
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UMG\UnrealEditor-UMG.lib"
 "delayimp.lib"
 "wininet.lib"
 "rpcrt4.lib"

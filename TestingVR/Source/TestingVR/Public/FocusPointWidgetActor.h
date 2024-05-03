@@ -18,7 +18,8 @@ protected:
 
 public:	
 	virtual void Tick(float DeltaTime) override;
-// 
-// 	UPROPERTY(EditDefaultsOnly)
-// 	class UWidgetComponent* widgetComp;
+ 
+ 	UPROPERTY(EditDefaultsOnly)
+ 	class UWidgetComponent* widgetComp;
+
 };

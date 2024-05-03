@@ -44,8 +44,15 @@ public:
 	class UCableComponent* LcableComp;
 
 	//조준점 UI 
-	UPROPERTY(EditAnywhere)
-	class AFocusPointWidgetActor* crossHair;
+	UPROPERTY(EditAnywhere, Category = "VR|UI")
+	TSubclassOf<class AFocusPointWidgetActor> crossHairR_bp;
+	class AFocusPointWidgetActor* crossHairR_inst;
+
+	UPROPERTY(EditAnywhere, Category = "VR|UI")
+	TSubclassOf<class ALeftFocusPointWidgetActor> crossHairL_bp;
+	class ALeftFocusPointWidgetActor* crossHairL_inst;
+
+
 
 	//인풋
 	UPROPERTY(EditDefaultsOnly , Category = "VR|Inputs")
@@ -72,6 +79,10 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "VR|Inputs")
 	class UInputAction* ia_boost;
 
+	//회전감도 
+	UPROPERTY(EditAnywhere, Category = "VR|Inputs")
+	float sensivility = 0.7f;
+
 	//부스터 이펙트
 	UPROPERTY(EditAnywhere)
 	class UNiagaraComponent* boostComp;
@@ -95,12 +106,10 @@ public:
 	bool bSoundR = false;
 	bool bSoundL = false;
 
-
 	//이동방향 변수
 	FVector moveDir;
 	//회전방향 변수
 	FRotator deltaRot;
-
 		
 	//케이블 컴포넌트 Visibility 제어변수 
 	UPROPERTY(BlueprintReadOnly)
@@ -138,6 +147,8 @@ public:
 	UFUNCTION()
 	void OnBoost(const FInputActionValue& value);
 
-
-
+	UFUNCTION()
+	void ShowCrossHairR();
+	UFUNCTION()
+	void ShowCrossHairL();
 };

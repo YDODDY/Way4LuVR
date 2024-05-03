@@ -57,10 +57,16 @@
     <ClCompile Include="..\..\Source\TestingVR\Private\FocusPointWidgetActor.cpp">
       <Filter>Source\TestingVR\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\TestingVR\Private\LeftFocusPointWidgetActor.cpp">
+      <Filter>Source\TestingVR\Private</Filter>
+    </ClCompile>
     <Filter Include="Source\TestingVR\Public">
       <UniqueIdentifier>{C0F7B777-B928-3EE0-87F3-4BC8C34AE3ED}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\TestingVR\Public\FocusPointWidgetActor.h">
+      <Filter>Source\TestingVR\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TestingVR\Public\LeftFocusPointWidgetActor.h">
       <Filter>Source\TestingVR\Public</Filter>
     </ClInclude>
   </ItemGroup>
