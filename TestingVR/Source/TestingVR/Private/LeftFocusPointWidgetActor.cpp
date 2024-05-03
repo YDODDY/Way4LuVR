@@ -1,16 +1,16 @@
 
 
 #include "LeftFocusPointWidgetActor.h"
-#include "Components/WidgetComponent.h"
+#include "Components/StaticMeshComponent.h"
 
 
 ALeftFocusPointWidgetActor::ALeftFocusPointWidgetActor()
 {
 	PrimaryActorTick.bCanEverTick = true;
-	widgetComp = CreateDefaultSubobject<UWidgetComponent>(TEXT("CrossHair Widget Component"));
-	widgetComp->SetupAttachment(RootComponent);
-	widgetComp->SetRelativeScale3D(FVector(0.5f));
-	widgetComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	meshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh Component"));
+	meshComp -> SetupAttachment(RootComponent);
+	meshComp -> SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
 }
 
 void ALeftFocusPointWidgetActor::BeginPlay()

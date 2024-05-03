@@ -9024,3 +9024,1244 @@ Script Stack (0 frames) :
 [2024.05.03-08.14.30:952][595]LogUObjectHash: Compacting FUObjectHashTables data took   0.95ms
 [2024.05.03-08.14.30:992][595]Display: HotReload took  0.3s.
 [2024.05.03-08.14.30:992][595]Display: Reload/Re-instancing Complete: 1 package changed, 4 classes unchanged, 11 functions remapped
+[2024.05.03-08.16.22:454][968]LogD3D12RHI: Warning: Descriptor cache ran out of sub allocated descriptor blocks! Moving to Context local View heap strategy
+[2024.05.03-08.16.22:454][968]LogD3D12RHI: This should only happen in the Editor where it doesn't matter as much. If it happens in game you should increase the device global heap size!
+[2024.05.03-08.16.58:340][514]LogD3D12RHI: OnlineHeap RollOver Detected. Increase the heap size to prevent creation of additional heaps
+[2024.05.03-08.26.19:683][308]LogDebuggerCommands: Repeating last play command: VR Preview
+[2024.05.03-08.26.19:693][308]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.05.03-08.26.19:693][308]PIE: New page: PIE session: NewMap (2024. 5. 4. 오전 2:26:19)
+[2024.05.03-08.26.19:693][308]LogPlayLevel: Creating play world package: /Game/Testing/maps/UEDPIE_0_NewMap
+[2024.05.03-08.26.19:697][308]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002891s)
+[2024.05.03-08.26.19:697][308]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Testing/maps/NewMap.NewMap to /Game/Testing/maps/UEDPIE_0_NewMap.NewMap (0.002953s)
+[2024.05.03-08.26.19:764][308]LogUObjectHash: Compacting FUObjectHashTables data took   2.58ms
+[2024.05.03-08.26.19:766][308]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.05.03-08.26.19:766][308]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.05.03-08.26.19:766][308]LogAIModule: Creating AISystem for world NewMap
+[2024.05.03-08.26.19:767][308]LogPlayLevel: PIE: World Init took: (0.001368s)
+[2024.05.03-08.26.19:767][308]LogAudio: Display: Creating Audio Device:                 Id: 18, Scope: Unique, Realtime: True
+[2024.05.03-08.26.19:767][308]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.05.03-08.26.19:767][308]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.05.03-08.26.19:767][308]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.05.03-08.26.19:767][308]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.05.03-08.26.19:767][308]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2024.05.03-08.26.19:767][308]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2024.05.03-08.26.19:767][308]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2024.05.03-08.26.19:767][308]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.05.03-08.26.19:768][308]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.05.03-08.26.19:768][308]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.05.03-08.26.19:768][308]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.05.03-08.26.19:770][308]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.05.03-08.26.19:785][308]LogAudioMixer: Display: Using Audio Hardware Device 헤드폰(Oculus Virtual Audio Device)
+[2024.05.03-08.26.19:786][308]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.05.03-08.26.19:786][308]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.05.03-08.26.19:786][308]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.05.03-08.26.19:786][308]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=18
+[2024.05.03-08.26.19:786][308]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=18
+[2024.05.03-08.26.19:788][308]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=18
+[2024.05.03-08.26.19:788][308]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=18
+[2024.05.03-08.26.19:789][308]LogInit: FAudioDevice initialized with ID 18.
+[2024.05.03-08.26.19:789][308]LogAudio: Display: Audio Device (ID: 18) registered with world 'NewMap'.
+[2024.05.03-08.26.19:789][308]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 18
+[2024.05.03-08.26.19:801][308]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.05.03-08.26.20:122][308]LogLoad: Game class is 'BP_TestGameMode_C'
+[2024.05.03-08.26.20:124][308]LogWorld: Bringing World /Game/Testing/maps/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2024.05.03-17.26.20
+[2024.05.03-08.26.20:124][308]LogWorld: Bringing up level for play took: 0.001281
+[2024.05.03-08.26.20:126][308]LogOnline: OSS: Created online subsystem instance for: :Context_29
+[2024.05.03-08.26.20:129][308]LogActor: Warning: BP_CrossHairR_C /Game/Testing/maps/UEDPIE_0_NewMap.NewMap:PersistentLevel.BP_CrossHairR_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.26.20:129][308]LogActor: Warning: BP_CrossHairL_C /Game/Testing/maps/UEDPIE_0_NewMap.NewMap:PersistentLevel.BP_CrossHairL_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.26.20:135][308]PIE: Server logged in
+[2024.05.03-08.26.20:137][308]PIE: Play in editor total start time 0.448 seconds.
+[2024.05.03-08.26.20:150][308]LogViewport: Scene viewport resized to 3648x1872, mode Windowed.
+[2024.05.03-08.26.20:153][308]LogHMD: Warning: Requesting 10 bit swapchain, but not supported: fall back to 8bpc
+[2024.05.03-08.27.02:377][376]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.05.03-08.27.02:377][376]LogWorld: BeginTearingDown for /Game/Testing/maps/UEDPIE_0_NewMap
+[2024.05.03-08.27.02:426][376]LogSlate: Window 'TestingVR Preview [NetMode: Standalone 0]  (64-bit/PC D3D SM6) OpenXR Oculus (1.96.0)' being destroyed
+[2024.05.03-08.27.02:428][376]LogWorld: UWorld::CleanupWorld for NewMap, bSessionEnded=true, bCleanupResources=true
+[2024.05.03-08.27.02:428][376]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.05.03-08.27.02:432][376]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.05.03-08.27.02:438][376]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.05.03-08.27.02:461][376]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 18
+[2024.05.03-08.27.02:461][376]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=18
+[2024.05.03-08.27.02:463][376]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=18
+[2024.05.03-08.27.02:487][376]LogUObjectHash: Compacting FUObjectHashTables data took   0.94ms
+[2024.05.03-08.27.02:608][377]LogPlayLevel: Display: Destroying online subsystem :Context_29
+[2024.05.03-08.27.04:026][543]LogDebuggerCommands: Repeating last play command: VR Preview
+[2024.05.03-08.27.04:030][543]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.05.03-08.27.04:030][543]PIE: New page: PIE session: NewMap (2024. 5. 4. 오전 2:27:04)
+[2024.05.03-08.27.04:030][543]LogPlayLevel: Creating play world package: /Game/Testing/maps/UEDPIE_0_NewMap
+[2024.05.03-08.27.04:031][543]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001619s)
+[2024.05.03-08.27.04:031][543]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Testing/maps/NewMap.NewMap to /Game/Testing/maps/UEDPIE_0_NewMap.NewMap (0.001646s)
+[2024.05.03-08.27.04:041][543]LogUObjectHash: Compacting FUObjectHashTables data took   0.88ms
+[2024.05.03-08.27.04:048][543]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.05.03-08.27.04:048][543]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.05.03-08.27.04:048][543]LogAIModule: Creating AISystem for world NewMap
+[2024.05.03-08.27.04:048][543]LogPlayLevel: PIE: World Init took: (0.000798s)
+[2024.05.03-08.27.04:048][543]LogAudio: Display: Creating Audio Device:                 Id: 19, Scope: Unique, Realtime: True
+[2024.05.03-08.27.04:049][543]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.05.03-08.27.04:049][543]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.05.03-08.27.04:049][543]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.05.03-08.27.04:049][543]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.05.03-08.27.04:049][543]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2024.05.03-08.27.04:049][543]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2024.05.03-08.27.04:049][543]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2024.05.03-08.27.04:049][543]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.05.03-08.27.04:049][543]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.05.03-08.27.04:049][543]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.05.03-08.27.04:049][543]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.05.03-08.27.04:052][543]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.05.03-08.27.04:061][543]LogAudioMixer: Display: Using Audio Hardware Device 헤드폰(Oculus Virtual Audio Device)
+[2024.05.03-08.27.04:062][543]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.05.03-08.27.04:062][543]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.05.03-08.27.04:062][543]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.05.03-08.27.04:062][543]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=19
+[2024.05.03-08.27.04:063][543]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=19
+[2024.05.03-08.27.04:064][543]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=19
+[2024.05.03-08.27.04:064][543]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=19
+[2024.05.03-08.27.04:064][543]LogInit: FAudioDevice initialized with ID 19.
+[2024.05.03-08.27.04:064][543]LogAudio: Display: Audio Device (ID: 19) registered with world 'NewMap'.
+[2024.05.03-08.27.04:064][543]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 19
+[2024.05.03-08.27.04:074][543]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.05.03-08.27.04:373][543]LogLoad: Game class is 'BP_TestGameMode_C'
+[2024.05.03-08.27.04:374][543]LogWorld: Bringing World /Game/Testing/maps/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2024.05.03-17.27.04
+[2024.05.03-08.27.04:374][543]LogWorld: Bringing up level for play took: 0.000705
+[2024.05.03-08.27.04:376][543]LogOnline: OSS: Created online subsystem instance for: :Context_30
+[2024.05.03-08.27.04:378][543]LogActor: Warning: BP_CrossHairR_C /Game/Testing/maps/UEDPIE_0_NewMap.NewMap:PersistentLevel.BP_CrossHairR_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.27.04:378][543]LogActor: Warning: BP_CrossHairL_C /Game/Testing/maps/UEDPIE_0_NewMap.NewMap:PersistentLevel.BP_CrossHairL_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.27.04:382][543]PIE: Server logged in
+[2024.05.03-08.27.04:383][543]PIE: Play in editor total start time 0.354 seconds.
+[2024.05.03-08.27.04:387][543]LogViewport: Scene viewport resized to 3648x1872, mode Windowed.
+[2024.05.03-08.27.04:390][543]LogHMD: Warning: Requesting 10 bit swapchain, but not supported: fall back to 8bpc
+[2024.05.03-08.27.06:086][772]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.05.03-08.27.06:086][772]LogWorld: BeginTearingDown for /Game/Testing/maps/UEDPIE_0_NewMap
+[2024.05.03-08.27.06:124][772]LogSlate: Window 'TestingVR Preview [NetMode: Standalone 0]  (64-bit/PC D3D SM6) OpenXR Oculus (1.96.0)' being destroyed
+[2024.05.03-08.27.06:127][772]LogWorld: UWorld::CleanupWorld for NewMap, bSessionEnded=true, bCleanupResources=true
+[2024.05.03-08.27.06:128][772]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.05.03-08.27.06:130][772]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.05.03-08.27.06:135][772]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.05.03-08.27.06:144][772]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 19
+[2024.05.03-08.27.06:144][772]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=19
+[2024.05.03-08.27.06:146][772]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=19
+[2024.05.03-08.27.06:151][772]LogUObjectHash: Compacting FUObjectHashTables data took   0.98ms
+[2024.05.03-08.27.06:259][773]LogPlayLevel: Display: Destroying online subsystem :Context_30
+[2024.05.03-08.27.09:547][166]LogDebuggerCommands: Repeating last play command: VR Preview
+[2024.05.03-08.27.09:551][166]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.05.03-08.27.09:551][166]PIE: New page: PIE session: NewMap (2024. 5. 4. 오전 2:27:09)
+[2024.05.03-08.27.09:551][166]LogPlayLevel: Creating play world package: /Game/Testing/maps/UEDPIE_0_NewMap
+[2024.05.03-08.27.09:553][166]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001684s)
+[2024.05.03-08.27.09:553][166]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Testing/maps/NewMap.NewMap to /Game/Testing/maps/UEDPIE_0_NewMap.NewMap (0.001713s)
+[2024.05.03-08.27.09:563][166]LogUObjectHash: Compacting FUObjectHashTables data took   0.83ms
+[2024.05.03-08.27.09:564][166]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.05.03-08.27.09:564][166]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.05.03-08.27.09:565][166]LogAIModule: Creating AISystem for world NewMap
+[2024.05.03-08.27.09:565][166]LogPlayLevel: PIE: World Init took: (0.000808s)
+[2024.05.03-08.27.09:565][166]LogAudio: Display: Creating Audio Device:                 Id: 20, Scope: Unique, Realtime: True
+[2024.05.03-08.27.09:565][166]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.05.03-08.27.09:565][166]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.05.03-08.27.09:565][166]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.05.03-08.27.09:565][166]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.05.03-08.27.09:565][166]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2024.05.03-08.27.09:566][166]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2024.05.03-08.27.09:566][166]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2024.05.03-08.27.09:566][166]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.05.03-08.27.09:566][166]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.05.03-08.27.09:566][166]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.05.03-08.27.09:566][166]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.05.03-08.27.09:568][166]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.05.03-08.27.09:578][166]LogAudioMixer: Display: Using Audio Hardware Device 헤드폰(Oculus Virtual Audio Device)
+[2024.05.03-08.27.09:579][166]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.05.03-08.27.09:579][166]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.05.03-08.27.09:579][166]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.05.03-08.27.09:579][166]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=20
+[2024.05.03-08.27.09:579][166]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=20
+[2024.05.03-08.27.09:582][166]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=20
+[2024.05.03-08.27.09:582][166]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=20
+[2024.05.03-08.27.09:582][166]LogInit: FAudioDevice initialized with ID 20.
+[2024.05.03-08.27.09:582][166]LogAudio: Display: Audio Device (ID: 20) registered with world 'NewMap'.
+[2024.05.03-08.27.09:582][166]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 20
+[2024.05.03-08.27.09:592][166]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.05.03-08.27.09:876][166]LogLoad: Game class is 'BP_TestGameMode_C'
+[2024.05.03-08.27.09:878][166]LogWorld: Bringing World /Game/Testing/maps/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2024.05.03-17.27.09
+[2024.05.03-08.27.09:878][166]LogWorld: Bringing up level for play took: 0.001068
+[2024.05.03-08.27.09:880][166]LogOnline: OSS: Created online subsystem instance for: :Context_31
+[2024.05.03-08.27.09:882][166]LogActor: Warning: BP_CrossHairR_C /Game/Testing/maps/UEDPIE_0_NewMap.NewMap:PersistentLevel.BP_CrossHairR_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.27.09:882][166]LogActor: Warning: BP_CrossHairL_C /Game/Testing/maps/UEDPIE_0_NewMap.NewMap:PersistentLevel.BP_CrossHairL_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.27.09:886][166]PIE: Server logged in
+[2024.05.03-08.27.09:888][166]PIE: Play in editor total start time 0.336 seconds.
+[2024.05.03-08.27.09:892][166]LogViewport: Scene viewport resized to 3648x1872, mode Windowed.
+[2024.05.03-08.27.09:896][166]LogHMD: Warning: Requesting 10 bit swapchain, but not supported: fall back to 8bpc
+[2024.05.03-08.27.18:156][112]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.05.03-08.27.18:156][112]LogWorld: BeginTearingDown for /Game/Testing/maps/UEDPIE_0_NewMap
+[2024.05.03-08.27.18:202][112]LogSlate: Window 'TestingVR Preview [NetMode: Standalone 0]  (64-bit/PC D3D SM6) OpenXR Oculus (1.96.0)' being destroyed
+[2024.05.03-08.27.18:203][112]LogWorld: UWorld::CleanupWorld for NewMap, bSessionEnded=true, bCleanupResources=true
+[2024.05.03-08.27.18:204][112]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.05.03-08.27.18:206][112]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.05.03-08.27.18:209][112]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.05.03-08.27.18:219][112]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 20
+[2024.05.03-08.27.18:221][112]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=20
+[2024.05.03-08.27.18:223][112]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=20
+[2024.05.03-08.27.18:228][112]LogUObjectHash: Compacting FUObjectHashTables data took   0.85ms
+[2024.05.03-08.27.18:336][113]LogPlayLevel: Display: Destroying online subsystem :Context_31
+[2024.05.03-08.27.31:480][686]LogDebuggerCommands: Repeating last play command: VR Preview
+[2024.05.03-08.27.31:484][686]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.05.03-08.27.31:484][686]PIE: New page: PIE session: NewMap (2024. 5. 4. 오전 2:27:31)
+[2024.05.03-08.27.31:484][686]LogPlayLevel: Creating play world package: /Game/Testing/maps/UEDPIE_0_NewMap
+[2024.05.03-08.27.31:486][686]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001699s)
+[2024.05.03-08.27.31:486][686]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Testing/maps/NewMap.NewMap to /Game/Testing/maps/UEDPIE_0_NewMap.NewMap (0.001727s)
+[2024.05.03-08.27.31:496][686]LogUObjectHash: Compacting FUObjectHashTables data took   0.81ms
+[2024.05.03-08.27.31:497][686]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.05.03-08.27.31:497][686]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.05.03-08.27.31:497][686]LogAIModule: Creating AISystem for world NewMap
+[2024.05.03-08.27.31:498][686]LogPlayLevel: PIE: World Init took: (0.000842s)
+[2024.05.03-08.27.31:498][686]LogAudio: Display: Creating Audio Device:                 Id: 21, Scope: Unique, Realtime: True
+[2024.05.03-08.27.31:498][686]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.05.03-08.27.31:498][686]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.05.03-08.27.31:498][686]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.05.03-08.27.31:498][686]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.05.03-08.27.31:498][686]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2024.05.03-08.27.31:498][686]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2024.05.03-08.27.31:498][686]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2024.05.03-08.27.31:498][686]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.05.03-08.27.31:498][686]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.05.03-08.27.31:498][686]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.05.03-08.27.31:498][686]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.05.03-08.27.31:500][686]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.05.03-08.27.31:511][686]LogAudioMixer: Display: Using Audio Hardware Device 헤드폰(Oculus Virtual Audio Device)
+[2024.05.03-08.27.31:511][686]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.05.03-08.27.31:511][686]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.05.03-08.27.31:511][686]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.05.03-08.27.31:511][686]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=21
+[2024.05.03-08.27.31:511][686]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=21
+[2024.05.03-08.27.31:513][686]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=21
+[2024.05.03-08.27.31:513][686]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=21
+[2024.05.03-08.27.31:513][686]LogInit: FAudioDevice initialized with ID 21.
+[2024.05.03-08.27.31:513][686]LogAudio: Display: Audio Device (ID: 21) registered with world 'NewMap'.
+[2024.05.03-08.27.31:514][686]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 21
+[2024.05.03-08.27.31:522][686]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.05.03-08.27.31:809][686]LogLoad: Game class is 'BP_TestGameMode_C'
+[2024.05.03-08.27.31:811][686]LogWorld: Bringing World /Game/Testing/maps/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2024.05.03-17.27.31
+[2024.05.03-08.27.31:811][686]LogWorld: Bringing up level for play took: 0.001611
+[2024.05.03-08.27.31:814][686]LogOnline: OSS: Created online subsystem instance for: :Context_32
+[2024.05.03-08.27.31:816][686]LogActor: Warning: BP_CrossHairR_C /Game/Testing/maps/UEDPIE_0_NewMap.NewMap:PersistentLevel.BP_CrossHairR_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.27.31:816][686]LogActor: Warning: BP_CrossHairL_C /Game/Testing/maps/UEDPIE_0_NewMap.NewMap:PersistentLevel.BP_CrossHairL_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.27.31:820][686]PIE: Server logged in
+[2024.05.03-08.27.31:821][686]PIE: Play in editor total start time 0.337 seconds.
+[2024.05.03-08.27.31:826][686]LogViewport: Scene viewport resized to 3648x1872, mode Windowed.
+[2024.05.03-08.27.31:829][686]LogHMD: Warning: Requesting 10 bit swapchain, but not supported: fall back to 8bpc
+[2024.05.03-08.28.05:286][398]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.05.03-08.28.05:286][398]LogWorld: BeginTearingDown for /Game/Testing/maps/UEDPIE_0_NewMap
+[2024.05.03-08.28.05:339][398]LogSlate: Window 'TestingVR Preview [NetMode: Standalone 0]  (64-bit/PC D3D SM6) OpenXR Oculus (1.96.0)' being destroyed
+[2024.05.03-08.28.05:342][398]LogWorld: UWorld::CleanupWorld for NewMap, bSessionEnded=true, bCleanupResources=true
+[2024.05.03-08.28.05:342][398]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.05.03-08.28.05:346][398]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.05.03-08.28.05:348][398]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.05.03-08.28.05:359][398]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 21
+[2024.05.03-08.28.05:359][398]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=21
+[2024.05.03-08.28.05:362][398]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=21
+[2024.05.03-08.28.05:367][398]LogUObjectHash: Compacting FUObjectHashTables data took   0.90ms
+[2024.05.03-08.28.05:425][399]LogPlayLevel: Display: Destroying online subsystem :Context_32
+[2024.05.03-08.35.00:684][921]LogViewport: Scene viewport resized to 1005x781, mode Windowed.
+[2024.05.03-08.36.07:663][376]LogUObjectHash: Compacting FUObjectHashTables data took   1.15ms
+[2024.05.03-08.36.07:666][376]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/Testing/maps/NewMap' took 0.018
+[2024.05.03-08.36.07:667][376]OBJ SavePackage: Generating thumbnails for [1] asset(s) in package [/Game/Testing/BP_Player] ([2] browsable assets)...
+[2024.05.03-08.36.07:694][376]OBJ SavePackage:     Rendered thumbnail for [Blueprint /Game/Testing/BP_Player.BP_Player]
+[2024.05.03-08.36.07:694][376]OBJ SavePackage: Finished generating thumbnails for package [/Game/Testing/BP_Player]
+[2024.05.03-08.36.07:734][376]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/Testing/BP_Player_Auto2
+[2024.05.03-08.36.07:734][376]LogSavePackage: Moving '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Saved/BP_Player_Auto2AC0637F646EE6FDDC9E9CC8A11D2E7F0.tmp' to '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Saved/Autosaves/Game/Testing/BP_Player_Auto2.uasset'
+[2024.05.03-08.36.07:736][376]LogFileHelpers: Auto-saving content packages took 0.071
+[2024.05.03-08.36.52:215][510]LogDerivedDataCache: C:/Users/admin/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:02:00.628 and deleted 0 files with total size 0 MiB and 0 empty folders. Scanned 63328 files in 61018 folders with total size 16237 MiB.
+[2024.05.03-08.39.19:306][951]LogHotReload: New module detected: UnrealEditor-TestingVR-0038.dll
+[2024.05.03-08.39.19:977][954]LogHotReload: Starting Hot-Reload from IDE
+[2024.05.03-08.39.20:049][954]LogUObjectHash: Compacting FUObjectHashTables data took   0.79ms
+[2024.05.03-08.39.20:100][954]LogClass: UPackage /Script/TestingVR Reload.
+[2024.05.03-08.39.20:101][954]LogClass: UClass FocusPointWidgetActor Reload.
+[2024.05.03-08.39.20:101][954]LogClass: UClass LeftFocusPointWidgetActor Reload.
+[2024.05.03-08.39.20:102][954]LogClass: Could not find existing class FocusPointWidgetActor in package /Script/TestingVR for reload, assuming new or modified class
+[2024.05.03-08.39.20:102][954]LogClass: Could not find existing class LeftFocusPointWidgetActor in package /Script/TestingVR for reload, assuming new or modified class
+[2024.05.03-08.39.20:120][954]Re-instancing FocusPointWidgetActor after reload.
+[2024.05.03-08.39.20:142][954]LogActor: Warning: BP_CrossHairR_C /Engine/Transient.World_9:PersistentLevel.BP_CrossHairR_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.39.20:183][954]Re-instancing LeftFocusPointWidgetActor after reload.
+[2024.05.03-08.39.20:187][954]LogActor: Warning: BP_CrossHairL_C /Engine/Transient.World_11:PersistentLevel.BP_CrossHairL_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.39.20:336][954]LogUObjectHash: Compacting FUObjectHashTables data took   1.26ms
+[2024.05.03-08.39.20:384][954]Display: HotReload took  0.4s.
+[2024.05.03-08.39.20:384][954]Display: Reload/Re-instancing Complete: 1 package changed, 2 classes changed, 2 classes unchanged, 11 functions remapped
+[2024.05.03-08.39.29:030][679]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.05.03-08.39.29:035][679]LogActor: Warning: BP_CrossHairR_C /Engine/Transient.World_12:PersistentLevel.BP_CrossHairR_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: ================================================
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: Total job queries 77, among them cache hits 32 (41.56%)
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: Tracking 45 distinct input hashes that result in 40 distinct outputs (88.89%)
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: RAM used: 1.55 MiB of 819.20 MiB budget. Usage: 0.19%
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: === Shader Compilation stats ===
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: Shaders Compiled: 1
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: Jobs assigned 1, completed 1 (100%)
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: Time job spent in pending queue: average 0.03 s, longest 0.03 s
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: Job execution time: average 2.43 s, max 2.43 s
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: Job life time (pending + execution): average 2.46 s, max 2.46
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: Shader code size: average 83.379 KiB, min 83.379 KiB, max 83.379 KiB
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: Time at least one job was in flight (either pending or executed): 2.46 s
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: Jobs were issued in 1 batches (only local compilation was used), average 1.00 jobs/batch
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: Average processing rate: 0.41 jobs/sec
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: Total thread time: 2.033 s
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: Total thread preprocess time: 0.743 s
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: Percentage time preprocessing: 36.55%
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: Effective parallelization: 0.83 (times faster than compiling all shaders on one thread). Compare with number of workers: 8
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: Top 1 most expensive shader types by average time:
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display:                                 TBasePassPSFNoLightMapPolicy (compiled    1 times, average 2.03 sec, max 2.03 sec, min 2.03 sec)
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: Top 1 shader types by total compile time:
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display:                                 TBasePassPSFNoLightMapPolicy - 100.00% of total time (compiled    1 times, average 2.03 sec, max 2.03 sec, min 2.03 sec)
+[2024.05.03-08.39.31:564][950]LogShaderCompilers: Display: ================================================
+[2024.05.03-08.39.31:628][952]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.05.03-08.39.34:741][304]LogSlate: Took 0.001084 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2024.05.03-08.39.49:789][915]BlueprintLog: New page: Compile BP_CrossHairR
+[2024.05.03-08.39.49:807][915]LogActor: Warning: BP_CrossHairR_C /Engine/Transient.World_9:PersistentLevel.BP_CrossHairR_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.39.49:808][915]LogActor: Warning: BP_CrossHairR_C /Engine/Transient.World_12:PersistentLevel.BP_CrossHairR_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.39.49:891][915]LogUObjectHash: Compacting FUObjectHashTables data took   1.31ms
+[2024.05.03-08.39.49:894][915]LogActor: Warning: BP_CrossHairR_C /Engine/Transient.World_12:PersistentLevel.BP_CrossHairR_C_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.39.50:374][963]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.05.03-08.39.50:428][963]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.05.03-08.39.50:434][963]LogActor: Warning: BP_CrossHairR_C /Engine/Transient.World_14:PersistentLevel.BP_CrossHairR_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.39.50:446][963]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Testing/BP_CrossHairR" FILE="../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/BP_CrossHairR.uasset" SILENT=true
+[2024.05.03-08.39.50:449][963]LogSavePackage: Moving output files for package: /Game/Testing/BP_CrossHairR
+[2024.05.03-08.39.50:449][963]LogSavePackage: Moving '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Saved/BP_CrossHairRF0C9104442DC538DBBEB58BB2672C7DE.tmp' to '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/BP_CrossHairR.uasset'
+[2024.05.03-08.39.50:455][963]LogFileHelpers: InternalPromptForCheckoutAndSave took 81 ms (total: 1.25 sec)
+[2024.05.03-08.39.50:457][963]AssetCheck: New page: Asset Save: BP_CrossHairR
+[2024.05.03-08.39.50:457][963]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/Testing/BP_CrossHairR.BP_CrossHairR
+[2024.05.03-08.39.58:754][901]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.05.03-08.39.58:760][901]LogActor: Warning: BP_CrossHairL_C /Engine/Transient.World_15:PersistentLevel.BP_CrossHairL_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.39.59:964][ 33]BlueprintLog: New page: Compile BP_CrossHairL
+[2024.05.03-08.39.59:981][ 33]LogActor: Warning: BP_CrossHairL_C /Engine/Transient.World_11:PersistentLevel.BP_CrossHairL_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.39.59:982][ 33]LogActor: Warning: BP_CrossHairL_C /Engine/Transient.World_15:PersistentLevel.BP_CrossHairL_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.40.00:033][ 33]LogUObjectHash: Compacting FUObjectHashTables data took   1.17ms
+[2024.05.03-08.40.00:039][ 33]LogActor: Warning: BP_CrossHairL_C /Engine/Transient.World_15:PersistentLevel.BP_CrossHairL_C_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.40.00:217][ 44]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.05.03-08.40.00:270][ 44]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.05.03-08.40.00:276][ 44]LogActor: Warning: BP_CrossHairL_C /Engine/Transient.World_16:PersistentLevel.BP_CrossHairL_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.40.00:283][ 44]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Testing/BP_CrossHairL" FILE="../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/BP_CrossHairL.uasset" SILENT=true
+[2024.05.03-08.40.00:286][ 44]LogWorldPartition: Can't find class descriptor '/Game/Testing/BP_CrossHairL.BP_CrossHairL_C' for saving '/Game/Testing/BP_CrossHairL.BP_CrossHairL_C'
+[2024.05.03-08.40.00:286][ 44]LogWorldPartition: Can't find class descriptor '/Game/Testing/BP_CrossHairL.BP_CrossHairL_C' for saving '/Game/Testing/BP_CrossHairL.BP_CrossHairL_C'
+[2024.05.03-08.40.00:286][ 44]LogSavePackage: Moving output files for package: /Game/Testing/BP_CrossHairL
+[2024.05.03-08.40.00:286][ 44]LogSavePackage: Moving '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Saved/BP_CrossHairL53788E7144462BB9AA4A178063E5D76B.tmp' to '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/BP_CrossHairL.uasset'
+[2024.05.03-08.40.00:293][ 44]LogFileHelpers: InternalPromptForCheckoutAndSave took 75 ms (total: 1.33 sec)
+[2024.05.03-08.40.00:296][ 44]AssetCheck: New page: Asset Save: BP_CrossHairL
+[2024.05.03-08.40.00:296][ 44]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/Testing/BP_CrossHairL.BP_CrossHairL
+[2024.05.03-08.40.02:070][255]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.05.03-08.40.02:100][255]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Testing/BP_Player" FILE="../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/BP_Player.uasset" SILENT=true
+[2024.05.03-08.40.02:112][255]LogSavePackage: Moving output files for package: /Game/Testing/BP_Player
+[2024.05.03-08.40.02:113][255]LogSavePackage: Moving '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Saved/BP_Player2CDD7C2E420B22A19D4274828C42E0B9.tmp' to '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/BP_Player.uasset'
+[2024.05.03-08.40.02:119][255]LogFileHelpers: InternalPromptForCheckoutAndSave took 49 ms (total: 1.38 sec)
+[2024.05.03-08.40.02:123][255]AssetCheck: New page: Asset Save: BP_Player
+[2024.05.03-08.40.02:123][255]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/Testing/BP_Player.BP_Player
+[2024.05.03-08.40.08:749][985]BlueprintLog: New page: Compile BP_Player
+[2024.05.03-08.40.09:006][985]LogUObjectHash: Compacting FUObjectHashTables data took   0.87ms
+[2024.05.03-08.40.18:225][  1]LogDebuggerCommands: Repeating last play command: VR Preview
+[2024.05.03-08.40.18:230][  1]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.05.03-08.40.18:231][  1]PIE: New page: PIE session: NewMap (2024. 5. 4. 오전 2:40:18)
+[2024.05.03-08.40.18:231][  1]LogPlayLevel: Creating play world package: /Game/Testing/maps/UEDPIE_0_NewMap
+[2024.05.03-08.40.18:233][  1]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002427s)
+[2024.05.03-08.40.18:233][  1]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Testing/maps/NewMap.NewMap to /Game/Testing/maps/UEDPIE_0_NewMap.NewMap (0.002460s)
+[2024.05.03-08.40.18:246][  1]LogUObjectHash: Compacting FUObjectHashTables data took   0.93ms
+[2024.05.03-08.40.18:248][  1]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.05.03-08.40.18:248][  1]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.05.03-08.40.18:249][  1]LogAIModule: Creating AISystem for world NewMap
+[2024.05.03-08.40.18:249][  1]LogPlayLevel: PIE: World Init took: (0.001154s)
+[2024.05.03-08.40.18:249][  1]LogAudio: Display: Creating Audio Device:                 Id: 22, Scope: Unique, Realtime: True
+[2024.05.03-08.40.18:249][  1]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.05.03-08.40.18:249][  1]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.05.03-08.40.18:249][  1]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.05.03-08.40.18:249][  1]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.05.03-08.40.18:249][  1]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2024.05.03-08.40.18:249][  1]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2024.05.03-08.40.18:249][  1]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2024.05.03-08.40.18:249][  1]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.05.03-08.40.18:250][  1]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.05.03-08.40.18:250][  1]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.05.03-08.40.18:250][  1]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.05.03-08.40.18:253][  1]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.05.03-08.40.18:265][  1]LogAudioMixer: Display: Using Audio Hardware Device 헤드폰(Oculus Virtual Audio Device)
+[2024.05.03-08.40.18:266][  1]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.05.03-08.40.18:266][  1]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.05.03-08.40.18:266][  1]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.05.03-08.40.18:266][  1]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=22
+[2024.05.03-08.40.18:266][  1]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=22
+[2024.05.03-08.40.18:268][  1]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=22
+[2024.05.03-08.40.18:269][  1]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=22
+[2024.05.03-08.40.18:269][  1]LogInit: FAudioDevice initialized with ID 22.
+[2024.05.03-08.40.18:269][  1]LogAudio: Display: Audio Device (ID: 22) registered with world 'NewMap'.
+[2024.05.03-08.40.18:269][  1]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 22
+[2024.05.03-08.40.18:279][  1]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.05.03-08.40.18:587][  1]LogLoad: Game class is 'BP_TestGameMode_C'
+[2024.05.03-08.40.18:589][  1]LogWorld: Bringing World /Game/Testing/maps/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2024.05.03-17.40.18
+[2024.05.03-08.40.18:589][  1]LogWorld: Bringing up level for play took: 0.001247
+[2024.05.03-08.40.18:591][  1]LogOnline: OSS: Created online subsystem instance for: :Context_38
+[2024.05.03-08.40.18:594][  1]LogActor: Warning: BP_CrossHairR_C /Game/Testing/maps/UEDPIE_0_NewMap.NewMap:PersistentLevel.BP_CrossHairR_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.40.18:594][  1]LogActor: Warning: BP_CrossHairL_C /Game/Testing/maps/UEDPIE_0_NewMap.NewMap:PersistentLevel.BP_CrossHairL_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.40.18:602][  1]PIE: Server logged in
+[2024.05.03-08.40.18:604][  1]PIE: Play in editor total start time 0.374 seconds.
+[2024.05.03-08.40.18:615][  1]LogViewport: Scene viewport resized to 3648x1872, mode Windowed.
+[2024.05.03-08.40.18:619][  1]LogHMD: Warning: Requesting 10 bit swapchain, but not supported: fall back to 8bpc
+[2024.05.03-08.40.45:876][954]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.05.03-08.40.45:876][954]LogWorld: BeginTearingDown for /Game/Testing/maps/UEDPIE_0_NewMap
+[2024.05.03-08.40.45:930][954]LogSlate: Window 'TestingVR Preview [NetMode: Standalone 0]  (64-bit/PC D3D SM6) OpenXR Oculus (1.96.0)' being destroyed
+[2024.05.03-08.40.45:932][954]LogWorld: UWorld::CleanupWorld for NewMap, bSessionEnded=true, bCleanupResources=true
+[2024.05.03-08.40.45:932][954]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.05.03-08.40.45:938][954]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.05.03-08.40.45:942][954]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.05.03-08.40.45:952][954]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 22
+[2024.05.03-08.40.45:952][954]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=22
+[2024.05.03-08.40.45:956][954]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=22
+[2024.05.03-08.40.45:968][954]LogUObjectHash: Compacting FUObjectHashTables data took   1.03ms
+[2024.05.03-08.40.46:033][955]LogPlayLevel: Display: Destroying online subsystem :Context_38
+[2024.05.03-08.41.22:496][789]LogHotReload: New module detected: UnrealEditor-TestingVR-0040.dll
+[2024.05.03-08.41.23:446][870]LogHotReload: Starting Hot-Reload from IDE
+[2024.05.03-08.41.23:446][870]LogSlate: Prevented a slow task dialog from being summoned while a context menu was open
+[2024.05.03-08.41.23:462][870]LogUObjectHash: Compacting FUObjectHashTables data took   1.71ms
+[2024.05.03-08.41.23:657][870]LogUObjectHash: Compacting FUObjectHashTables data took   1.24ms
+[2024.05.03-08.41.23:724][870]Display: HotReload took  0.3s.
+[2024.05.03-08.41.23:724][870]Display: Reload/Re-instancing Complete: 1 package changed, 4 classes unchanged, 11 functions remapped
+[2024.05.03-08.41.34:349][892]LogContentBrowser: Deferred new asset folder creation: NewFolder
+[2024.05.03-08.41.34:365][892]LogContentBrowser: Creating deferred item: NewFolder
+[2024.05.03-08.41.34:380][893]LogContentBrowser: Renaming the item being created (Deferred Item: NewFolder).
+[2024.05.03-08.41.38:146][325]LogContentBrowser: Attempting asset rename: NewFolder -> Material
+[2024.05.03-08.41.38:148][325]LogContentBrowser: End creating deferred item NewFolder
+[2024.05.03-08.41.44:514][912]LogContentBrowser: Deferred new asset file creation: NewMaterial
+[2024.05.03-08.41.44:523][912]LogContentBrowser: Creating deferred item: NewMaterial
+[2024.05.03-08.41.44:552][914]LogContentBrowser: Renaming the item being created (Deferred Item: NewMaterial).
+[2024.05.03-08.41.49:137][461]LogContentBrowser: Attempting asset rename: NewMaterial -> M_CrossHair
+[2024.05.03-08.41.49:144][461]LogContentBrowser: End creating deferred item NewMaterial
+[2024.05.03-08.41.49:648][520]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.05.03-08.41.49:703][520]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Testing/Material/M_CrossHair" FILE="../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/Material/M_CrossHair.uasset" SILENT=true
+[2024.05.03-08.41.49:705][520]LogSavePackage: Moving output files for package: /Game/Testing/Material/M_CrossHair
+[2024.05.03-08.41.49:705][520]LogSavePackage: Moving '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Saved/M_CrossHair44BF13A948F42F6BC6307EB07B0DB9B8.tmp' to '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/Material/M_CrossHair.uasset'
+[2024.05.03-08.41.49:713][520]LogFileHelpers: InternalPromptForCheckoutAndSave took 64 ms (total: 1.44 sec)
+[2024.05.03-08.41.49:713][520]AssetCheck: New page: Asset Save: M_CrossHair
+[2024.05.03-08.41.49:713][520]LogContentValidation: Display: Validating /Script/Engine.Material /Game/Testing/Material/M_CrossHair.M_CrossHair
+[2024.05.03-08.41.50:516][608]LogAssetEditorSubsystem: Opening Asset editor for Material /Game/Testing/Material/M_CrossHair.M_CrossHair
+[2024.05.03-08.41.50:560][608]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.05.03-08.41.50:560][608]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.05.03-08.41.51:046][608]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.41.51:046][608]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.41.51:046][608]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.41.51:585][656]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.41.51:585][656]MaterialEditorStats: Texture samplers: 2/16
+[2024.05.03-08.41.51:585][656]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.41.51:585][656]MaterialEditorStats: Shader Count: 1
+[2024.05.03-08.41.52:790][781]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.41.52:790][781]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.41.52:790][781]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.41.52:790][781]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.41.53:397][836]LogViewport: Scene viewport resized to 534x479, mode Windowed.
+[2024.05.03-08.41.53:805][876]LogSlate: Window 'M_CrossHair' being destroyed
+[2024.05.03-08.43.16:221][ 56]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.43.16:221][ 56]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.43.16:222][ 56]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: ================================================
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: Total job queries 124, among them cache hits 40 (32.26%)
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: Tracking 84 distinct input hashes that result in 67 distinct outputs (79.76%)
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: RAM used: 3.07 MiB of 819.20 MiB budget. Usage: 0.38%
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: === Shader Compilation stats ===
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: Shaders Compiled: 33
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: Jobs assigned 33, completed 33 (100%)
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: Average time worker was idle: 18.13 s
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: Time job spent in pending queue: average 0.05 s, longest 0.10 s
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: Job execution time: average 0.72 s, max 2.43 s
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: Job life time (pending + execution): average 0.78 s, max 2.46
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: Shader code size: average 64.498 KiB, min 3.863 KiB, max 87.199 KiB
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: Time at least one job was in flight (either pending or executed): 16.95 s
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: Jobs were issued in 33 batches (only local compilation was used), average 1.00 jobs/batch
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: Average processing rate: 1.95 jobs/sec
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: Total thread time: 19.942 s
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: Total thread preprocess time: 1.669 s
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: Percentage time preprocessing: 8.37%
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: Effective parallelization: 1.18 (times faster than compiling all shaders on one thread). Compare with number of workers: 8
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: Top 5 most expensive shader types by average time:
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display:                         TBasePassPSFNoLightMapPolicySkylight (compiled    6 times, average 1.47 sec, max 1.64 sec, min 1.33 sec)
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display:                                 TBasePassPSFNoLightMapPolicy (compiled    8 times, average 0.72 sec, max 2.03 sec, min 0.20 sec)
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display:                                 TBasePassVSFNoLightMapPolicy (compiled   11 times, average 0.27 sec, max 0.36 sec, min 0.23 sec)
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display:                  TShadowDepthVSVertexShadowDepth_OutputDepth (compiled    2 times, average 0.26 sec, max 0.30 sec, min 0.22 sec)
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display:                                          TDepthOnlyVS<false> (compiled    2 times, average 0.23 sec, max 0.25 sec, min 0.21 sec)
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: Top 5 shader types by total compile time:
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display:                         TBasePassPSFNoLightMapPolicySkylight - 44.09% of total time (compiled    6 times, average 1.47 sec, max 1.64 sec, min 1.33 sec)
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display:                                 TBasePassPSFNoLightMapPolicy - 29.05% of total time (compiled    8 times, average 0.72 sec, max 2.03 sec, min 0.20 sec)
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display:                                 TBasePassVSFNoLightMapPolicy - 14.89% of total time (compiled   11 times, average 0.27 sec, max 0.36 sec, min 0.23 sec)
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display:                  TShadowDepthVSVertexShadowDepth_OutputDepth - 2.60% of total time (compiled    2 times, average 0.26 sec, max 0.30 sec, min 0.22 sec)
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display:                                          TDepthOnlyVS<false> - 2.30% of total time (compiled    2 times, average 0.23 sec, max 0.25 sec, min 0.21 sec)
+[2024.05.03-08.43.16:256][ 57]LogShaderCompilers: Display: ================================================
+[2024.05.03-08.43.16:280][ 58]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.43.16:280][ 58]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.43.16:280][ 58]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.43.16:280][ 58]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.43.22:433][775]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.43.22:434][775]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.43.22:434][775]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.43.22:473][777]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.43.22:473][777]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.43.22:473][777]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.43.22:473][777]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.43.22:960][833]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.43.22:960][833]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.43.22:960][833]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.43.22:992][835]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.43.22:993][835]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.43.22:993][835]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.43.22:993][835]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.43.23:852][937]LogSlate: Window 'Color Picker' being destroyed
+[2024.05.03-08.43.23:858][937]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.43.23:858][937]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.43.23:858][937]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.43.23:874][939]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.43.23:874][939]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.43.23:874][939]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.43.23:874][939]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.43.26:846][284]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.43.26:847][284]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.43.26:847][284]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.43.26:884][286]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.43.26:884][286]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.43.26:884][286]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.43.26:884][286]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.43.27:711][384]LogSlate: Window 'Color Picker' being destroyed
+[2024.05.03-08.43.27:716][384]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.43.27:716][384]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.43.27:716][384]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.43.27:732][386]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.43.27:732][386]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.43.27:732][386]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.43.27:732][386]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.43.31:006][776]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.43.31:006][776]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.43.31:006][776]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.43.31:048][778]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.43.31:048][778]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.43.31:048][778]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.43.31:048][778]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.43.53:640][314]LogSlate: Window 'Message' being destroyed
+[2024.05.03-08.43.53:644][314]Message dialog closed, result: Yes, title: Message, text: Would you like to apply the changes of the modified material to the original material?
+/Game/Testing/Material/M_CrossHair.M_CrossHair
+(Selecting 'No' will cause all changes to be lost!)
+[2024.05.03-08.43.54:196][314]LogUObjectHash: Compacting FUObjectHashTables data took   6.70ms
+[2024.05.03-08.43.54:806][314]LogUObjectHash: Compacting FUObjectHashTables data took   0.97ms
+[2024.05.03-08.43.54:857][314]LogWorld: UWorld::CleanupWorld for World_17, bSessionEnded=true, bCleanupResources=true
+[2024.05.03-08.43.54:857][314]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.05.03-08.43.56:749][508]LogUObjectHash: Compacting FUObjectHashTables data took   0.98ms
+[2024.05.03-08.43.57:636][508]LogSlate: Window 'Delete Assets' being destroyed
+[2024.05.03-08.43.57:723][508]LogUObjectHash: Compacting FUObjectHashTables data took   0.91ms
+[2024.05.03-08.43.57:736][508]LogUObjectHash: Compacting FUObjectHashTables data took   0.85ms
+[2024.05.03-08.43.57:749][508]LogUObjectHash: Compacting FUObjectHashTables data took   0.56ms
+[2024.05.03-08.44.16:792][696]LogAssetEditorSubsystem: Opening Asset editor for Material /Game/VRTemplate/Materials/M_GridRotation.M_GridRotation
+[2024.05.03-08.44.16:801][696]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.05.03-08.44.16:801][696]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.05.03-08.44.17:148][696]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.44.17:149][696]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(6)
+[2024.05.03-08.44.17:149][696]MaterialEditorStats: LWC Promote usages (Est.): 4
+[2024.05.03-08.44.17:149][696]MaterialEditorStats: LWC Multiply Vector Vector usages (Est.): 3
+[2024.05.03-08.44.17:149][696]MaterialEditorStats: LWC Other usages (Est.): 3
+[2024.05.03-08.44.17:149][696]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.44.17:800][756]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.44.17:800][756]MaterialEditorStats: Texture samplers: 2/16
+[2024.05.03-08.44.17:800][756]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(6)
+[2024.05.03-08.44.17:800][756]MaterialEditorStats: LWC Promote usages (Est.): 4
+[2024.05.03-08.44.17:800][756]MaterialEditorStats: LWC Multiply Vector Vector usages (Est.): 3
+[2024.05.03-08.44.17:800][756]MaterialEditorStats: LWC Other usages (Est.): 3
+[2024.05.03-08.44.17:800][756]MaterialEditorStats: Shader Count: 1
+[2024.05.03-08.44.18:643][829]LogViewport: Scene viewport resized to 534x479, mode Windowed.
+[2024.05.03-08.44.18:948][862]LogSlate: Window 'M_GridRotation' being destroyed
+[2024.05.03-08.44.19:009][869]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.44.19:009][869]MaterialEditorStats: Texture samplers: 5/16
+[2024.05.03-08.44.19:009][869]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(6)
+[2024.05.03-08.44.19:009][869]MaterialEditorStats: LWC Promote usages (Est.): 4
+[2024.05.03-08.44.19:009][869]MaterialEditorStats: LWC Multiply Vector Vector usages (Est.): 3
+[2024.05.03-08.44.19:009][869]MaterialEditorStats: LWC Other usages (Est.): 3
+[2024.05.03-08.44.19:009][869]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.44.24:086][468]LogWorld: UWorld::CleanupWorld for World_18, bSessionEnded=true, bCleanupResources=true
+[2024.05.03-08.44.24:086][468]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.05.03-08.44.27:018][799]LogAssetEditorSubsystem: Opening Asset editor for MaterialInstanceConstant /Game/VRTemplate/Materials/MI_Grid_Accent.MI_Grid_Accent
+[2024.05.03-08.44.27:021][799]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.05.03-08.44.27:022][799]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.05.03-08.44.27:249][799]LogViewport: Scene viewport resized to 108x26, mode Windowed.
+[2024.05.03-08.44.28:477][931]LogViewport: Scene viewport resized to 107x49, mode Windowed.
+[2024.05.03-08.44.28:614][943]LogViewport: Scene viewport resized to 524x1014, mode Windowed.
+[2024.05.03-08.44.28:893][975]LogSlate: Window 'MI_Grid_Accent' being destroyed
+[2024.05.03-08.44.31:377][269]LogWorld: UWorld::CleanupWorld for World_19, bSessionEnded=true, bCleanupResources=true
+[2024.05.03-08.44.31:377][269]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.05.03-08.44.43:203][558]LogAssetEditorSubsystem: Opening Asset editor for Material /Game/Testing/Material/M_GridRotation.M_GridRotation
+[2024.05.03-08.44.43:207][558]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.05.03-08.44.43:207][558]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.05.03-08.44.43:517][558]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.44.43:517][558]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(6)
+[2024.05.03-08.44.43:517][558]MaterialEditorStats: LWC Promote usages (Est.): 4
+[2024.05.03-08.44.43:517][558]MaterialEditorStats: LWC Multiply Vector Vector usages (Est.): 3
+[2024.05.03-08.44.43:517][558]MaterialEditorStats: LWC Other usages (Est.): 3
+[2024.05.03-08.44.43:517][558]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.44.43:605][562]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.44.43:605][562]MaterialEditorStats: Texture samplers: 5/16
+[2024.05.03-08.44.43:605][562]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(6)
+[2024.05.03-08.44.43:605][562]MaterialEditorStats: LWC Promote usages (Est.): 4
+[2024.05.03-08.44.43:605][562]MaterialEditorStats: LWC Multiply Vector Vector usages (Est.): 3
+[2024.05.03-08.44.43:605][562]MaterialEditorStats: LWC Other usages (Est.): 3
+[2024.05.03-08.44.43:605][562]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.44.44:876][700]LogSlate: Window 'M_GridRotation' being destroyed
+[2024.05.03-08.44.44:891][700]LogWorld: UWorld::CleanupWorld for World_20, bSessionEnded=true, bCleanupResources=true
+[2024.05.03-08.44.44:891][700]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.05.03-08.44.52:407][560]LogContentBrowser: Attempting asset rename: M_GridRotation -> M_CrossHair
+[2024.05.03-08.44.52:455][560]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.05.03-08.44.54:529][560]LogStall: Stall detector 'FShaderCompilingManager::BlockOnShaderMapCompletion' exceeded budget of 2.000000s, reporting...
+[2024.05.03-08.44.54:533][560]LogStall: Stall detector 'FShaderCompilingManager::BlockOnShaderMapCompletion' report submitted, and took 0.004089s
+[2024.05.03-08.44.56:771][560]LogStall: Stall detector 'FShaderCompilingManager::BlockOnShaderMapCompletion' complete in 4.242950s (2.242950s overbudget)
+[2024.05.03-08.44.56:799][560]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Testing/Material/M_CrossHair" FILE="../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/Material/M_CrossHair.uasset" SILENT=true
+[2024.05.03-08.44.56:803][560]LogSavePackage: Moving output files for package: /Game/Testing/Material/M_CrossHair
+[2024.05.03-08.44.56:803][560]LogSavePackage: Moving '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Saved/M_CrossHairBFBCBFA44002B31EAA0DFF8E5A2F9836.tmp' to '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/Material/M_CrossHair.uasset'
+[2024.05.03-08.44.56:811][560]LogFileHelpers: InternalPromptForCheckoutAndSave took 4.35 sec (total: 5.80 sec)
+[2024.05.03-08.44.56:832][560]LogUObjectHash: Compacting FUObjectHashTables data took   0.95ms
+[2024.05.03-08.44.56:849][560]LogUObjectHash: Compacting FUObjectHashTables data took   0.89ms
+[2024.05.03-08.44.56:860][560]LogUObjectHash: Compacting FUObjectHashTables data took   0.46ms
+[2024.05.03-08.44.56:862][560]AssetCheck: New page: Asset Save: M_CrossHair
+[2024.05.03-08.44.56:862][560]LogContentValidation: Display: Validating /Script/Engine.Material /Game/Testing/Material/M_CrossHair.M_CrossHair
+[2024.05.03-08.44.57:716][657]LogAssetEditorSubsystem: Opening Asset editor for Material /Game/Testing/Material/M_CrossHair.M_CrossHair
+[2024.05.03-08.44.57:719][657]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.05.03-08.44.57:720][657]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.05.03-08.44.57:983][657]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.44.57:983][657]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(6)
+[2024.05.03-08.44.57:983][657]MaterialEditorStats: LWC Promote usages (Est.): 4
+[2024.05.03-08.44.57:983][657]MaterialEditorStats: LWC Multiply Vector Vector usages (Est.): 3
+[2024.05.03-08.44.57:983][657]MaterialEditorStats: LWC Other usages (Est.): 3
+[2024.05.03-08.44.57:983][657]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.44.57:987][657]LogViewport: Scene viewport resized to 534x479, mode Windowed.
+[2024.05.03-08.44.58:063][659]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.44.58:063][659]MaterialEditorStats: Texture samplers: 5/16
+[2024.05.03-08.44.58:063][659]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(6)
+[2024.05.03-08.44.58:063][659]MaterialEditorStats: LWC Promote usages (Est.): 4
+[2024.05.03-08.44.58:063][659]MaterialEditorStats: LWC Multiply Vector Vector usages (Est.): 3
+[2024.05.03-08.44.58:063][659]MaterialEditorStats: LWC Other usages (Est.): 3
+[2024.05.03-08.44.58:063][659]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.45.19:779][215]LogWorld: UWorld::CleanupWorld for World_21, bSessionEnded=true, bCleanupResources=true
+[2024.05.03-08.45.19:779][215]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.05.03-08.45.23:569][654]LogUObjectHash: Compacting FUObjectHashTables data took   0.95ms
+[2024.05.03-08.45.24:463][654]LogSlate: Window 'Delete Assets' being destroyed
+[2024.05.03-08.45.24:482][654]LogUObjectHash: Compacting FUObjectHashTables data took   0.82ms
+[2024.05.03-08.45.24:494][654]LogUObjectHash: Compacting FUObjectHashTables data took   0.89ms
+[2024.05.03-08.45.24:506][654]LogUObjectHash: Compacting FUObjectHashTables data took   0.45ms
+[2024.05.03-08.45.41:097][493]LogAssetEditorSubsystem: Opening Asset editor for Material /Game/AOT_Effect/Materials/M_Wind_Slash.M_Wind_Slash
+[2024.05.03-08.45.41:102][493]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.05.03-08.45.41:102][493]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.05.03-08.45.41:449][493]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.45.41:449][493]MaterialEditorStats: Texture Lookups (Est.): VS(3), PS(6)
+[2024.05.03-08.45.41:449][493]MaterialEditorStats: User interpolators: 4/4 Scalars (1/4 Vectors) (TexCoords: 4, Custom: 0)
+[2024.05.03-08.45.41:449][493]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.45.43:111][642]LogViewport: Scene viewport resized to 534x479, mode Windowed.
+[2024.05.03-08.45.43:315][659]LogSlate: Window 'M_Wind_Slash' being destroyed
+[2024.05.03-08.45.43:317][659]MaterialEditorStats: Base pass shader without light map: 174 instructions
+[2024.05.03-08.45.43:317][659]MaterialEditorStats: Base pass vertex shader: 270 instructions
+[2024.05.03-08.45.43:317][659]MaterialEditorStats: Texture samplers: 5/16
+[2024.05.03-08.45.43:317][659]MaterialEditorStats: Texture Lookups (Est.): VS(3), PS(6)
+[2024.05.03-08.45.43:317][659]MaterialEditorStats: User interpolators: 4/4 Scalars (1/4 Vectors) (TexCoords: 4, Custom: 0)
+[2024.05.03-08.45.43:317][659]MaterialEditorStats: Shader Count: 4
+[2024.05.03-08.45.44:960][850]LogWorld: UWorld::CleanupWorld for World_22, bSessionEnded=true, bCleanupResources=true
+[2024.05.03-08.45.44:960][850]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: ================================================
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: Total job queries 244, among them cache hits 97 (39.75%)
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: Tracking 145 distinct input hashes that result in 109 distinct outputs (75.17%)
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: RAM used: 5.30 MiB of 819.20 MiB budget. Usage: 0.65%
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: === Shader Compilation stats ===
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: Shaders Compiled: 90
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: Jobs assigned 90, completed 90 (100%)
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: Average time worker was idle: 23.46 s
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: Time job spent in pending queue: average 0.37 s, longest 2.62 s
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: Job execution time: average 0.73 s, max 2.43 s
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: Job life time (pending + execution): average 1.10 s, max 4.25
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: Shader code size: average 66.624 KiB, min 3.863 KiB, max 89.785 KiB
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: Time at least one job was in flight (either pending or executed): 26.51 s
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: Jobs were issued in 90 batches (only local compilation was used), average 1.00 jobs/batch
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: Average processing rate: 3.39 jobs/sec
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: Total thread time: 56.09 s
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: Total thread preprocess time: 3.048 s
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: Percentage time preprocessing: 5.43%
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: Effective parallelization: 2.12 (times faster than compiling all shaders on one thread). Compare with number of workers: 8
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: Top 5 most expensive shader types by average time:
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display:  TBasePassPSTDistanceFieldShadowsAndLightMapPolicyHQSkylight (compiled    1 times, average 2.15 sec, max 2.15 sec, min 2.15 sec)
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display:                                 TBasePassPSTLightMapPolicyHQ (compiled    1 times, average 2.14 sec, max 2.14 sec, min 2.14 sec)
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: TBasePassPSFPrecomputedVolumetricLightmapLightingPolicySkylight (compiled    1 times, average 2.13 sec, max 2.13 sec, min 2.13 sec)
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display:                         TBasePassPSTLightMapPolicyLQSkylight (compiled    1 times, average 2.11 sec, max 2.11 sec, min 2.11 sec)
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display:      TBasePassPSFPrecomputedVolumetricLightmapLightingPolicy (compiled    1 times, average 2.09 sec, max 2.09 sec, min 2.09 sec)
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: Top 5 shader types by total compile time:
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display:                                 TBasePassPSFNoLightMapPolicy - 19.17% of total time (compiled   22 times, average 0.49 sec, max 2.08 sec, min 0.19 sec)
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display:                         TBasePassPSFNoLightMapPolicySkylight - 18.32% of total time (compiled    7 times, average 1.47 sec, max 1.64 sec, min 1.33 sec)
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display:                                 TBasePassVSFNoLightMapPolicy - 11.35% of total time (compiled   25 times, average 0.25 sec, max 0.36 sec, min 0.18 sec)
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display:  TBasePassPSTDistanceFieldShadowsAndLightMapPolicyHQSkylight - 3.83% of total time (compiled    1 times, average 2.15 sec, max 2.15 sec, min 2.15 sec)
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display:                                 TBasePassPSTLightMapPolicyHQ - 3.82% of total time (compiled    1 times, average 2.14 sec, max 2.14 sec, min 2.14 sec)
+[2024.05.03-08.46.39:651][ 75]LogShaderCompilers: Display: ================================================
+[2024.05.03-08.46.51:757][452]LogContentBrowser: Attempting asset rename: M_Basic_Wall -> M_CrossHair
+[2024.05.03-08.46.51:780][452]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.05.03-08.46.53:844][452]LogStall: Stall detector 'FShaderCompilingManager::BlockOnShaderMapCompletion' exceeded budget of 2.000000s
+[2024.05.03-08.46.55:832][452]LogStall: Stall detector 'FShaderCompilingManager::BlockOnShaderMapCompletion' complete in 3.992029s (1.992029s overbudget)
+[2024.05.03-08.46.55:858][452]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Testing/Material/M_CrossHair" FILE="../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/Material/M_CrossHair.uasset" SILENT=true
+[2024.05.03-08.46.55:860][452]LogSavePackage: Moving output files for package: /Game/Testing/Material/M_CrossHair
+[2024.05.03-08.46.55:860][452]LogSavePackage: Moving '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Saved/M_CrossHairF383805C4A93A2B7C712C88F72A19654.tmp' to '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/Material/M_CrossHair.uasset'
+[2024.05.03-08.46.55:866][452]LogFileHelpers: InternalPromptForCheckoutAndSave took 4.08 sec (total: 9.88 sec)
+[2024.05.03-08.46.55:886][452]LogUObjectHash: Compacting FUObjectHashTables data took   0.83ms
+[2024.05.03-08.46.55:906][452]LogUObjectHash: Compacting FUObjectHashTables data took   0.90ms
+[2024.05.03-08.46.55:918][452]LogUObjectHash: Compacting FUObjectHashTables data took   0.47ms
+[2024.05.03-08.46.55:921][452]AssetCheck: New page: Asset Save: M_CrossHair
+[2024.05.03-08.46.55:921][452]LogContentValidation: Display: Validating /Script/Engine.Material /Game/Testing/Material/M_CrossHair.M_CrossHair
+[2024.05.03-08.46.56:804][553]LogAssetEditorSubsystem: Opening Asset editor for Material /Game/Testing/Material/M_CrossHair.M_CrossHair
+[2024.05.03-08.46.56:807][553]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.05.03-08.46.56:807][553]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.05.03-08.46.57:066][553]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.46.57:066][553]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.46.57:066][553]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.46.57:069][553]LogViewport: Scene viewport resized to 534x479, mode Windowed.
+[2024.05.03-08.46.57:108][555]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.46.57:108][555]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.46.57:108][555]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.46.57:108][555]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.47.01:247][ 44]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.47.01:247][ 44]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.47.01:247][ 44]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.47.01:674][ 92]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.47.01:674][ 92]MaterialEditorStats: Texture samplers: 2/16
+[2024.05.03-08.47.01:674][ 92]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.47.01:674][ 92]MaterialEditorStats: Shader Count: 1
+[2024.05.03-08.47.02:681][212]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.47.02:681][212]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.47.02:681][212]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.47.02:681][212]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.47.05:037][473]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.47.05:038][473]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.47.05:038][473]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.47.05:067][475]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.47.05:067][475]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.47.05:067][475]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.47.05:067][475]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.47.06:346][627]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.47.06:346][627]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.47.06:346][627]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.47.06:373][629]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.47.06:373][629]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.47.06:373][629]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.47.06:373][629]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.47.07:077][712]LogSlate: Window 'Color Picker' being destroyed
+[2024.05.03-08.47.07:082][712]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.47.07:082][712]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.47.07:082][712]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.47.07:096][714]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.47.07:096][714]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.47.07:096][714]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.47.07:096][714]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.47.07:747][790]LogMaterialEditor: Saving and Compiling material M_CrossHair
+[2024.05.03-08.47.07:801][790]LogUObjectHash: Compacting FUObjectHashTables data took   0.90ms
+[2024.05.03-08.47.08:172][790]LogUObjectHash: Compacting FUObjectHashTables data took   0.41ms
+[2024.05.03-08.47.08:180][790]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.05.03-08.47.10:252][790]LogStall: Stall detector 'FShaderCompilingManager::BlockOnShaderMapCompletion' exceeded budget of 2.000000s
+[2024.05.03-08.47.12:189][790]LogStall: Stall detector 'FShaderCompilingManager::BlockOnShaderMapCompletion' complete in 3.939293s (1.939293s overbudget)
+[2024.05.03-08.47.12:216][790]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Testing/Material/M_CrossHair" FILE="../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/Material/M_CrossHair.uasset" SILENT=true
+[2024.05.03-08.47.12:217][790]LogSavePackage: Moving output files for package: /Game/Testing/Material/M_CrossHair
+[2024.05.03-08.47.12:217][790]LogSavePackage: Moving '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Saved/M_CrossHair8842C1284EBCF9F0CB85A18746CD8076.tmp' to '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/Material/M_CrossHair.uasset'
+[2024.05.03-08.47.12:223][790]LogFileHelpers: InternalPromptForCheckoutAndSave took 4.04 sec (total: 13.9 sec)
+[2024.05.03-08.47.12:224][790]AssetCheck: New page: Asset Save: M_CrossHair
+[2024.05.03-08.47.12:224][790]LogContentValidation: Display: Validating /Script/Engine.Material /Game/Testing/Material/M_CrossHair.M_CrossHair
+[2024.05.03-08.47.12:226][790]MaterialEditorStats: Base pass shader: 744 instructions
+[2024.05.03-08.47.12:226][790]MaterialEditorStats: Base pass shader with Surface Lightmap: 777 instructions
+[2024.05.03-08.47.12:226][790]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.47.12:226][790]MaterialEditorStats: Texture samplers: 5/16
+[2024.05.03-08.47.12:226][790]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.47.12:226][790]MaterialEditorStats: Shader Count: 23
+[2024.05.03-08.47.15:794][204]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.47.15:794][204]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.47.15:794][204]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.47.16:160][247]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.47.16:160][247]MaterialEditorStats: Texture samplers: 2/16
+[2024.05.03-08.47.16:160][247]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.47.16:160][247]MaterialEditorStats: Shader Count: 1
+[2024.05.03-08.47.16:359][271]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.47.16:359][271]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.47.16:359][271]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.47.16:359][271]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.48.06:717][184]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.48.06:717][184]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.48.06:717][184]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.48.06:745][186]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.48.06:745][186]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.48.06:745][186]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.48.06:745][186]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.48.13:757][ 13]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.48.13:757][ 13]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.48.13:758][ 13]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.48.13:787][ 15]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.48.13:787][ 15]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.48.13:787][ 15]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.48.13:787][ 15]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.48.18:131][526]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.48.18:131][526]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.48.18:131][526]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.48.18:162][528]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.48.18:162][528]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.48.18:162][528]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.48.18:162][528]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.48.24:077][222]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.48.24:077][222]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.48.24:077][222]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.48.24:519][269]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.48.24:519][269]MaterialEditorStats: Texture samplers: 2/16
+[2024.05.03-08.48.24:519][269]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.48.24:519][269]MaterialEditorStats: Shader Count: 1
+[2024.05.03-08.48.25:927][428]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.48.25:928][428]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.48.25:928][428]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.48.25:928][428]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.48.37:289][772]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.48.37:290][772]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.48.37:290][772]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.48.37:684][818]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.48.37:684][818]MaterialEditorStats: Texture samplers: 2/16
+[2024.05.03-08.48.37:684][818]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.48.37:684][818]MaterialEditorStats: Shader Count: 1
+[2024.05.03-08.48.37:883][842]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.48.37:883][842]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.48.37:883][842]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.48.37:883][842]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.48.46:070][809]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.48.46:070][809]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.48.46:070][809]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.48.46:127][811]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.48.46:127][811]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.48.46:127][811]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.48.46:127][811]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.48.46:956][910]LogEditorTransaction: Undo Create Reroute Node
+[2024.05.03-08.48.47:140][910]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.48.47:140][910]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.48.47:140][910]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.48.47:249][912]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.48.47:249][912]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.48.47:249][912]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.48.47:249][912]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.48.57:768][142]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.48.57:768][142]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.48.57:768][142]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.48.58:141][185]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.48.58:141][185]MaterialEditorStats: Texture samplers: 2/16
+[2024.05.03-08.48.58:141][185]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.48.58:141][185]MaterialEditorStats: Shader Count: 1
+[2024.05.03-08.48.58:240][197]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.48.58:240][197]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.48.58:240][197]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.48.58:240][197]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.48.59:537][338]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.48.59:537][338]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.48.59:537][338]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.48.59:570][340]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.48.59:570][340]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.48.59:570][340]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.48.59:570][340]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.49.04:383][905]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.49.04:383][905]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.49.04:383][905]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.49.04:417][907]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.49.04:417][907]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.49.04:417][907]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.49.04:417][907]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.49.14:954][165]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.49.14:954][165]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.49.14:954][165]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.49.15:297][205]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.49.15:297][205]MaterialEditorStats: Texture samplers: 2/16
+[2024.05.03-08.49.15:297][205]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.49.15:297][205]MaterialEditorStats: Shader Count: 1
+[2024.05.03-08.49.15:737][248]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.49.15:737][248]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.49.15:737][248]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.49.15:737][248]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.49.26:828][553]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.49.26:828][553]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.49.26:828][553]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.49.26:865][555]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.49.26:865][555]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.49.26:865][555]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.49.26:865][555]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.49.26:890][558]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.05.03-08.49.28:193][710]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.49.28:193][710]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.49.28:193][710]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.49.28:238][712]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.49.28:238][712]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.49.28:238][712]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.49.28:238][712]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.49.36:044][607]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.49.36:044][607]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.49.36:044][607]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.49.36:073][609]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.49.36:073][609]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.49.36:073][609]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.49.36:073][609]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: ================================================
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: Total job queries 420, among them cache hits 214 (50.95%)
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: Tracking 204 distinct input hashes that result in 143 distinct outputs (70.10%)
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: RAM used: 7.76 MiB of 819.20 MiB budget. Usage: 0.95%
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: === Shader Compilation stats ===
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: Shaders Compiled: 149
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: Jobs assigned 149, completed 149 (100%)
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: Average time worker was idle: 20.94 s
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: Time job spent in pending queue: average 0.56 s, longest 2.62 s
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: Job execution time: average 0.85 s, max 2.43 s
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: Job life time (pending + execution): average 1.40 s, max 4.25
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: Shader code size: average 70.892 KiB, min 3.863 KiB, max 94.98 KiB
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: Time at least one job was in flight (either pending or executed): 39.79 s
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: Jobs were issued in 149 batches (only local compilation was used), average 1.00 jobs/batch
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: Average processing rate: 3.74 jobs/sec
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: Total thread time: 111.075 s
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: Total thread preprocess time: 4.529 s
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: Percentage time preprocessing: 4.08%
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: Effective parallelization: 2.79 (times faster than compiling all shaders on one thread). Compare with number of workers: 8
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: Top 5 most expensive shader types by average time:
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display: TBasePassPSFPrecomputedVolumetricLightmapLightingPolicySkylight (compiled    3 times, average 2.06 sec, max 2.13 sec, min 2.00 sec)
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display:                                 TBasePassPSTLightMapPolicyHQ (compiled    3 times, average 2.05 sec, max 2.14 sec, min 1.97 sec)
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display:  TBasePassPSTDistanceFieldShadowsAndLightMapPolicyHQSkylight (compiled    3 times, average 2.05 sec, max 2.15 sec, min 1.98 sec)
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display:        TBasePassPSFCachedPointIndirectLightingPolicySkylight (compiled    3 times, average 2.03 sec, max 2.07 sec, min 1.94 sec)
+[2024.05.03-08.49.45:160][689]LogShaderCompilers: Display:                         TBasePassPSTLightMapPolicyLQSkylight (compiled    3 times, average 2.02 sec, max 2.11 sec, min 1.97 sec)
+[2024.05.03-08.49.45:161][689]LogShaderCompilers: Display: Top 5 shader types by total compile time:
+[2024.05.03-08.49.45:161][689]LogShaderCompilers: Display:                         TBasePassPSFNoLightMapPolicySkylight - 12.27% of total time (compiled   13 times, average 1.05 sec, max 1.64 sec, min 0.41 sec)
+[2024.05.03-08.49.45:161][689]LogShaderCompilers: Display:                                 TBasePassPSFNoLightMapPolicy - 11.98% of total time (compiled   26 times, average 0.51 sec, max 2.08 sec, min 0.19 sec)
+[2024.05.03-08.49.45:161][689]LogShaderCompilers: Display:                                 TBasePassVSFNoLightMapPolicy - 7.57% of total time (compiled   34 times, average 0.25 sec, max 0.36 sec, min 0.16 sec)
+[2024.05.03-08.49.45:161][689]LogShaderCompilers: Display: TBasePassPSFPrecomputedVolumetricLightmapLightingPolicySkylight - 5.56% of total time (compiled    3 times, average 2.06 sec, max 2.13 sec, min 2.00 sec)
+[2024.05.03-08.49.45:161][689]LogShaderCompilers: Display:                                 TBasePassPSTLightMapPolicyHQ - 5.53% of total time (compiled    3 times, average 2.05 sec, max 2.14 sec, min 1.97 sec)
+[2024.05.03-08.49.45:161][689]LogShaderCompilers: Display: ================================================
+[2024.05.03-08.49.48:676][ 85]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.49.48:676][ 85]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.49.48:676][ 85]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.49.48:706][ 87]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.49.48:706][ 87]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.49.48:706][ 87]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.49.48:706][ 87]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.49.53:734][677]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.49.53:734][677]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.49.53:734][677]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.49.53:763][679]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.49.53:763][679]MaterialEditorStats: Texture samplers: 4/16
+[2024.05.03-08.49.53:763][679]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(3)
+[2024.05.03-08.49.53:763][679]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.49.56:534][999]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.49.56:534][999]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.49.56:534][999]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.49.57:006][ 50]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.49.57:006][ 50]MaterialEditorStats: Texture samplers: 2/16
+[2024.05.03-08.49.57:006][ 50]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.49.57:006][ 50]MaterialEditorStats: Shader Count: 1
+[2024.05.03-08.49.57:206][ 74]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.49.57:206][ 74]MaterialEditorStats: Texture samplers: 5/16
+[2024.05.03-08.49.57:206][ 74]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.49.57:206][ 74]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.50.08:571][416]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.50.08:571][416]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.50.08:571][416]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.50.08:606][418]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.50.08:606][418]MaterialEditorStats: Texture samplers: 5/16
+[2024.05.03-08.50.08:606][418]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.50.08:606][418]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.50.11:500][761]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.50.11:500][761]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.50.11:500][761]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.50.11:531][763]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.50.11:531][763]MaterialEditorStats: Texture samplers: 5/16
+[2024.05.03-08.50.11:531][763]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.50.11:531][763]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.50.15:099][178]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.50.15:099][178]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.50.15:099][178]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.50.15:128][180]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.50.15:128][180]MaterialEditorStats: Texture samplers: 5/16
+[2024.05.03-08.50.15:128][180]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.50.15:128][180]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.50.16:863][379]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.50.16:863][379]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.50.16:863][379]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.50.16:892][381]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.50.16:892][381]MaterialEditorStats: Texture samplers: 5/16
+[2024.05.03-08.50.16:893][381]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.50.16:893][381]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.50.18:148][520]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.50.18:148][520]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.50.18:148][520]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.50.18:664][581]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.50.18:665][581]MaterialEditorStats: Texture samplers: 2/16
+[2024.05.03-08.50.18:665][581]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.50.18:665][581]MaterialEditorStats: Shader Count: 1
+[2024.05.03-08.50.18:974][618]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.50.18:974][618]MaterialEditorStats: Texture samplers: 5/16
+[2024.05.03-08.50.18:974][618]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.50.18:974][618]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.50.23:674][165]LogMaterialEditor: Saving and Compiling material M_CrossHair
+[2024.05.03-08.50.23:710][165]LogUObjectHash: Compacting FUObjectHashTables data took   0.98ms
+[2024.05.03-08.50.24:100][165]LogUObjectHash: Compacting FUObjectHashTables data took   0.62ms
+[2024.05.03-08.50.24:108][165]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.05.03-08.50.26:081][165]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Testing/Material/M_CrossHair" FILE="../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/Material/M_CrossHair.uasset" SILENT=true
+[2024.05.03-08.50.26:083][165]LogSavePackage: Moving output files for package: /Game/Testing/Material/M_CrossHair
+[2024.05.03-08.50.26:084][165]LogSavePackage: Moving '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Saved/M_CrossHair7EB994F44C36FC3FE34E489D98BA15B8.tmp' to '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/Material/M_CrossHair.uasset'
+[2024.05.03-08.50.26:088][165]LogFileHelpers: InternalPromptForCheckoutAndSave took 1.97 sec (total: 15.9 sec)
+[2024.05.03-08.50.26:090][165]AssetCheck: New page: Asset Save: M_CrossHair
+[2024.05.03-08.50.26:090][165]LogContentValidation: Display: Validating /Script/Engine.Material /Game/Testing/Material/M_CrossHair.M_CrossHair
+[2024.05.03-08.50.26:090][165]MaterialEditorStats: Base pass shader: 686 instructions
+[2024.05.03-08.50.26:090][165]MaterialEditorStats: Base pass shader with Surface Lightmap: 710 instructions
+[2024.05.03-08.50.26:091][165]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.50.26:091][165]MaterialEditorStats: Texture samplers: 6/16
+[2024.05.03-08.50.26:091][165]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.50.26:091][165]MaterialEditorStats: Shader Count: 29
+[2024.05.03-08.50.30:176][640]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.50.30:176][640]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.50.30:176][640]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.50.30:191][642]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.50.30:192][642]MaterialEditorStats: Texture samplers: 5/16
+[2024.05.03-08.50.30:192][642]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.50.30:192][642]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.50.32:002][854]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.50.32:002][854]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.50.32:002][854]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.50.32:018][856]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.50.32:018][856]MaterialEditorStats: Texture samplers: 5/16
+[2024.05.03-08.50.32:018][856]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.50.32:018][856]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.50.32:668][932]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.50.32:668][932]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.50.32:668][932]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.50.32:698][934]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.50.32:698][934]MaterialEditorStats: Texture samplers: 5/16
+[2024.05.03-08.50.32:698][934]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.50.32:698][934]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.50.33:408][ 17]LogSlate: Window 'Color Picker' being destroyed
+[2024.05.03-08.50.33:413][ 17]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.50.33:413][ 17]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.50.33:413][ 17]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.50.33:429][ 19]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.50.33:429][ 19]MaterialEditorStats: Texture samplers: 5/16
+[2024.05.03-08.50.33:429][ 19]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.50.33:429][ 19]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.50.37:349][477]LogMaterialEditor: Saving and Compiling material M_CrossHair
+[2024.05.03-08.50.37:384][477]LogUObjectHash: Compacting FUObjectHashTables data took   0.79ms
+[2024.05.03-08.50.37:558][477]LogUObjectHash: Compacting FUObjectHashTables data took   0.40ms
+[2024.05.03-08.50.37:568][477]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.05.03-08.50.37:662][477]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Testing/Material/M_CrossHair" FILE="../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/Material/M_CrossHair.uasset" SILENT=true
+[2024.05.03-08.50.37:664][477]LogSavePackage: Moving output files for package: /Game/Testing/Material/M_CrossHair
+[2024.05.03-08.50.37:665][477]LogSavePackage: Moving '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Saved/M_CrossHair39D0A6814B0B75F84FA52E9F26CB2EC5.tmp' to '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/Material/M_CrossHair.uasset'
+[2024.05.03-08.50.37:671][477]LogFileHelpers: InternalPromptForCheckoutAndSave took 102 ms (total: 16.0 sec)
+[2024.05.03-08.50.37:672][477]AssetCheck: New page: Asset Save: M_CrossHair
+[2024.05.03-08.50.37:672][477]LogContentValidation: Display: Validating /Script/Engine.Material /Game/Testing/Material/M_CrossHair.M_CrossHair
+[2024.05.03-08.50.37:674][477]MaterialEditorStats: Base pass shader: 686 instructions
+[2024.05.03-08.50.37:674][477]MaterialEditorStats: Base pass shader with Surface Lightmap: 710 instructions
+[2024.05.03-08.50.37:674][477]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.50.37:674][477]MaterialEditorStats: Texture samplers: 6/16
+[2024.05.03-08.50.37:674][477]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.50.37:674][477]MaterialEditorStats: Shader Count: 29
+[2024.05.03-08.50.38:964][630]LogMaterialEditor: Saving and Compiling material M_CrossHair
+[2024.05.03-08.50.38:966][630]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.05.03-08.50.39:013][630]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Testing/Material/M_CrossHair" FILE="../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/Material/M_CrossHair.uasset" SILENT=true
+[2024.05.03-08.50.39:015][630]LogSavePackage: Moving output files for package: /Game/Testing/Material/M_CrossHair
+[2024.05.03-08.50.39:015][630]LogSavePackage: Moving '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Saved/M_CrossHairAFC8309C4ABBAABFD74C5D98FBCF2FD0.tmp' to '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/Material/M_CrossHair.uasset'
+[2024.05.03-08.50.39:019][630]LogFileHelpers: InternalPromptForCheckoutAndSave took 53 ms (total: 16.0 sec)
+[2024.05.03-08.50.39:022][630]AssetCheck: New page: Asset Save: M_CrossHair
+[2024.05.03-08.50.39:022][630]LogContentValidation: Display: Validating /Script/Engine.Material /Game/Testing/Material/M_CrossHair.M_CrossHair
+[2024.05.03-08.50.45:154][366]LogMaterialEditor: Saving and Compiling material M_CrossHair
+[2024.05.03-08.50.45:156][366]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.05.03-08.50.45:202][366]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Testing/Material/M_CrossHair" FILE="../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/Material/M_CrossHair.uasset" SILENT=true
+[2024.05.03-08.50.45:203][366]LogSavePackage: Moving output files for package: /Game/Testing/Material/M_CrossHair
+[2024.05.03-08.50.45:204][366]LogSavePackage: Moving '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Saved/M_CrossHair5C9A5E714693322D52A6579BEE34CAD6.tmp' to '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/Material/M_CrossHair.uasset'
+[2024.05.03-08.50.45:209][366]LogFileHelpers: InternalPromptForCheckoutAndSave took 52 ms (total: 16.1 sec)
+[2024.05.03-08.50.45:212][366]AssetCheck: New page: Asset Save: M_CrossHair
+[2024.05.03-08.50.45:212][366]LogContentValidation: Display: Validating /Script/Engine.Material /Game/Testing/Material/M_CrossHair.M_CrossHair
+[2024.05.03-08.51.41:003][391]LogMaterialEditor: Saving and Compiling material M_CrossHair
+[2024.05.03-08.51.41:005][391]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.05.03-08.51.41:060][391]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Testing/Material/M_CrossHair" FILE="../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/Material/M_CrossHair.uasset" SILENT=true
+[2024.05.03-08.51.41:061][391]LogSavePackage: Moving output files for package: /Game/Testing/Material/M_CrossHair
+[2024.05.03-08.51.41:062][391]LogSavePackage: Moving '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Saved/M_CrossHair4F8CA4B64822373043E86989361BC4E3.tmp' to '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/Material/M_CrossHair.uasset'
+[2024.05.03-08.51.41:066][391]LogFileHelpers: InternalPromptForCheckoutAndSave took 61 ms (total: 16.1 sec)
+[2024.05.03-08.51.41:081][391]AssetCheck: New page: Asset Save: M_CrossHair
+[2024.05.03-08.51.41:081][391]LogContentValidation: Display: Validating /Script/Engine.Material /Game/Testing/Material/M_CrossHair.M_CrossHair
+[2024.05.03-08.51.51:859][601]BlueprintLog: New page: Compile BP_CrossHairL
+[2024.05.03-08.51.51:900][601]LogActor: Warning: BP_CrossHairL_C /Engine/Transient.World_11:PersistentLevel.BP_CrossHairL_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.51.51:901][601]LogActor: Warning: BP_CrossHairL_C /Engine/Transient.World_16:PersistentLevel.BP_CrossHairL_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.51.51:902][601]LogActor: Warning: BP_CrossHairL_C /Engine/Transient.World_15:PersistentLevel.BP_CrossHairL_C_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.51.51:920][601]LogUObjectHash: Compacting FUObjectHashTables data took   0.95ms
+[2024.05.03-08.51.51:924][601]LogActor: Warning: BP_CrossHairL_C /Engine/Transient.World_15:PersistentLevel.BP_CrossHairL_C_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.51.52:532][662]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.05.03-08.51.52:591][662]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Testing/BP_CrossHairL" FILE="../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/BP_CrossHairL.uasset" SILENT=true
+[2024.05.03-08.51.52:597][662]LogWorldPartition: Can't find class descriptor '/Game/Testing/BP_CrossHairL.BP_CrossHairL_C' for saving '/Game/Testing/BP_CrossHairL.BP_CrossHairL_C'
+[2024.05.03-08.51.52:597][662]LogWorldPartition: Can't find class descriptor '/Game/Testing/BP_CrossHairL.BP_CrossHairL_C' for saving '/Game/Testing/BP_CrossHairL.BP_CrossHairL_C'
+[2024.05.03-08.51.52:598][662]LogSavePackage: Moving output files for package: /Game/Testing/BP_CrossHairL
+[2024.05.03-08.51.52:599][662]LogSavePackage: Moving '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Saved/BP_CrossHairLF18691744C43D90D5ADBB9AFB284E410.tmp' to '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/BP_CrossHairL.uasset'
+[2024.05.03-08.51.52:604][662]LogFileHelpers: InternalPromptForCheckoutAndSave took 72 ms (total: 16.2 sec)
+[2024.05.03-08.51.52:610][662]AssetCheck: New page: Asset Save: BP_CrossHairL
+[2024.05.03-08.51.52:610][662]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/Testing/BP_CrossHairL.BP_CrossHairL
+[2024.05.03-08.51.55:400][983]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.51.55:400][983]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.51.55:400][983]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.51.55:429][985]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.51.55:429][985]MaterialEditorStats: Texture samplers: 5/16
+[2024.05.03-08.51.55:429][985]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.51.55:429][985]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.51.56:323][ 90]LogSlate: Window 'Color Picker' being destroyed
+[2024.05.03-08.51.56:328][ 90]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.51.56:328][ 90]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.51.56:328][ 90]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.51.56:344][ 92]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.51.56:344][ 92]MaterialEditorStats: Texture samplers: 5/16
+[2024.05.03-08.51.56:344][ 92]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.51.56:344][ 92]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.51.58:559][344]LogSlate: Window 'Color Picker' being destroyed
+[2024.05.03-08.51.58:564][344]MaterialEditorStats: Texture samplers: 0/16
+[2024.05.03-08.51.58:564][344]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.51.58:564][344]MaterialEditorStats: Shader Count: 0
+[2024.05.03-08.51.58:579][346]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.51.58:579][346]MaterialEditorStats: Texture samplers: 5/16
+[2024.05.03-08.51.58:579][346]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.51.58:579][346]MaterialEditorStats: Shader Count: 2
+[2024.05.03-08.51.59:502][455]LogMaterialEditor: Saving and Compiling material M_CrossHair
+[2024.05.03-08.51.59:539][455]LogUObjectHash: Compacting FUObjectHashTables data took   0.79ms
+[2024.05.03-08.51.59:721][455]LogUObjectHash: Compacting FUObjectHashTables data took   0.46ms
+[2024.05.03-08.51.59:728][455]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.05.03-08.51.59:812][455]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Testing/Material/M_CrossHair" FILE="../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/Material/M_CrossHair.uasset" SILENT=true
+[2024.05.03-08.51.59:815][455]LogSavePackage: Moving output files for package: /Game/Testing/Material/M_CrossHair
+[2024.05.03-08.51.59:816][455]LogSavePackage: Moving '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Saved/M_CrossHair3D43079346B15FD3DB315F8903322163.tmp' to '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/Material/M_CrossHair.uasset'
+[2024.05.03-08.51.59:821][455]LogFileHelpers: InternalPromptForCheckoutAndSave took 92 ms (total: 16.3 sec)
+[2024.05.03-08.51.59:823][455]AssetCheck: New page: Asset Save: M_CrossHair
+[2024.05.03-08.51.59:823][455]LogContentValidation: Display: Validating /Script/Engine.Material /Game/Testing/Material/M_CrossHair.M_CrossHair
+[2024.05.03-08.51.59:826][455]MaterialEditorStats: Base pass shader: 686 instructions
+[2024.05.03-08.51.59:826][455]MaterialEditorStats: Base pass shader with Surface Lightmap: 710 instructions
+[2024.05.03-08.51.59:826][455]MaterialEditorStats: Base pass vertex shader: 263 instructions
+[2024.05.03-08.51.59:826][455]MaterialEditorStats: Texture samplers: 6/16
+[2024.05.03-08.51.59:826][455]MaterialEditorStats: Texture Lookups (Est.): VS(0), PS(4)
+[2024.05.03-08.51.59:826][455]MaterialEditorStats: Shader Count: 29
+[2024.05.03-08.52.06:904][254]BlueprintLog: New page: Compile BP_CrossHairR
+[2024.05.03-08.52.06:920][254]LogActor: Warning: BP_CrossHairR_C /Engine/Transient.World_9:PersistentLevel.BP_CrossHairR_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.52.06:921][254]LogActor: Warning: BP_CrossHairR_C /Engine/Transient.World_14:PersistentLevel.BP_CrossHairR_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.52.06:921][254]LogActor: Warning: BP_CrossHairR_C /Engine/Transient.World_12:PersistentLevel.BP_CrossHairR_C_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.52.06:937][254]LogUObjectHash: Compacting FUObjectHashTables data took   0.85ms
+[2024.05.03-08.52.06:941][254]LogActor: Warning: BP_CrossHairR_C /Engine/Transient.World_12:PersistentLevel.BP_CrossHairR_C_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.52.07:373][298]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.05.03-08.52.07:434][298]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Testing/BP_CrossHairR" FILE="../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/BP_CrossHairR.uasset" SILENT=true
+[2024.05.03-08.52.07:437][298]LogSavePackage: Moving output files for package: /Game/Testing/BP_CrossHairR
+[2024.05.03-08.52.07:437][298]LogSavePackage: Moving '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Saved/BP_CrossHairRCF7CFF0342421D96CC552FA3A09AF669.tmp' to '../../../../../../Users/admin/Desktop/VRProject/Way4LuVR/TestingVR/Content/Testing/BP_CrossHairR.uasset'
+[2024.05.03-08.52.07:442][298]LogFileHelpers: InternalPromptForCheckoutAndSave took 69 ms (total: 16.4 sec)
+[2024.05.03-08.52.07:447][298]AssetCheck: New page: Asset Save: BP_CrossHairR
+[2024.05.03-08.52.07:448][298]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/Testing/BP_CrossHairR.BP_CrossHairR
+[2024.05.03-08.52.08:442][415]LogDebuggerCommands: Repeating last play command: VR Preview
+[2024.05.03-08.52.08:451][415]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.05.03-08.52.08:451][415]PIE: New page: PIE session: NewMap (2024. 5. 4. 오전 2:52:08)
+[2024.05.03-08.52.08:452][415]LogPlayLevel: Creating play world package: /Game/Testing/maps/UEDPIE_0_NewMap
+[2024.05.03-08.52.08:458][415]LogPlayLevel: PIE: StaticDuplicateObject took: (0.004318s)
+[2024.05.03-08.52.08:458][415]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Testing/maps/NewMap.NewMap to /Game/Testing/maps/UEDPIE_0_NewMap.NewMap (0.004355s)
+[2024.05.03-08.52.08:467][415]LogUObjectHash: Compacting FUObjectHashTables data took   0.87ms
+[2024.05.03-08.52.08:472][415]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.05.03-08.52.08:473][415]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.05.03-08.52.08:474][415]LogAIModule: Creating AISystem for world NewMap
+[2024.05.03-08.52.08:475][415]LogPlayLevel: PIE: World Init took: (0.003650s)
+[2024.05.03-08.52.08:476][415]LogAudio: Display: Creating Audio Device:                 Id: 23, Scope: Unique, Realtime: True
+[2024.05.03-08.52.08:476][415]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.05.03-08.52.08:476][415]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.05.03-08.52.08:476][415]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.05.03-08.52.08:476][415]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.05.03-08.52.08:476][415]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2024.05.03-08.52.08:476][415]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2024.05.03-08.52.08:476][415]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2024.05.03-08.52.08:476][415]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.05.03-08.52.08:477][415]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.05.03-08.52.08:477][415]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.05.03-08.52.08:477][415]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.05.03-08.52.08:479][415]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.05.03-08.52.08:491][415]LogAudioMixer: Display: Using Audio Hardware Device 헤드폰(Oculus Virtual Audio Device)
+[2024.05.03-08.52.08:493][415]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.05.03-08.52.08:493][415]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.05.03-08.52.08:493][415]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.05.03-08.52.08:498][415]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=23
+[2024.05.03-08.52.08:498][415]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=23
+[2024.05.03-08.52.08:499][415]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=23
+[2024.05.03-08.52.08:499][415]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=23
+[2024.05.03-08.52.08:499][415]LogInit: FAudioDevice initialized with ID 23.
+[2024.05.03-08.52.08:499][415]LogAudio: Display: Audio Device (ID: 23) registered with world 'NewMap'.
+[2024.05.03-08.52.08:499][415]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 23
+[2024.05.03-08.52.08:512][415]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.05.03-08.52.08:807][415]LogLoad: Game class is 'BP_TestGameMode_C'
+[2024.05.03-08.52.08:810][415]LogWorld: Bringing World /Game/Testing/maps/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2024.05.03-17.52.08
+[2024.05.03-08.52.08:810][415]LogWorld: Bringing up level for play took: 0.002343
+[2024.05.03-08.52.08:813][415]LogOnline: OSS: Created online subsystem instance for: :Context_47
+[2024.05.03-08.52.08:829][415]LogActor: Warning: BP_CrossHairR_C /Game/Testing/maps/UEDPIE_0_NewMap.NewMap:PersistentLevel.BP_CrossHairR_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.52.08:829][415]LogActor: Warning: BP_CrossHairL_C /Game/Testing/maps/UEDPIE_0_NewMap.NewMap:PersistentLevel.BP_CrossHairL_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-08.52.08:833][415]PIE: Server logged in
+[2024.05.03-08.52.08:836][415]PIE: Play in editor total start time 0.386 seconds.
+[2024.05.03-08.52.08:845][415]LogViewport: Scene viewport resized to 3648x1872, mode Windowed.
+[2024.05.03-08.52.08:848][415]LogHMD: Warning: Requesting 10 bit swapchain, but not supported: fall back to 8bpc
+[2024.05.03-08.52.52:256][747]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.05.03-08.52.52:256][747]LogWorld: BeginTearingDown for /Game/Testing/maps/UEDPIE_0_NewMap
+[2024.05.03-08.52.52:312][747]LogSlate: Window 'TestingVR Preview [NetMode: Standalone 0]  (64-bit/PC D3D SM6) OpenXR Oculus (1.96.0)' being destroyed
+[2024.05.03-08.52.52:315][747]LogWorld: UWorld::CleanupWorld for NewMap, bSessionEnded=true, bCleanupResources=true
+[2024.05.03-08.52.52:315][747]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.05.03-08.52.52:317][747]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.05.03-08.52.52:322][747]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.05.03-08.52.52:331][747]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 23
+[2024.05.03-08.52.52:331][747]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=23
+[2024.05.03-08.52.52:333][747]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=23
+[2024.05.03-08.52.52:338][747]LogUObjectHash: Compacting FUObjectHashTables data took   0.81ms
+[2024.05.03-08.52.52:400][748]LogPlayLevel: Display: Destroying online subsystem :Context_47
+[2024.05.03-09.00.33:642][473]LogHotReload: New module detected: UnrealEditor-TestingVR-0044.dll
+[2024.05.03-09.00.34:647][477]LogHotReload: Starting Hot-Reload from IDE
+[2024.05.03-09.00.34:711][477]LogUObjectHash: Compacting FUObjectHashTables data took   1.09ms
+[2024.05.03-09.00.34:898][477]LogUObjectHash: Compacting FUObjectHashTables data took   0.86ms
+[2024.05.03-09.00.34:968][477]Display: HotReload took  0.3s.
+[2024.05.03-09.00.34:968][477]Display: Reload/Re-instancing Complete: 1 package changed, 4 classes unchanged, 11 functions remapped
+[2024.05.03-09.01.22:496][ 70]LogDebuggerCommands: Repeating last play command: VR Preview
+[2024.05.03-09.01.22:502][ 70]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.05.03-09.01.22:502][ 70]PIE: New page: PIE session: NewMap (2024. 5. 4. 오전 3:01:22)
+[2024.05.03-09.01.22:502][ 70]LogPlayLevel: Creating play world package: /Game/Testing/maps/UEDPIE_0_NewMap
+[2024.05.03-09.01.22:504][ 70]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001881s)
+[2024.05.03-09.01.22:504][ 70]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Testing/maps/NewMap.NewMap to /Game/Testing/maps/UEDPIE_0_NewMap.NewMap (0.001917s)
+[2024.05.03-09.01.22:603][ 70]LogUObjectHash: Compacting FUObjectHashTables data took   1.33ms
+[2024.05.03-09.01.22:604][ 70]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.05.03-09.01.22:605][ 70]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.05.03-09.01.22:605][ 70]LogAIModule: Creating AISystem for world NewMap
+[2024.05.03-09.01.22:606][ 70]LogPlayLevel: PIE: World Init took: (0.001200s)
+[2024.05.03-09.01.22:606][ 70]LogAudio: Display: Creating Audio Device:                 Id: 24, Scope: Unique, Realtime: True
+[2024.05.03-09.01.22:606][ 70]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.05.03-09.01.22:606][ 70]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.05.03-09.01.22:606][ 70]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.05.03-09.01.22:606][ 70]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.05.03-09.01.22:606][ 70]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2024.05.03-09.01.22:606][ 70]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2024.05.03-09.01.22:606][ 70]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2024.05.03-09.01.22:606][ 70]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.05.03-09.01.22:606][ 70]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.05.03-09.01.22:606][ 70]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.05.03-09.01.22:606][ 70]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.05.03-09.01.22:619][ 70]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.05.03-09.01.22:628][ 70]LogAudioMixer: Display: Using Audio Hardware Device 헤드폰(Oculus Virtual Audio Device)
+[2024.05.03-09.01.22:633][ 70]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.05.03-09.01.22:633][ 70]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.05.03-09.01.22:633][ 70]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.05.03-09.01.22:634][ 70]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=24
+[2024.05.03-09.01.22:634][ 70]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=24
+[2024.05.03-09.01.22:636][ 70]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=24
+[2024.05.03-09.01.22:636][ 70]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=24
+[2024.05.03-09.01.22:636][ 70]LogInit: FAudioDevice initialized with ID 24.
+[2024.05.03-09.01.22:636][ 70]LogAudio: Display: Audio Device (ID: 24) registered with world 'NewMap'.
+[2024.05.03-09.01.22:636][ 70]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 24
+[2024.05.03-09.01.22:648][ 70]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.05.03-09.01.22:959][ 70]LogLoad: Game class is 'BP_TestGameMode_C'
+[2024.05.03-09.01.22:961][ 70]LogWorld: Bringing World /Game/Testing/maps/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2024.05.03-18.01.22
+[2024.05.03-09.01.22:961][ 70]LogWorld: Bringing up level for play took: 0.001165
+[2024.05.03-09.01.22:964][ 70]LogOnline: OSS: Created online subsystem instance for: :Context_48
+[2024.05.03-09.01.22:966][ 70]LogActor: Warning: BP_CrossHairR_C /Game/Testing/maps/UEDPIE_0_NewMap.NewMap:PersistentLevel.BP_CrossHairR_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-09.01.22:966][ 70]LogActor: Warning: BP_CrossHairL_C /Game/Testing/maps/UEDPIE_0_NewMap.NewMap:PersistentLevel.BP_CrossHairL_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2024.05.03-09.01.22:971][ 70]PIE: Server logged in
+[2024.05.03-09.01.22:973][ 70]PIE: Play in editor total start time 0.472 seconds.
+[2024.05.03-09.01.22:986][ 70]LogViewport: Scene viewport resized to 3648x1872, mode Windowed.
+[2024.05.03-09.01.22:989][ 70]LogHMD: Warning: Requesting 10 bit swapchain, but not supported: fall back to 8bpc
+[2024.05.03-09.01.43:846][561]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.05.03-09.01.43:846][561]LogWorld: BeginTearingDown for /Game/Testing/maps/UEDPIE_0_NewMap
+[2024.05.03-09.01.43:896][561]LogSlate: Window 'TestingVR Preview [NetMode: Standalone 0]  (64-bit/PC D3D SM6) OpenXR Oculus (1.96.0)' being destroyed
+[2024.05.03-09.01.43:898][561]LogWorld: UWorld::CleanupWorld for NewMap, bSessionEnded=true, bCleanupResources=true
+[2024.05.03-09.01.43:898][561]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.05.03-09.01.43:901][561]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.05.03-09.01.43:906][561]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.05.03-09.01.43:929][561]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2024.05.03-09.01.43:930][561]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 24
+[2024.05.03-09.01.43:930][561]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=24
+[2024.05.03-09.01.43:933][561]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=24
+[2024.05.03-09.01.43:955][561]LogUObjectHash: Compacting FUObjectHashTables data took   0.93ms
+[2024.05.03-09.01.44:021][562]LogPlayLevel: Display: Destroying online subsystem :Context_48

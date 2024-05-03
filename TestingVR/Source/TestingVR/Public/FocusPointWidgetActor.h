@@ -19,7 +19,8 @@ protected:
 public:	
 	virtual void Tick(float DeltaTime) override;
  
- 	UPROPERTY(EditDefaultsOnly)
- 	class UWidgetComponent* widgetComp;
+	
+	UPROPERTY(EditAnywhere)
+	class UStaticMeshComponent* meshComp;
 
 };

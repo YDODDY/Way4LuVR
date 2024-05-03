@@ -16,7 +16,7 @@
 #include "Components/AudioComponent.h"
 #include "FocusPointWidgetActor.h"
 #include "LeftFocusPointWidgetActor.h"
-#include "Components/WidgetComponent.h"
+#include "Components/StaticMeshComponent.h"
 
 ATestPlayer::ATestPlayer()
 {
@@ -188,6 +188,7 @@ void ATestPlayer::OnRightShooting(const FInputActionValue& value)
 	{
 		bIsGrapplingR = true;
 		bIsGrappling = true;
+		bFixCrossHairR = true;
 		//케이블 컴포넌트 Visibility 킴
 		RcableComp->SetVisibility(true);
 		if (bSoundR == false)
@@ -203,6 +204,8 @@ void ATestPlayer::OnRightShooting(const FInputActionValue& value)
 			GetCharacterMovement()->SetMovementMode(MOVE_Flying);
  			RcableComp->EndLocation = GetActorTransform().InverseTransformPosition(grabPointR);
 		//	LaunchCharacter((grabPointR-GetActorLocation()) * 0.2f, true, true);
+			
+			crossHairR_inst->SetActorLocation(grabPointR);
 			//바람효과
 			windEffectComp->Activate();
 			windEffectComp->SetVisibility(true);
@@ -230,6 +233,7 @@ void ATestPlayer::OnLeftShooting(const FInputActionValue& value)
 	{
 		bIsGrapplingL = true;
 		bIsGrappling = true;
+		bFixCrossHairL = true;
 		//왼손 케이블 컴포넌트 Visibility 킴
 		LcableComp->SetVisibility(true);
 		if (bSoundL == false)
@@ -245,6 +249,8 @@ void ATestPlayer::OnLeftShooting(const FInputActionValue& value)
 
 			LcableComp->EndLocation = GetActorTransform().InverseTransformPosition(grabPointL);
 		//	LaunchCharacter((grabPointL - GetActorLocation())* 0.2f, true, true);
+			crossHairL_inst->SetActorLocation(grabPointL);
+
 			//바람효과
 			windEffectComp->Activate();
 			windEffectComp->SetVisibility(true);
@@ -262,6 +268,7 @@ void ATestPlayer::StopRightShooting(const FInputActionValue& value)
 	bSoundR = false;
 	bIsGrapplingR = false;
 	bIsGrappling = false;
+	bFixCrossHairR = false;
 	if (!GetCharacterMovement()->IsFalling())
 	{
 		GetCharacterMovement()->SetMovementMode(MOVE_Falling);
@@ -274,6 +281,7 @@ void ATestPlayer::StopLeftShooting(const FInputActionValue& value)
 	bSoundL = false;
 	bIsGrapplingL = false;
 	bIsGrappling = false;
+	bFixCrossHairL = false;
 	if (!GetCharacterMovement()->IsFalling())
 	{
 		GetCharacterMovement()->SetMovementMode(MOVE_Falling);
@@ -307,22 +315,25 @@ void ATestPlayer::ShowCrossHairR()
 {
 	if(crossHairR_inst != nullptr)
 	{ 
-		FVector startLocR = rightHand->GetComponentLocation();
-		FVector endLocR = startLocR + rightHand->GetRightVector() * 50000;
-		FHitResult hitInfo;
-		FCollisionObjectQueryParams objQueryParams;
-		objQueryParams.AddObjectTypesToQuery(ECC_WorldStatic);
-		objQueryParams.AddObjectTypesToQuery(ECC_WorldDynamic);
-
-		//라인트레이스 발사
-		bool bResult = GetWorld()->LineTraceSingleByObjectType(hitInfo, startLocR, endLocR, objQueryParams);
-		if (bResult)
+		if(bFixCrossHairR == false)
 		{ 
-			crossHairR_inst->SetActorLocation(hitInfo.ImpactPoint + FVector(1));
-		}
-		else
-		{
-			crossHairR_inst->SetActorLocation((rightHand->GetRightVector()) * 50000);
+			FVector startLocR = rightHand->GetComponentLocation();
+			FVector endLocR = startLocR + rightHand->GetRightVector() * 50000;
+			FHitResult hitInfo;
+			FCollisionObjectQueryParams objQueryParams;
+			objQueryParams.AddObjectTypesToQuery(ECC_WorldStatic);
+			objQueryParams.AddObjectTypesToQuery(ECC_WorldDynamic);
+
+			//라인트레이스 발사
+			bool bResult = GetWorld()->LineTraceSingleByObjectType(hitInfo, startLocR, endLocR, objQueryParams);
+			if (bResult)
+			{ 
+				crossHairR_inst->SetActorLocation(hitInfo.ImpactPoint);
+			}
+			else
+			{
+				crossHairR_inst->SetActorLocation((rightHand->GetRightVector()) * 50000);
+			}
 		}
 	}
 }
@@ -332,22 +343,25 @@ void ATestPlayer::ShowCrossHairL()
 {
 	if(crossHairL_inst != nullptr)
 	{ 
-		FVector startLocL = leftHand->GetComponentLocation();
-		FVector endLocL = startLocL + leftHand->GetRightVector() * 50000;
-		FHitResult hitInfo;
-		FCollisionObjectQueryParams objQueryParams;
-		objQueryParams.AddObjectTypesToQuery(ECC_WorldStatic);
-		objQueryParams.AddObjectTypesToQuery(ECC_WorldDynamic);
+		if(bFixCrossHairL == false)
+		{ 
+			FVector startLocL = leftHand->GetComponentLocation();
+			FVector endLocL = startLocL + leftHand->GetRightVector() * 50000;
+			FHitResult hitInfo;
+			FCollisionObjectQueryParams objQueryParams;
+			objQueryParams.AddObjectTypesToQuery(ECC_WorldStatic);
+			objQueryParams.AddObjectTypesToQuery(ECC_WorldDynamic);
 
-		//라인트레이스 발사
-		bool bResult = GetWorld()->LineTraceSingleByObjectType(hitInfo, startLocL, endLocL, objQueryParams);
-		if (bResult)
-		{	
-			crossHairL_inst->SetActorLocation(hitInfo.ImpactPoint + FVector(1));
-		}
-		else
-		{
-			crossHairL_inst->SetActorLocation((leftHand->GetRightVector()) * 50000);
+			//라인트레이스 발사
+			bool bResult = GetWorld()->LineTraceSingleByObjectType(hitInfo, startLocL, endLocL, objQueryParams);
+			if (bResult)
+			{	
+				crossHairL_inst->SetActorLocation(hitInfo.ImpactPoint);
+			}
+			else
+			{
+				crossHairL_inst->SetActorLocation((leftHand->GetRightVector()) * 50000);
+			}
 		}
 	}
 }

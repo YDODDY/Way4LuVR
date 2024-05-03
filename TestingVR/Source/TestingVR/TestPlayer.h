@@ -106,6 +106,9 @@ public:
 	bool bSoundR = false;
 	bool bSoundL = false;
 
+	bool bFixCrossHairR = false;
+	bool bFixCrossHairL = false;
+
 	//이동방향 변수
 	FVector moveDir;
 	//회전방향 변수
