@@ -36,11 +36,13 @@
 /FUNCTIONPADMIN:6
 /NATVIS:"..\Plugins\FX\Niagara\Intermediate\Build\Win64\x64\UnrealEditor\Development\Niagara\Niagara.natvis"
 "C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\TestingVREditor\Development\Engine\SharedPCH.Engine.Cpp20.InclOrderUnreal5_0.h.obj"
+"C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\FocusPointWidgetActor.gen.cpp.obj"
 "C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\TestingGameModeBase.gen.cpp.obj"
 "C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\TestingVR.init.gen.cpp.obj"
 "C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\TestPlayer.gen.cpp.obj"
 "C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\TestingGameModeBase.cpp.obj"
 "C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\TestingVR.cpp.obj"
+"C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\FocusPointWidgetActor.cpp.obj"
 "C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\TestPlayer.cpp.obj"
 "C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\Default.rc2.res"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Engine\UnrealEditor-Engine.lib"

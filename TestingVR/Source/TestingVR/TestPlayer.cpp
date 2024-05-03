@@ -14,6 +14,7 @@
 #include "Camera/PlayerCameraManager.h"
 #include "NiagaraComponent.h"
 #include "Components/AudioComponent.h"
+#include "FocusPointWidgetActor.h"
 
 ATestPlayer::ATestPlayer()
 {
@@ -55,15 +56,22 @@ ATestPlayer::ATestPlayer()
 	windEffectComp->SetupAttachment(RootComponent);
 	windEffectComp->SetAutoActivate(false);
 	windEffectComp->SetAutoDestroy(false);
-	//바람효과음 
+	//바람 효과음 
 	windSoundComp = CreateDefaultSubobject<UAudioComponent>(TEXT("Wind Sound Effect"));
 	windSoundComp->SetupAttachment(RootComponent);
-
+	windSoundComp->SetAutoActivate(false);
+	//달리기소리 효과음 
+	runningSoundComp = CreateDefaultSubobject<UAudioComponent>(TEXT("Running Sound Effect"));
+	runningSoundComp->SetupAttachment(RootComponent);
+	runningSoundComp->SetAutoActivate(false);
 }
 
 void ATestPlayer::BeginPlay()
 {
 	Super::BeginPlay();
+	
+	//조준점 받아둠
+	crossHair = Cast<AFocusPointWidgetActor>(GetWorld());
 
 	//컨트롤러 받아둠
 	auto* pc = Cast<APlayerController>(Controller);
@@ -165,6 +173,7 @@ void ATestPlayer::OnRightShooting(const FInputActionValue& value)
 	if (bResult)
 	{
 		bIsGrapplingR = true;
+		bIsGrappling = true;
 		//케이블 컴포넌트 Visibility 킴
 		RcableComp->SetVisibility(true);
 		if (bSoundR == false)
@@ -173,12 +182,13 @@ void ATestPlayer::OnRightShooting(const FInputActionValue& value)
 			//효과음
 			UGameplayStatics::PlaySound2D(GetWorld(), shootingSound);
 		}
+
 		grabPointR = hitInfo.ImpactPoint;
 		if (bIsGrapplingR)
 		{	
 			GetCharacterMovement()->SetMovementMode(MOVE_Flying);
  			RcableComp->EndLocation = GetActorTransform().InverseTransformPosition(grabPointR);
-			LaunchCharacter((grabPointR-GetActorLocation()), true, true);
+		//	LaunchCharacter((grabPointR-GetActorLocation()) * 0.2f, true, true);
 			//바람효과
 			windEffectComp->Activate();
 			windEffectComp->SetVisibility(true);
@@ -205,6 +215,7 @@ void ATestPlayer::OnLeftShooting(const FInputActionValue& value)
 	if (bResult)
 	{
 		bIsGrapplingL = true;
+		bIsGrappling = true;
 		//왼손 케이블 컴포넌트 Visibility 킴
 		LcableComp->SetVisibility(true);
 		if (bSoundL == false)
@@ -219,7 +230,7 @@ void ATestPlayer::OnLeftShooting(const FInputActionValue& value)
 			GetCharacterMovement()->SetMovementMode(MOVE_Flying);
 
 			LcableComp->EndLocation = GetActorTransform().InverseTransformPosition(grabPointL);
-			LaunchCharacter((grabPointL - GetActorLocation()), true, true);
+		//	LaunchCharacter((grabPointL - GetActorLocation())* 0.2f, true, true);
 			//바람효과
 			windEffectComp->Activate();
 			windEffectComp->SetVisibility(true);
@@ -236,6 +247,7 @@ void ATestPlayer::StopRightShooting(const FInputActionValue& value)
 {	
 	bSoundR = false;
 	bIsGrapplingR = false;
+	bIsGrappling = false;
 	if (!GetCharacterMovement()->IsFalling())
 	{
 		GetCharacterMovement()->SetMovementMode(MOVE_Falling);
@@ -247,6 +259,7 @@ void ATestPlayer::StopLeftShooting(const FInputActionValue& value)
 {
 	bSoundL = false;
 	bIsGrapplingL = false;
+	bIsGrappling = false;
 	if (!GetCharacterMovement()->IsFalling())
 	{
 		GetCharacterMovement()->SetMovementMode(MOVE_Falling);

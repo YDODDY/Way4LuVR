@@ -1,4 +1,5 @@
 /I "."
+/I "C:\Users\USER\Desktop\Way4LuVR\TestingVR\Source\TestingVR\Private"
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\Engine\UHT"
 /I "..\Shaders\Shared"
 /I "Runtime\Engine\Classes"
@@ -258,6 +259,7 @@
 /I "Developer\WidgetRegistration\Public"
 /I "C:\Users\USER\Desktop\Way4LuVR\TestingVR\Intermediate\Build\Win64\UnrealEditor\Inc\TestingVR\UHT"
 /I "C:\Users\USER\Desktop\Way4LuVR\TestingVR\Source"
+/I "C:\Users\USER\Desktop\Way4LuVR\TestingVR\Source\TestingVR\Public"
 /I "..\Plugins\EnhancedInput\Intermediate\Build\Win64\UnrealEditor\Inc\EnhancedInput\UHT"
 /I "..\Plugins\EnhancedInput\Source\EnhancedInput\Public"
 /I "..\Plugins\Runtime\CableComponent\Intermediate\Build\Win64\UnrealEditor\Inc\CableComponent\UHT"

@@ -1,13 +1,13 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\user\\desktop\\way4luvr\\testingvr\\intermediate\\build\\win64\\unrealeditor\\inc\\testingvr\\uht\\focuspointwidgetactor.gen.cpp",
+        "Source": "c:\\users\\admin\\desktop\\vrproject\\way4luvr\\testingvr\\intermediate\\build\\win64\\unrealeditor\\inc\\testingvr\\uht\\focuspointwidgetactor.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "c:\\users\\user\\desktop\\way4luvr\\testingvr\\intermediate\\build\\win64\\x64\\testingvreditor\\development\\engine\\sharedpch.engine.cpp20.inclorderunreal5_0.h.pch",
+        "PCH": "c:\\users\\admin\\desktop\\vrproject\\way4luvr\\testingvr\\intermediate\\build\\win64\\x64\\testingvreditor\\development\\engine\\sharedpch.engine.cpp20.inclorderunreal5_0.h.pch",
         "Includes": [
-            "c:\\users\\user\\desktop\\way4luvr\\testingvr\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\testingvr\\definitions.testingvr.h",
-            "c:\\users\\user\\desktop\\way4luvr\\testingvr\\source\\testingvr\\public\\focuspointwidgetactor.h",
-            "c:\\users\\user\\desktop\\way4luvr\\testingvr\\intermediate\\build\\win64\\unrealeditor\\inc\\testingvr\\uht\\focuspointwidgetactor.generated.h"
+            "c:\\users\\admin\\desktop\\vrproject\\way4luvr\\testingvr\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\testingvr\\definitions.testingvr.h",
+            "c:\\users\\admin\\desktop\\vrproject\\way4luvr\\testingvr\\source\\testingvr\\public\\focuspointwidgetactor.h",
+            "c:\\users\\admin\\desktop\\vrproject\\way4luvr\\testingvr\\intermediate\\build\\win64\\unrealeditor\\inc\\testingvr\\uht\\focuspointwidgetactor.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

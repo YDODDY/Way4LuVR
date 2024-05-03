@@ -36,12 +36,16 @@ public:
 
 	UPROPERTY(EditDefaultsOnly)
 	class USkeletalMeshComponent* rightHand;
-
-	UPROPERTY(EditDefaultsOnly)
+	//케이블
+	UPROPERTY(EditAnywhere,BlueprintReadOnly)
 	class UCableComponent* RcableComp;
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	class UCableComponent* LcableComp;
+
+	//조준점 UI 
+	UPROPERTY(EditAnywhere)
+	class AFocusPointWidgetActor* crossHair;
 
 	//인풋
 	UPROPERTY(EditDefaultsOnly , Category = "VR|Inputs")
@@ -84,6 +88,8 @@ public:
 	class USoundBase* boostingSound;
 	UPROPERTY(EditAnywhere, Category = "VR|Sounds")
 	class UAudioComponent* windSoundComp;
+	UPROPERTY(EditAnywhere, Category = "VR|Sounds")
+	class UAudioComponent* runningSoundComp;
 
 	//임시 그래플링 사운드 제어용 
 	bool bSoundR = false;
@@ -97,12 +103,18 @@ public:
 
 		
 	//케이블 컴포넌트 Visibility 제어변수 
+	UPROPERTY(BlueprintReadOnly)
 	bool bIsGrapplingR = false;
+	UPROPERTY(BlueprintReadOnly)
 	bool bIsGrapplingL = false;
+	UPROPERTY(BlueprintReadOnly)
+	bool bIsGrappling = false;
 
 
 	//케이블 꽂히는 위치변수
+	UPROPERTY(BlueprintReadOnly)
 	FVector grabPointR;
+	UPROPERTY(BlueprintReadOnly)
 	FVector grabPointL;
 
 	//인풋함수
