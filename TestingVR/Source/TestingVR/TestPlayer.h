@@ -43,6 +43,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	class UCableComponent* LcableComp;
 
+	UPROPERTY(EditDefaultsOnly)
+	class UBoxComponent* boxComp;
+
 	//조준점 UI 
 	UPROPERTY(EditAnywhere, Category = "VR|UI")
 	TSubclassOf<class AFocusPointWidgetActor> crossHairR_bp;
@@ -79,6 +82,12 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "VR|Inputs")
 	class UInputAction* ia_boost;
 
+	UPROPERTY(EditDefaultsOnly, Category = "VR|Inputs")
+	class UInputAction* ia_attack;
+
+	class ADamagetTestActor* damageActor;
+
+
 	//회전감도 
 	UPROPERTY(EditAnywhere, Category = "VR|Inputs")
 	float sensivility = 0.7f;
@@ -89,6 +98,9 @@ public:
 	//바람 이펙트
 	UPROPERTY(EditAnywhere)
 	class UNiagaraComponent* windEffectComp;
+	//공격 이펙트
+	UPROPERTY(EditAnywhere)
+	class UNiagaraComponent* attackEffectComp;
 
 	//소리
 	UPROPERTY(EditAnywhere, Category = "VR|Sounds")
@@ -97,6 +109,8 @@ public:
 	class USoundBase* shootingSound;
 	UPROPERTY(EditAnywhere, Category = "VR|Sounds")
 	class USoundBase* boostingSound;
+	UPROPERTY(EditAnywhere, Category = "VR|Sounds")
+	class USoundBase* attackingSound;
 	UPROPERTY(EditAnywhere, Category = "VR|Sounds")
 	class UAudioComponent* windSoundComp;
 	UPROPERTY(EditAnywhere, Category = "VR|Sounds")
@@ -149,6 +163,12 @@ public:
 	void StopLeftShooting(const FInputActionValue& value);
 	UFUNCTION()
 	void OnBoost(const FInputActionValue& value);
+	UFUNCTION()
+	void OnAttack(const FInputActionValue& value);
+	UFUNCTION()
+	void OnAttackBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+	UFUNCTION()
+	void OnDamaged(AActor* attacker);
 
 	UFUNCTION()
 	void ShowCrossHairR();

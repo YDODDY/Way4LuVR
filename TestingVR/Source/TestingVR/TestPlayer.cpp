@@ -17,6 +17,8 @@
 #include "FocusPointWidgetActor.h"
 #include "LeftFocusPointWidgetActor.h"
 #include "Components/StaticMeshComponent.h"
+#include "Components/BoxComponent.h"
+#include "DamageTestActor.h"
 
 ATestPlayer::ATestPlayer()
 {
@@ -51,13 +53,21 @@ ATestPlayer::ATestPlayer()
 	//부스트 이펙트
 	boostComp = CreateDefaultSubobject<UNiagaraComponent>(TEXT("Boost Effect Component"));
 	boostComp -> SetupAttachment(RootComponent);
+	boostComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	boostComp -> SetAutoActivate(false);
 	boostComp -> SetAutoDestroy(false);
 	//바람 이펙트
 	windEffectComp = CreateDefaultSubobject<UNiagaraComponent>(TEXT("Wind Effect Component"));
 	windEffectComp->SetupAttachment(RootComponent);
+	windEffectComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	windEffectComp->SetAutoActivate(false);
 	windEffectComp->SetAutoDestroy(false);
+	//공격 이펙트
+	attackEffectComp = CreateDefaultSubobject<UNiagaraComponent>(TEXT("Attack Effect Component"));
+	attackEffectComp->SetupAttachment(RootComponent);
+	attackEffectComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	attackEffectComp->SetAutoActivate(false);
+	attackEffectComp->SetAutoDestroy(false);
 	//바람 효과음 
 	windSoundComp = CreateDefaultSubobject<UAudioComponent>(TEXT("Wind Sound Effect"));
 	windSoundComp->SetupAttachment(RootComponent);
@@ -66,6 +76,14 @@ ATestPlayer::ATestPlayer()
 	runningSoundComp = CreateDefaultSubobject<UAudioComponent>(TEXT("Running Sound Effect"));
 	runningSoundComp->SetupAttachment(RootComponent);
 	runningSoundComp->SetAutoActivate(false);
+	//공격 판정 범위 
+	boxComp = CreateDefaultSubobject<UBoxComponent>(TEXT("Attack Range Component"));
+	boxComp->SetupAttachment(RootComponent);
+	boxComp->SetRelativeLocation(FVector(160, 0, 10));
+	boxComp->SetRelativeScale3D(FVector(4.25f, 4, 0.7f));
+	boxComp->SetCollisionProfileName(FName("Attack"));
+	boxComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	boxComp->SetGenerateOverlapEvents(true);
 }
 
 void ATestPlayer::BeginPlay()
@@ -94,6 +112,8 @@ void ATestPlayer::BeginPlay()
 	FActorSpawnParameters paramsL;
 	paramsL.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 	crossHairL_inst = GetWorld()->SpawnActor<ALeftFocusPointWidgetActor>(crossHairL_bp, endLocL, FRotator::ZeroRotator, paramsL);
+
+	boxComp->OnComponentBeginOverlap.AddDynamic(this, &ATestPlayer::OnAttackBeginOverlap);
 }
 
 void ATestPlayer::Tick(float DeltaTime)
@@ -108,16 +128,6 @@ void ATestPlayer::Tick(float DeltaTime)
  	{
   		LcableComp->EndLocation = GetActorTransform().InverseTransformPosition(grabPointL);
  	}
-	//캐릭터 무브먼트 모드가 falling 혹은 flying 일 경우 바람효과음 출력
-	if (GetCharacterMovement()->IsFalling() || GetCharacterMovement()->IsFlying())
-	{
-		windSoundComp->Play();
-	}
-	else
-	{
-		windSoundComp->Stop();
-	}
-
 	//양 손 조준점 띄우기
 	ShowCrossHairR();
 	ShowCrossHairL();
@@ -143,17 +153,20 @@ void ATestPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 		input->BindAction(ia_Lshot, ETriggerEvent::Started, this, &ATestPlayer::OnLeftShooting);
 		input->BindAction(ia_Lshot, ETriggerEvent::Completed, this, &ATestPlayer::StopLeftShooting);
 		input->BindAction(ia_boost, ETriggerEvent::Started, this, &ATestPlayer::OnBoost);
+		//공격
+		input->BindAction(ia_attack, ETriggerEvent::Started, this, &ATestPlayer::OnAttack);
 	}
 }
 //이동
 void ATestPlayer::OnIAMove(const FInputActionValue& value)
 {
+	runningSoundComp->Play();
 	FVector2D v = value.Get<FVector2D>();
 
 	AddMovementInput(GetActorForwardVector(), v.Y);
 	AddMovementInput(GetActorRightVector(), v.X);
 }
-//시야 회전 좌우
+//시야 회전 좌우s
 void ATestPlayer::OnIATurn(const FInputActionValue& value)
 {
 	float v = value.Get<float>();
@@ -172,6 +185,7 @@ void ATestPlayer::OnIAJump(const FInputActionValue& value)
 	Jump();
 	UGameplayStatics::PlaySound2D(GetWorld(), jumpSound);
 }
+
 
 //오른손 그래플링 훅
 void ATestPlayer::OnRightShooting(const FInputActionValue& value)
@@ -262,7 +276,7 @@ void ATestPlayer::OnLeftShooting(const FInputActionValue& value)
 		}
 	}
 }
-//훅 쏘는 키 뗐을 때 
+//훅 쏘는 키 뗐을 때 R
 void ATestPlayer::StopRightShooting(const FInputActionValue& value)
 {	
 	bSoundR = false;
@@ -275,7 +289,7 @@ void ATestPlayer::StopRightShooting(const FInputActionValue& value)
 	}
 	RcableComp->SetVisibility(false);
 }
-//훅 쏘는 키 뗐을 때 
+//훅 쏘는 키 뗐을 때 L
 void ATestPlayer::StopLeftShooting(const FInputActionValue& value)
 {
 	bSoundL = false;
@@ -303,12 +317,52 @@ void ATestPlayer::OnBoost(const FInputActionValue& value)
 		windEffectComp->SetVisibility(true);
 		UGameplayStatics::PlaySound2D(GetWorld(), boostingSound);
 
+		
 		//부스트 이펙트는 1.5초 뒤 끔
 		FTimerHandle boostHandle;
+		GetWorldTimerManager().ClearTimer(boostHandle);
 		GetWorldTimerManager().SetTimer(boostHandle, FTimerDelegate::CreateLambda([&]() {
 			boostComp->SetVisibility(false);
 			}), 1.5f, false);
 	}
+}
+//공격인풋 함수 
+void ATestPlayer::OnAttack(const FInputActionValue& value)
+{	
+	if (attackingSound != nullptr)
+	{
+		UGameplayStatics::PlaySound2D(GetWorld(), attackingSound);
+	}
+	//전방으로 만들어둔 공격범위 콜리전 효과 킴 -> 닿으면 데미지 입음 
+	boxComp->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+
+	//공격 이펙트
+	attackEffectComp->Activate();
+	attackEffectComp->SetVisibility(true);
+	//1초 뒤 공격효과 끔
+	FTimerHandle attackEffectHandle;
+	GetWorldTimerManager().ClearTimer(attackEffectHandle);
+	GetWorldTimerManager().SetTimer(attackEffectHandle, FTimerDelegate::CreateLambda([&]() {
+		attackEffectComp->SetVisibility(false);
+		}), 0.7f, false);
+
+	//1초 뒤 공격범위 콜리전 효과 끔
+	FTimerHandle attackTimer;
+	GetWorldTimerManager().ClearTimer(attackTimer);
+	GetWorldTimerManager().SetTimer(attackTimer, FTimerDelegate::CreateLambda([&]() {
+		boxComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+		}), 1.0f, false);
+
+}
+//실제 거인 데미지 주는 함수 
+void ATestPlayer::OnAttackBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+
+}
+//플레이어 데미지 입는 함수 - 거인 사용 
+void ATestPlayer::OnDamaged(AActor* attacker)
+{
+
 }
 //오른손 조준점 UI 띄우기
 void ATestPlayer::ShowCrossHairR()

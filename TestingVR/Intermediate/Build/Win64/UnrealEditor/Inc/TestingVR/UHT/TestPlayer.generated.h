@@ -9,6 +9,9 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
+class UPrimitiveComponent;
+struct FHitResult;
 struct FInputActionValue;
 #ifdef TESTINGVR_TestPlayer_generated_h
 #error "TestPlayer.generated.h already included, missing '#pragma once' in TestPlayer.h"
@@ -22,6 +25,9 @@ struct FInputActionValue;
  \
 	DECLARE_FUNCTION(execShowCrossHairL); \
 	DECLARE_FUNCTION(execShowCrossHairR); \
+	DECLARE_FUNCTION(execOnDamaged); \
+	DECLARE_FUNCTION(execOnAttackBeginOverlap); \
+	DECLARE_FUNCTION(execOnAttack); \
 	DECLARE_FUNCTION(execOnBoost); \
 	DECLARE_FUNCTION(execStopLeftShooting); \
 	DECLARE_FUNCTION(execStopRightShooting); \
