@@ -1,11 +1,11 @@
-"C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\UnrealEditor\Inc\TestingVR\UHT\LeftFocusPointWidgetActor.gen.cpp"
-/FI"C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\TestingVREditor\Development\Engine\SharedPCH.Engine.Cpp20.InclOrderUnreal5_0.h"
-/FI"C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\Definitions.TestingVR.h"
-/Yu"C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\TestingVREditor\Development\Engine\SharedPCH.Engine.Cpp20.InclOrderUnreal5_0.h"
-/Fp"C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\TestingVREditor\Development\Engine\SharedPCH.Engine.Cpp20.InclOrderUnreal5_0.h.pch"
-/Fo"C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\LeftFocusPointWidgetActor.gen.cpp.obj"
-/sourceDependencies "C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\LeftFocusPointWidgetActor.gen.cpp.dep.json"
-@"C:\Users\admin\Desktop\VRProject\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\TestingVR.Shared.rsp"
+"C:\Users\USER\Desktop\Way4LuVR\TestingVR\Intermediate\Build\Win64\UnrealEditor\Inc\TestingVR\UHT\LeftFocusPointWidgetActor.gen.cpp"
+/FI"C:\Users\USER\Desktop\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\TestingVREditor\Development\Engine\SharedPCH.Engine.Cpp20.InclOrderUnreal5_0.h"
+/FI"C:\Users\USER\Desktop\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\Definitions.TestingVR.h"
+/Yu"C:\Users\USER\Desktop\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\TestingVREditor\Development\Engine\SharedPCH.Engine.Cpp20.InclOrderUnreal5_0.h"
+/Fp"C:\Users\USER\Desktop\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\TestingVREditor\Development\Engine\SharedPCH.Engine.Cpp20.InclOrderUnreal5_0.h.pch"
+/Fo"C:\Users\USER\Desktop\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\LeftFocusPointWidgetActor.gen.cpp.obj"
+/sourceDependencies "C:\Users\USER\Desktop\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\LeftFocusPointWidgetActor.gen.cpp.dep.json"
+@"C:\Users\USER\Desktop\Way4LuVR\TestingVR\Intermediate\Build\Win64\x64\UnrealEditor\Development\TestingVR\TestingVR.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi
