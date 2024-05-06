@@ -3,6 +3,7 @@
 #include "DamageTestActor.h"
 #include "Components/BoxComponent.h"
 #include "Components/StaticMeshComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 ADamageTestActor::ADamageTestActor()
 {
