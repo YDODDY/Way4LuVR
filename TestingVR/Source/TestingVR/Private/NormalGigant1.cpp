@@ -211,6 +211,78 @@ ANormalGigant1::ANormalGigant1()
 	RightLeg->SetRelativeRotation(FRotator(0.0f, 0.0f, 96.7f));
 	RightLeg->SetWorldScale3D(FVector(0.06f, 0.06f, 0.61f));
 
+	//6. 오른손 콜리전
+	RightHandCollision = CreateDefaultSubobject<USphereComponent>(TEXT("RightHandCollision"));
+
+	//소켓위치 들고오기
+	FVector RightHandSocketLocation = GetMesh()->GetSocketLocation(TEXT("RightHandSocket"));
+	RightHandCollision->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("RightHandSocket"));
+
+	RightHandCollision->SetWorldScale3D(FVector(0.4));
+
+	RightHandCollision->SetRelativeLocation(FVector(0.f, -8.88f, 0.f));
+
+	
+
+	//7. 왼손 콜리전
+	LeftHandCollision = CreateDefaultSubobject<USphereComponent>(TEXT("LeftHandCollision"));
+
+	//소켓위치 들고오기
+	FVector LeftHandSocketLocation = GetMesh()->GetSocketLocation(TEXT("LeftHandSocket"));
+	LeftHandCollision->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("LeftHandSocket"));
+
+	LeftHandCollision->SetWorldScale3D(FVector(0.4));
+
+	LeftHandCollision->SetRelativeLocation(FVector(0.f, -8.88f, 0.f));
+
+	
+
+	//8. 왼팔 콜리전
+	LeftArmCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("LeftArmCollision"));
+
+	// LeftForeArmSocket의 위치를 가져옴
+	FVector LeftArmCollisionSocketLocation = GetMesh()->GetSocketLocation(TEXT("LeftForeArmSocket"));
+
+	// LeftArm의 위치를 LeftForeArmSocket의 위치로 설정
+	LeftArmCollision->SetRelativeLocation(LeftArmCollisionSocketLocation);
+
+	//LeftArm를 LeftForeArmSocket에 붙임
+	LeftArmCollision->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("LeftForeArmSocket"));
+
+	LeftArmCollision->SetRelativeLocation(FVector(0.0f, 0.0f, 0.39f));
+	LeftArmCollision->SetWorldScale3D(FVector(0.27f, 0.79f, 0.25f));
+
+	
+
+	//9. 오른팔 콜리전
+	RightArmCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("RightArmCollision"));
+
+	
+	FVector RightArmCollisionSocketLocation = GetMesh()->GetSocketLocation(TEXT("RightForeArmSocket"));
+
+	
+	RightArmCollision->SetRelativeLocation(RightArmCollisionSocketLocation);
+
+	
+	RightArmCollision->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("RightForeArmSocket"));
+
+	RightArmCollision->SetRelativeLocation(FVector(0.0f, 0.0f, 0.39f));
+	RightArmCollision->SetWorldScale3D(FVector(0.27f, 0.79f, 0.25f));
+
+	RightHandCollision->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+	RightHandCollision->SetCollisionResponseToAllChannels(ECR_Ignore);
+
+	LeftHandCollision->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+	LeftHandCollision->SetCollisionResponseToAllChannels(ECR_Ignore);
+
+	RightArmCollision->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+	RightArmCollision->SetCollisionResponseToAllChannels(ECR_Ignore);
+
+	LeftArmCollision->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+	LeftArmCollision->SetCollisionResponseToAllChannels(ECR_Ignore);
+
+
+
 	//어후 힘들어
 
 }
@@ -723,6 +795,21 @@ void ANormalGigant1::DieDestroy()
 //무브 스테이트
 void ANormalGigant1::move()
 {
+	//공격안할떄는 Ignore으로 처리
+	RightArmCollision->SetRelativeLocation(FVector(0.0f, 0.0f, 0.39f));
+	RightArmCollision->SetWorldScale3D(FVector(0.27f, 0.79f, 0.25f));
+
+	RightHandCollision->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+	RightHandCollision->SetCollisionResponseToAllChannels(ECR_Ignore);
+
+	LeftHandCollision->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+	LeftHandCollision->SetCollisionResponseToAllChannels(ECR_Ignore);
+
+	RightArmCollision->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+	RightArmCollision->SetCollisionResponseToAllChannels(ECR_Ignore);
+
+	LeftArmCollision->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+	LeftArmCollision->SetCollisionResponseToAllChannels(ECR_Ignore);
 	if (bIsAttackAnimationPlaying == false)
 	{
 		//플레이어가 시야안에 있고 플레이어와의 거리가 300이상이면
@@ -748,6 +835,34 @@ void ANormalGigant1::attack()
 	//플레이어가 사거리 안에 들어오고 플레이어와의 거리가 300이하라면 공격해라
 	if (bIsPlayerInSight() && DistanceAiToCharacter.Length() <= 300.0f)
 	{
+		RightHandCollision->SetCollisionEnabled(ECollisionEnabled::QueryOnly); // 또는 ECollisionEnabled::QueryAndPhysics로 설정할 수 있습니다.
+
+
+		//공격할떄만 overlap으로 처리
+		// 오른손 collision 모드를 QueryAndPhysics로 변경
+		RightHandCollision->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+
+		// 모든 채널에 대해 오버랩으로 반응하도록 설정
+		RightHandCollision->SetCollisionResponseToAllChannels(ECR_Overlap);
+
+		// 왼손 collision 모드를 QueryAndPhysics로 변경
+		LeftHandCollision->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+
+		// 모든 채널에 대해 오버랩으로 반응하도록 설정
+		LeftHandCollision->SetCollisionResponseToAllChannels(ECR_Overlap);
+
+		// 오른팔 collision 모드를 QueryAndPhysics로 변경
+		RightArmCollision->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+
+		// 모든 채널에 대해 오버랩으로 반응하도록 설정
+		RightArmCollision->SetCollisionResponseToAllChannels(ECR_Overlap);
+
+		// 왼팔 collision 모드를 QueryAndPhysics로 변경
+		LeftArmCollision->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+
+		// 모든 채널에 대해 오버랩으로 반응하도록 설정
+		LeftArmCollision->SetCollisionResponseToAllChannels(ECR_Overlap);
+
 		if (bIsAttack == false)
 		{
 			int32 Value = FMath::RandRange(1, 4);

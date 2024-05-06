@@ -163,6 +163,19 @@ public:
 	UPROPERTY(EditAnywhere)
 	class UStaticMeshComponent* RightLeg;
 
+	UPROPERTY(EditAnywhere)
+	class USphereComponent* RightHandCollision;
+
+	UPROPERTY(EditAnywhere)
+	class USphereComponent* LeftHandCollision;
+
+	UPROPERTY(EditAnywhere)
+	class UBoxComponent* RightArmCollision;
+
+	UPROPERTY(EditAnywhere)
+	class UBoxComponent* LeftArmCollision;
+
+
 	// 시야 반경
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "MySettings")
 	float SightRadius = 1000.0f;
