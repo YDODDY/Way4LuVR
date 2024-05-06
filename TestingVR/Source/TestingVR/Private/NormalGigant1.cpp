@@ -436,7 +436,7 @@ void ANormalGigant1::TakeCriticalDamage()
 void ANormalGigant1::OnBeginOverlapNeck(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	//객체 이름이 BP_Knife인경우에만 오버랩 이벤트 발생
-	if (OtherActor->GetActorLabel() == "BP_Knife" && bIsOverlappingKnife == false)
+	if (OtherActor->GetName().Contains("BP_Knife") && bIsOverlappingKnife == false)
 	{
 		// 오버랩 상태 설정
 		bIsOverlappingKnife = true;
@@ -462,7 +462,7 @@ void ANormalGigant1::OnEndOverlapNeck(UPrimitiveComponent* OverlappedComponent, 
 void ANormalGigant1::OnBeginOverlapBody(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	//객체 이름이 BP_Knife인경우에만 오버랩 이벤트 발생
-	if (OtherActor->GetActorLabel() == "BP_Knife" && bIsOverlappingKnife == false)
+	if (OtherActor->GetName().Contains("BP_Knife") && bIsOverlappingKnife == false)
 	{
 		// 오버랩 상태 설정
 		bIsOverlappingKnife = true;
@@ -490,7 +490,7 @@ void ANormalGigant1::OnEndOverlapBody(UPrimitiveComponent* OverlappedComponent, 
 void ANormalGigant1::OnBeginOverlapLeftArm(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	//객체 이름이 BP_Knife인경우에만 오버랩 이벤트 발생
-	if (OtherActor->GetActorLabel() == "BP_Knife" && bIsOverlappingKnife == false)
+	if (OtherActor->GetName().Contains("BP_Knife") && bIsOverlappingKnife == false)
 	{
 		// 오버랩 상태 설정
 		bIsOverlappingKnife = true;
@@ -512,7 +512,7 @@ void ANormalGigant1::OnEndOverlapLeftArm(UPrimitiveComponent* OverlappedComponen
 void ANormalGigant1::OnBeginOverlapRightArm(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	//객체 이름이 BP_Knife인경우에만 오버랩 이벤트 발생
-	if (OtherActor->GetActorLabel() == "BP_Knife" && bIsOverlappingKnife == false)
+	if (OtherActor->GetName().Contains("BP_Knife") && bIsOverlappingKnife == false)
 	{
 		// 오버랩 상태 설정
 		bIsOverlappingKnife = true;
@@ -534,7 +534,7 @@ void ANormalGigant1::OnEndOverlapRightArm(UPrimitiveComponent* OverlappedCompone
 void ANormalGigant1::OnBeginOverlapLeftLeg(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	//객체 이름이 BP_Knife인경우에만 오버랩 이벤트 발생
-	if (OtherActor->GetActorLabel() == "BP_Knife" && bIsOverlappingKnife == false)
+	if (OtherActor->GetName().Contains("BP_Knife") && bIsOverlappingKnife == false)
 	{
 		// 오버랩 상태 설정
 		bIsOverlappingKnife = true;
@@ -556,7 +556,7 @@ void ANormalGigant1::OnEndOverlapLeftLeg(UPrimitiveComponent* OverlappedComponen
 void ANormalGigant1::OnBeginOverlapRightLeg(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	//객체 이름이 BP_Knife인경우에만 오버랩 이벤트 발생
-	if (OtherActor->GetActorLabel() == "BP_Knife" && bIsOverlappingKnife == false)
+	if (OtherActor->GetName().Contains("BP_Knife") && bIsOverlappingKnife == false)
 	{
 		// 오버랩 상태 설정
 		bIsOverlappingKnife = true;

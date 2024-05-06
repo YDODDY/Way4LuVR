@@ -5,7 +5,7 @@
         "ProvidedModule": "",
         "Includes": [
             "c:\\users\\user\\desktop\\way4luvr\\testingvr\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\testingvr\\definitions.testingvr.h",
-            "c:\\users\\user\\desktop\\way4luvr\\testingvr\\intermediate\\build\\win64\\x64\\testingvreditor\\development\\engine\\shareddefinitions.engine.cpp20.inclorderunreal5_0.h",
+            "c:\\users\\user\\desktop\\way4luvr\\testingvr\\intermediate\\build\\win64\\x64\\testingvreditor\\development\\unrealed\\shareddefinitions.unrealed.cpp20.inclorderunreal5_0.h",
             "c:\\users\\user\\desktop\\way4luvr\\testingvr\\source\\testingvr\\testplayer.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\coreminimal.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\coretypes.h",
@@ -2098,7 +2098,13 @@
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\components\\boxcomponent.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
-            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\boxcomponent.generated.h"
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\boxcomponent.generated.h",
+            "c:\\users\\user\\desktop\\way4luvr\\testingvr\\source\\testingvr\\public\\damagetestactor.h",
+            "c:\\users\\user\\desktop\\way4luvr\\testingvr\\intermediate\\build\\win64\\unrealeditor\\inc\\testingvr\\uht\\damagetestactor.generated.h",
+            "c:\\users\\user\\desktop\\way4luvr\\testingvr\\source\\testingvr\\public\\playerknifeactor.h",
+            "c:\\users\\user\\desktop\\way4luvr\\testingvr\\intermediate\\build\\win64\\unrealeditor\\inc\\testingvr\\uht\\playerknifeactor.generated.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\components\\arrowcomponent.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\arrowcomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

@@ -19,6 +19,8 @@
 #include "Components/StaticMeshComponent.h"
 #include "Components/BoxComponent.h"
 #include "DamageTestActor.h"
+#include "PlayerKnifeActor.h"
+#include "Components/ArrowComponent.h"
 
 ATestPlayer::ATestPlayer()
 {
@@ -76,20 +78,18 @@ ATestPlayer::ATestPlayer()
 	runningSoundComp = CreateDefaultSubobject<UAudioComponent>(TEXT("Running Sound Effect"));
 	runningSoundComp->SetupAttachment(RootComponent);
 	runningSoundComp->SetAutoActivate(false);
-	//공격 판정 범위 
-	boxComp = CreateDefaultSubobject<UBoxComponent>(TEXT("Attack Range Component"));
-	boxComp->SetupAttachment(RootComponent);
-	boxComp->SetRelativeLocation(FVector(160, 0, 10));
-	boxComp->SetRelativeScale3D(FVector(4.25f, 4, 0.7f));
-	boxComp->SetCollisionProfileName(FName("Attack"));
-	boxComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-	boxComp->SetGenerateOverlapEvents(true);
+
+	knifeLocation = CreateDefaultSubobject<UArrowComponent>(TEXT("Knife Location Component"));
+	knifeLocation->SetupAttachment(RootComponent);
+	knifeLocation->SetRelativeLocation(FVector(30, 0, 0));
+	knifeLocation->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
 }
 
 void ATestPlayer::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 	//컨트롤러 받아둠
 	auto* pc = Cast<APlayerController>(Controller);
 	if (pc)
@@ -112,8 +112,6 @@ void ATestPlayer::BeginPlay()
 	FActorSpawnParameters paramsL;
 	paramsL.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 	crossHairL_inst = GetWorld()->SpawnActor<ALeftFocusPointWidgetActor>(crossHairL_bp, endLocL, FRotator::ZeroRotator, paramsL);
-
-	boxComp->OnComponentBeginOverlap.AddDynamic(this, &ATestPlayer::OnAttackBeginOverlap);
 }
 
 void ATestPlayer::Tick(float DeltaTime)
@@ -131,6 +129,8 @@ void ATestPlayer::Tick(float DeltaTime)
 	//양 손 조준점 띄우기
 	ShowCrossHairR();
 	ShowCrossHairL();
+
+
 }
 
 void ATestPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -316,7 +316,6 @@ void ATestPlayer::OnBoost(const FInputActionValue& value)
 		windEffectComp->Activate();
 		windEffectComp->SetVisibility(true);
 		UGameplayStatics::PlaySound2D(GetWorld(), boostingSound);
-
 		
 		//부스트 이펙트는 1.5초 뒤 끔
 		FTimerHandle boostHandle;
@@ -333,8 +332,11 @@ void ATestPlayer::OnAttack(const FInputActionValue& value)
 	{
 		UGameplayStatics::PlaySound2D(GetWorld(), attackingSound);
 	}
-	//전방으로 만들어둔 공격범위 콜리전 효과 킴 -> 닿으면 데미지 입음 
-	boxComp->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+
+	FActorSpawnParameters params;
+	params.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+
+	GetWorld()->SpawnActor<APlayerKnifeActor>(knifeActor, knifeLocation->GetComponentLocation(), knifeLocation->GetComponentRotation(), params);
 
 	//공격 이펙트
 	attackEffectComp->Activate();
@@ -345,20 +347,8 @@ void ATestPlayer::OnAttack(const FInputActionValue& value)
 	GetWorldTimerManager().SetTimer(attackEffectHandle, FTimerDelegate::CreateLambda([&]() {
 		attackEffectComp->SetVisibility(false);
 		}), 0.7f, false);
-
-	//1초 뒤 공격범위 콜리전 효과 끔
-	FTimerHandle attackTimer;
-	GetWorldTimerManager().ClearTimer(attackTimer);
-	GetWorldTimerManager().SetTimer(attackTimer, FTimerDelegate::CreateLambda([&]() {
-		boxComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-		}), 1.0f, false);
-
 }
-//실제 거인 데미지 주는 함수 
-void ATestPlayer::OnAttackBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
-{
 
-}
 //플레이어 데미지 입는 함수 - 거인 사용 
 void ATestPlayer::OnDamaged(AActor* attacker)
 {

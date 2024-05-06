@@ -43,9 +43,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	class UCableComponent* LcableComp;
 
-	UPROPERTY(EditDefaultsOnly)
-	class UBoxComponent* boxComp;
-
 	//조준점 UI 
 	UPROPERTY(EditAnywhere, Category = "VR|UI")
 	TSubclassOf<class AFocusPointWidgetActor> crossHairR_bp;
@@ -54,6 +51,10 @@ public:
 	UPROPERTY(EditAnywhere, Category = "VR|UI")
 	TSubclassOf<class ALeftFocusPointWidgetActor> crossHairL_bp;
 	class ALeftFocusPointWidgetActor* crossHairL_inst;
+
+	//칼위치 화살표
+	UPROPERTY(EditDefaultsOnly)
+	class UArrowComponent* knifeLocation;
 
 
 
@@ -116,6 +117,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = "VR|Sounds")
 	class UAudioComponent* runningSoundComp;
 
+	UPROPERTY(EditDefaultsOnly, Category = "VR")
+	TSubclassOf<class APlayerKnifeActor> knifeActor;
+
 	//임시 그래플링 사운드 제어용 
 	bool bSoundR = false;
 	bool bSoundL = false;
@@ -165,8 +169,7 @@ public:
 	void OnBoost(const FInputActionValue& value);
 	UFUNCTION()
 	void OnAttack(const FInputActionValue& value);
-	UFUNCTION()
-	void OnAttackBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
 	UFUNCTION()
 	void OnDamaged(AActor* attacker);
 
