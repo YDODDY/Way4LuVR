@@ -1,12 +1,12 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\admin\\desktop\\vrproject\\way4luvr\\testingvr\\source\\testingvr\\testplayer.cpp",
+        "Source": "c:\\users\\admin\\desktop\\vrproject\\way4luvr\\testingvr\\source\\testingvr\\private\\testplayer.cpp",
         "ProvidedModule": "",
         "PCH": "c:\\users\\admin\\desktop\\vrproject\\way4luvr\\testingvr\\intermediate\\build\\win64\\x64\\testingvreditor\\development\\unrealed\\sharedpch.unrealed.cpp20.inclorderunreal5_0.h.pch",
         "Includes": [
             "c:\\users\\admin\\desktop\\vrproject\\way4luvr\\testingvr\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\testingvr\\definitions.testingvr.h",
-            "c:\\users\\admin\\desktop\\vrproject\\way4luvr\\testingvr\\source\\testingvr\\testplayer.h",
+            "c:\\users\\admin\\desktop\\vrproject\\way4luvr\\testingvr\\source\\testingvr\\public\\testplayer.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\character.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\charactermovementreplication.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\experimental\\iris\\core\\public\\iris\\serialization\\irisobjectreferencepackagemap.h",
@@ -254,7 +254,9 @@
             "c:\\users\\admin\\desktop\\vrproject\\way4luvr\\testingvr\\source\\testingvr\\public\\playerknifeactor.h",
             "c:\\users\\admin\\desktop\\vrproject\\way4luvr\\testingvr\\intermediate\\build\\win64\\unrealeditor\\inc\\testingvr\\uht\\playerknifeactor.generated.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\components\\arrowcomponent.h",
-            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\arrowcomponent.generated.h"
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\arrowcomponent.generated.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\components\\capsulecomponent.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\capsulecomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

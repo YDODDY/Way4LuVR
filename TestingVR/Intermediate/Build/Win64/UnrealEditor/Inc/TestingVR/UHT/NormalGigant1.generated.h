@@ -22,6 +22,7 @@ struct FHitResult;
 #define FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_NormalGigant1_h_23_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_NormalGigant1_h_23_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execOnAttackBeginOverlap); \
 	DECLARE_FUNCTION(execOnEndOverlapRightLeg); \
 	DECLARE_FUNCTION(execOnBeginOverlapRightLeg); \
 	DECLARE_FUNCTION(execOnEndOverlapLeftLeg); \

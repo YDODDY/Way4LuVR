@@ -11,7 +11,6 @@
     <None Include="..\..\Source\TestingVREditor.Target.cs">
       <Filter>Source</Filter>
     </None>
-    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -30,12 +29,6 @@
     <Filter Include="Source\TestingVR">
       <UniqueIdentifier>{F0ECBC04-12BF-3D5F-A517-AD70D606D308}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\TestingVR\TestingGameModeBase.cpp">
-      <Filter>Source\TestingVR</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\TestingVR\TestingGameModeBase.h">
-      <Filter>Source\TestingVR</Filter>
-    </ClInclude>
     <None Include="..\..\Source\TestingVR\TestingVR.Build.cs">
       <Filter>Source\TestingVR</Filter>
     </None>
@@ -43,12 +36,6 @@
       <Filter>Source\TestingVR</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\TestingVR\TestingVR.h">
-      <Filter>Source\TestingVR</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\TestingVR\TestPlayer.cpp">
-      <Filter>Source\TestingVR</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\TestingVR\TestPlayer.h">
       <Filter>Source\TestingVR</Filter>
     </ClInclude>
     <Filter Include="Source\TestingVR\Private">
@@ -75,6 +62,12 @@
     <ClCompile Include="..\..\Source\TestingVR\Private\PlayerKnifeActor.cpp">
       <Filter>Source\TestingVR\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\TestingVR\Private\TestingGameModeBase.cpp">
+      <Filter>Source\TestingVR\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TestingVR\Private\TestPlayer.cpp">
+      <Filter>Source\TestingVR\Private</Filter>
+    </ClCompile>
     <Filter Include="Source\TestingVR\Public">
       <UniqueIdentifier>{C0F7B777-B928-3EE0-87F3-4BC8C34AE3ED}</UniqueIdentifier>
     </Filter>
@@ -97,6 +90,12 @@
       <Filter>Source\TestingVR\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\TestingVR\Public\PlayerKnifeActor.h">
+      <Filter>Source\TestingVR\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TestingVR\Public\TestingGameModeBase.h">
+      <Filter>Source\TestingVR\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TestingVR\Public\TestPlayer.h">
       <Filter>Source\TestingVR\Public</Filter>
     </ClInclude>
   </ItemGroup>

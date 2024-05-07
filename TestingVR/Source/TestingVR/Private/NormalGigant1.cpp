@@ -17,6 +17,7 @@
 #include "Components/CapsuleComponent.h"
 #include "Components/SphereComponent.h"
 #include <../../../../../../../Source/Runtime/Engine/Classes/Components/StaticMeshComponent.h>
+#include "TestPlayer.h"
 
 // 생성자
 ANormalGigant1::ANormalGigant1()
@@ -329,7 +330,11 @@ void ANormalGigant1::BeginPlay()
 	RightLeg->OnComponentBeginOverlap.AddDynamic(this, &ANormalGigant1::OnBeginOverlapRightLeg);
 	RightLeg->OnComponentEndOverlap.AddDynamic(this, &ANormalGigant1::OnEndOverlapRightLeg);
 
-
+	//오른손,팔 왼손,팔 공격범위 콜리전 비긴오버랩이벤트 바인드 
+	RightArmCollision->OnComponentBeginOverlap.AddDynamic(this, &ANormalGigant1::OnAttackBeginOverlap);
+	RightHandCollision->OnComponentBeginOverlap.AddDynamic(this, &ANormalGigant1::OnAttackBeginOverlap);
+	LeftArmCollision->OnComponentBeginOverlap.AddDynamic(this, &ANormalGigant1::OnAttackBeginOverlap);
+	LeftHandCollision->OnComponentBeginOverlap.AddDynamic(this, &ANormalGigant1::OnAttackBeginOverlap);
 }
 
 // Called every frame
@@ -571,6 +576,16 @@ void ANormalGigant1::OnBeginOverlapRightLeg(UPrimitiveComponent* OverlappedCompo
 void ANormalGigant1::OnEndOverlapRightLeg(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
 	bIsOverlappingKnife = false;
+}
+
+//오른팔, 손 & 왼팔, 손 공격범위 콜리전에 플레이어 오버랩되면 플레이어 데미지 입음 
+void ANormalGigant1::OnAttackBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	class ATestPlayer* player = Cast<ATestPlayer>(OtherActor);
+	if(player != nullptr)
+	{
+		player->OnDamaged(this);
+	}
 }
 
 

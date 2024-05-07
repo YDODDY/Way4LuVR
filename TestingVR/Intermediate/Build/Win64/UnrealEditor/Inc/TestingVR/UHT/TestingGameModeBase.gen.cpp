@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "TestingVR/TestingGameModeBase.h"
+#include "TestingVR/Public/TestingGameModeBase.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeTestingGameModeBase() {}
 // Cross Module References
@@ -43,7 +43,7 @@ void EmptyLinkFunctionForGeneratedCodeTestingGameModeBase() {}
 #endif
 		{ "HideCategories", "Info Rendering MovementReplication Replication Actor Input Movement Collision Rendering HLOD WorldPartition DataLayers Transformation" },
 		{ "IncludePath", "TestingGameModeBase.h" },
-		{ "ModuleRelativePath", "TestingGameModeBase.h" },
+		{ "ModuleRelativePath", "Public/TestingGameModeBase.h" },
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
 #endif
@@ -80,15 +80,15 @@ void EmptyLinkFunctionForGeneratedCodeTestingGameModeBase() {}
 	ATestingGameModeBase::ATestingGameModeBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ATestingGameModeBase);
 	ATestingGameModeBase::~ATestingGameModeBase() {}
-	struct Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestingGameModeBase_h_Statics
+	struct Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_TestingGameModeBase_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestingGameModeBase_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATestingGameModeBase, ATestingGameModeBase::StaticClass, TEXT("ATestingGameModeBase"), &Z_Registration_Info_UClass_ATestingGameModeBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATestingGameModeBase), 1460705936U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_TestingGameModeBase_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_ATestingGameModeBase, ATestingGameModeBase::StaticClass, TEXT("ATestingGameModeBase"), &Z_Registration_Info_UClass_ATestingGameModeBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATestingGameModeBase), 243891722U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestingGameModeBase_h_3694747019(TEXT("/Script/TestingVR"),
-		Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestingGameModeBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestingGameModeBase_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_TestingGameModeBase_h_984741881(TEXT("/Script/TestingVR"),
+		Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_TestingGameModeBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_TestingGameModeBase_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

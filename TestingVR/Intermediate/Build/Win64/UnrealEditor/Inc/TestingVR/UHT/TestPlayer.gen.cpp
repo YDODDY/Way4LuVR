@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "TestingVR/TestPlayer.h"
+#include "TestingVR/Public/TestPlayer.h"
 #include "InputActionValue.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
@@ -32,6 +32,13 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	TESTINGVR_API UClass* Z_Construct_UClass_ATestPlayer_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_TestingVR();
 // End Cross Module References
+	DEFINE_FUNCTION(ATestPlayer::execDie)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->Die();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ATestPlayer::execShowCrossHairL)
 	{
 		P_FINISH;
@@ -138,6 +145,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	{
 		UClass* Class = ATestPlayer::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "Die", &ATestPlayer::execDie },
 			{ "OnAttack", &ATestPlayer::execOnAttack },
 			{ "OnBoost", &ATestPlayer::execOnBoost },
 			{ "OnDamaged", &ATestPlayer::execOnDamaged },
@@ -153,6 +161,34 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 			{ "StopRightShooting", &ATestPlayer::execStopRightShooting },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_ATestPlayer_Die_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATestPlayer_Die_Statics::Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//\xef\xbf\xbd\xd7\xb4\xef\xbf\xbd \xef\xbf\xbd\xd4\xbc\xef\xbf\xbd\n" },
+#endif
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xef\xbf\xbd\xd7\xb4\xef\xbf\xbd \xef\xbf\xbd\xd4\xbc\xef\xbf\xbd" },
+#endif
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATestPlayer_Die_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATestPlayer, nullptr, "Die", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_Die_Statics::Function_MetaDataParams), Z_Construct_UFunction_ATestPlayer_Die_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_ATestPlayer_Die()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATestPlayer_Die_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_ATestPlayer_OnAttack_Statics
 	{
@@ -181,7 +217,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATestPlayer_OnAttack_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATestPlayer_OnAttack_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATestPlayer, nullptr, "OnAttack", nullptr, nullptr, Z_Construct_UFunction_ATestPlayer_OnAttack_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_OnAttack_Statics::PropPointers), sizeof(Z_Construct_UFunction_ATestPlayer_OnAttack_Statics::TestPlayer_eventOnAttack_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_OnAttack_Statics::Function_MetaDataParams), Z_Construct_UFunction_ATestPlayer_OnAttack_Statics::Function_MetaDataParams) };
@@ -223,7 +259,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATestPlayer_OnBoost_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATestPlayer_OnBoost_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATestPlayer, nullptr, "OnBoost", nullptr, nullptr, Z_Construct_UFunction_ATestPlayer_OnBoost_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_OnBoost_Statics::PropPointers), sizeof(Z_Construct_UFunction_ATestPlayer_OnBoost_Statics::TestPlayer_eventOnBoost_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_OnBoost_Statics::Function_MetaDataParams), Z_Construct_UFunction_ATestPlayer_OnBoost_Statics::Function_MetaDataParams) };
@@ -257,7 +293,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATestPlayer_OnDamaged_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATestPlayer_OnDamaged_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATestPlayer, nullptr, "OnDamaged", nullptr, nullptr, Z_Construct_UFunction_ATestPlayer_OnDamaged_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_OnDamaged_Statics::PropPointers), sizeof(Z_Construct_UFunction_ATestPlayer_OnDamaged_Statics::TestPlayer_eventOnDamaged_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_OnDamaged_Statics::Function_MetaDataParams), Z_Construct_UFunction_ATestPlayer_OnDamaged_Statics::Function_MetaDataParams) };
@@ -299,7 +335,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATestPlayer_OnIAJump_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATestPlayer_OnIAJump_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATestPlayer, nullptr, "OnIAJump", nullptr, nullptr, Z_Construct_UFunction_ATestPlayer_OnIAJump_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_OnIAJump_Statics::PropPointers), sizeof(Z_Construct_UFunction_ATestPlayer_OnIAJump_Statics::TestPlayer_eventOnIAJump_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_OnIAJump_Statics::Function_MetaDataParams), Z_Construct_UFunction_ATestPlayer_OnIAJump_Statics::Function_MetaDataParams) };
@@ -344,7 +380,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "//\xef\xbf\xbd\xef\xbf\xbd\xc7\xb2\xef\xbf\xbd\xd4\xbc\xef\xbf\xbd\n" },
 #endif
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xc7\xb2\xef\xbf\xbd\xd4\xbc\xef\xbf\xbd" },
 #endif
@@ -389,7 +425,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATestPlayer_OnIATurn_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATestPlayer_OnIATurn_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATestPlayer, nullptr, "OnIATurn", nullptr, nullptr, Z_Construct_UFunction_ATestPlayer_OnIATurn_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_OnIATurn_Statics::PropPointers), sizeof(Z_Construct_UFunction_ATestPlayer_OnIATurn_Statics::TestPlayer_eventOnIATurn_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_OnIATurn_Statics::Function_MetaDataParams), Z_Construct_UFunction_ATestPlayer_OnIATurn_Statics::Function_MetaDataParams) };
@@ -431,7 +467,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATestPlayer_OnIATurnUpDown_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATestPlayer_OnIATurnUpDown_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATestPlayer, nullptr, "OnIATurnUpDown", nullptr, nullptr, Z_Construct_UFunction_ATestPlayer_OnIATurnUpDown_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_OnIATurnUpDown_Statics::PropPointers), sizeof(Z_Construct_UFunction_ATestPlayer_OnIATurnUpDown_Statics::TestPlayer_eventOnIATurnUpDown_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_OnIATurnUpDown_Statics::Function_MetaDataParams), Z_Construct_UFunction_ATestPlayer_OnIATurnUpDown_Statics::Function_MetaDataParams) };
@@ -473,7 +509,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATestPlayer_OnLeftShooting_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATestPlayer_OnLeftShooting_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATestPlayer, nullptr, "OnLeftShooting", nullptr, nullptr, Z_Construct_UFunction_ATestPlayer_OnLeftShooting_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_OnLeftShooting_Statics::PropPointers), sizeof(Z_Construct_UFunction_ATestPlayer_OnLeftShooting_Statics::TestPlayer_eventOnLeftShooting_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_OnLeftShooting_Statics::Function_MetaDataParams), Z_Construct_UFunction_ATestPlayer_OnLeftShooting_Statics::Function_MetaDataParams) };
@@ -515,7 +551,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATestPlayer_OnRightShooting_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATestPlayer_OnRightShooting_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATestPlayer, nullptr, "OnRightShooting", nullptr, nullptr, Z_Construct_UFunction_ATestPlayer_OnRightShooting_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_OnRightShooting_Statics::PropPointers), sizeof(Z_Construct_UFunction_ATestPlayer_OnRightShooting_Statics::TestPlayer_eventOnRightShooting_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_OnRightShooting_Statics::Function_MetaDataParams), Z_Construct_UFunction_ATestPlayer_OnRightShooting_Statics::Function_MetaDataParams) };
@@ -539,7 +575,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATestPlayer_ShowCrossHairL_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATestPlayer_ShowCrossHairL_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATestPlayer, nullptr, "ShowCrossHairL", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_ShowCrossHairL_Statics::Function_MetaDataParams), Z_Construct_UFunction_ATestPlayer_ShowCrossHairL_Statics::Function_MetaDataParams) };
@@ -561,7 +597,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATestPlayer_ShowCrossHairR_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATestPlayer_ShowCrossHairR_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATestPlayer, nullptr, "ShowCrossHairR", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_ShowCrossHairR_Statics::Function_MetaDataParams), Z_Construct_UFunction_ATestPlayer_ShowCrossHairR_Statics::Function_MetaDataParams) };
@@ -601,7 +637,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATestPlayer_StopLeftShooting_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATestPlayer_StopLeftShooting_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATestPlayer, nullptr, "StopLeftShooting", nullptr, nullptr, Z_Construct_UFunction_ATestPlayer_StopLeftShooting_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_StopLeftShooting_Statics::PropPointers), sizeof(Z_Construct_UFunction_ATestPlayer_StopLeftShooting_Statics::TestPlayer_eventStopLeftShooting_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_StopLeftShooting_Statics::Function_MetaDataParams), Z_Construct_UFunction_ATestPlayer_StopLeftShooting_Statics::Function_MetaDataParams) };
@@ -643,7 +679,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATestPlayer_StopRightShooting_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATestPlayer_StopRightShooting_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATestPlayer, nullptr, "StopRightShooting", nullptr, nullptr, Z_Construct_UFunction_ATestPlayer_StopRightShooting_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_StopRightShooting_Statics::PropPointers), sizeof(Z_Construct_UFunction_ATestPlayer_StopRightShooting_Statics::TestPlayer_eventStopRightShooting_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ATestPlayer_StopRightShooting_Statics::Function_MetaDataParams), Z_Construct_UFunction_ATestPlayer_StopRightShooting_Statics::Function_MetaDataParams) };
@@ -747,6 +783,10 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_ia_attack;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_ia_restart_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_ia_restart;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_sensivility_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_sensivility;
@@ -791,6 +831,14 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 #endif
 		static const UECodeGen_Private::FClassPropertyParams NewProp_knifeActor;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_currentHP_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_currentHP;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_maxHP_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_maxHP;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_bIsGrapplingR_MetaData[];
 #endif
 		static void NewProp_bIsGrapplingR_SetBit(void* Obj);
@@ -823,26 +871,27 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_ATestPlayer_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_ATestPlayer_OnAttack, "OnAttack" }, // 2934552916
-		{ &Z_Construct_UFunction_ATestPlayer_OnBoost, "OnBoost" }, // 3308999523
-		{ &Z_Construct_UFunction_ATestPlayer_OnDamaged, "OnDamaged" }, // 98568494
-		{ &Z_Construct_UFunction_ATestPlayer_OnIAJump, "OnIAJump" }, // 732326605
-		{ &Z_Construct_UFunction_ATestPlayer_OnIAMove, "OnIAMove" }, // 2671404153
-		{ &Z_Construct_UFunction_ATestPlayer_OnIATurn, "OnIATurn" }, // 2067538803
-		{ &Z_Construct_UFunction_ATestPlayer_OnIATurnUpDown, "OnIATurnUpDown" }, // 2424206905
-		{ &Z_Construct_UFunction_ATestPlayer_OnLeftShooting, "OnLeftShooting" }, // 1521864508
-		{ &Z_Construct_UFunction_ATestPlayer_OnRightShooting, "OnRightShooting" }, // 3535832395
-		{ &Z_Construct_UFunction_ATestPlayer_ShowCrossHairL, "ShowCrossHairL" }, // 125642367
-		{ &Z_Construct_UFunction_ATestPlayer_ShowCrossHairR, "ShowCrossHairR" }, // 1957738921
-		{ &Z_Construct_UFunction_ATestPlayer_StopLeftShooting, "StopLeftShooting" }, // 2241838669
-		{ &Z_Construct_UFunction_ATestPlayer_StopRightShooting, "StopRightShooting" }, // 3519944959
+		{ &Z_Construct_UFunction_ATestPlayer_Die, "Die" }, // 3383337718
+		{ &Z_Construct_UFunction_ATestPlayer_OnAttack, "OnAttack" }, // 2372502975
+		{ &Z_Construct_UFunction_ATestPlayer_OnBoost, "OnBoost" }, // 2004199384
+		{ &Z_Construct_UFunction_ATestPlayer_OnDamaged, "OnDamaged" }, // 1164556170
+		{ &Z_Construct_UFunction_ATestPlayer_OnIAJump, "OnIAJump" }, // 917622198
+		{ &Z_Construct_UFunction_ATestPlayer_OnIAMove, "OnIAMove" }, // 336786476
+		{ &Z_Construct_UFunction_ATestPlayer_OnIATurn, "OnIATurn" }, // 471590827
+		{ &Z_Construct_UFunction_ATestPlayer_OnIATurnUpDown, "OnIATurnUpDown" }, // 3315145475
+		{ &Z_Construct_UFunction_ATestPlayer_OnLeftShooting, "OnLeftShooting" }, // 537871742
+		{ &Z_Construct_UFunction_ATestPlayer_OnRightShooting, "OnRightShooting" }, // 889791880
+		{ &Z_Construct_UFunction_ATestPlayer_ShowCrossHairL, "ShowCrossHairL" }, // 4019720169
+		{ &Z_Construct_UFunction_ATestPlayer_ShowCrossHairR, "ShowCrossHairR" }, // 2838083031
+		{ &Z_Construct_UFunction_ATestPlayer_StopLeftShooting, "StopLeftShooting" }, // 3172697352
+		{ &Z_Construct_UFunction_ATestPlayer_StopRightShooting, "StopRightShooting" }, // 362483085
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::Class_MetaDataParams[] = {
 		{ "HideCategories", "Navigation" },
 		{ "IncludePath", "TestPlayer.h" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 #if WITH_METADATA
@@ -852,7 +901,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 		{ "Comment", "//\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc6\xae\n" },
 #endif
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc6\xae" },
 #endif
@@ -863,7 +912,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_leftMotion_MetaData[] = {
 		{ "Category", "TestPlayer" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_leftMotion = { "leftMotion", nullptr, (EPropertyFlags)0x0010000000090009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, leftMotion), Z_Construct_UClass_UMotionControllerComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_leftMotion_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_leftMotion_MetaData) };
@@ -871,7 +920,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_rightMotion_MetaData[] = {
 		{ "Category", "TestPlayer" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_rightMotion = { "rightMotion", nullptr, (EPropertyFlags)0x0010000000090009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, rightMotion), Z_Construct_UClass_UMotionControllerComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_rightMotion_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_rightMotion_MetaData) };
@@ -879,7 +928,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_leftHand_MetaData[] = {
 		{ "Category", "TestPlayer" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_leftHand = { "leftHand", nullptr, (EPropertyFlags)0x0010000000090009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, leftHand), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_leftHand_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_leftHand_MetaData) };
@@ -887,7 +936,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_rightHand_MetaData[] = {
 		{ "Category", "TestPlayer" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_rightHand = { "rightHand", nullptr, (EPropertyFlags)0x0010000000090009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, rightHand), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_rightHand_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_rightHand_MetaData) };
@@ -898,7 +947,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 		{ "Comment", "//\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xcc\xba\xef\xbf\xbd\n" },
 #endif
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xcc\xba\xef\xbf\xbd" },
 #endif
@@ -909,7 +958,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_LcableComp_MetaData[] = {
 		{ "Category", "TestPlayer" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_LcableComp = { "LcableComp", nullptr, (EPropertyFlags)0x001000000008001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, LcableComp), Z_Construct_UClass_UCableComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_LcableComp_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_LcableComp_MetaData) };
@@ -919,7 +968,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "//\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd UI \n" },
 #endif
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd UI" },
 #endif
@@ -929,7 +978,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_crossHairL_bp_MetaData[] = {
 		{ "Category", "VR|UI" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_crossHairL_bp = { "crossHairL_bp", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, crossHairL_bp), Z_Construct_UClass_UClass, Z_Construct_UClass_ALeftFocusPointWidgetActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_crossHairL_bp_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_crossHairL_bp_MetaData) };
@@ -940,7 +989,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 		{ "Comment", "//\xc4\xae\xef\xbf\xbd\xef\xbf\xbd\xc4\xa1 \xc8\xad\xef\xbf\xbd\xef\xbf\xbd\xc7\xa5\n" },
 #endif
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "\xc4\xae\xef\xbf\xbd\xef\xbf\xbd\xc4\xa1 \xc8\xad\xef\xbf\xbd\xef\xbf\xbd\xc7\xa5" },
 #endif
@@ -953,7 +1002,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "//\xef\xbf\xbd\xef\xbf\xbd\xc7\xb2\n" },
 #endif
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xc7\xb2" },
 #endif
@@ -963,66 +1012,73 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_move_MetaData[] = {
 		{ "Category", "VR|Inputs" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_move = { "ia_move", nullptr, (EPropertyFlags)0x0010000000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, ia_move), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_move_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_move_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_turnLR_MetaData[] = {
 		{ "Category", "VR|Inputs" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_turnLR = { "ia_turnLR", nullptr, (EPropertyFlags)0x0010000000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, ia_turnLR), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_turnLR_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_turnLR_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_turnUD_MetaData[] = {
 		{ "Category", "VR|Inputs" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_turnUD = { "ia_turnUD", nullptr, (EPropertyFlags)0x0010000000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, ia_turnUD), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_turnUD_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_turnUD_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_jump_MetaData[] = {
 		{ "Category", "VR|Inputs" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_jump = { "ia_jump", nullptr, (EPropertyFlags)0x0010000000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, ia_jump), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_jump_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_jump_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_Rshot_MetaData[] = {
 		{ "Category", "VR|Inputs" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_Rshot = { "ia_Rshot", nullptr, (EPropertyFlags)0x0010000000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, ia_Rshot), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_Rshot_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_Rshot_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_Lshot_MetaData[] = {
 		{ "Category", "VR|Inputs" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_Lshot = { "ia_Lshot", nullptr, (EPropertyFlags)0x0010000000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, ia_Lshot), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_Lshot_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_Lshot_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_boost_MetaData[] = {
 		{ "Category", "VR|Inputs" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_boost = { "ia_boost", nullptr, (EPropertyFlags)0x0010000000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, ia_boost), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_boost_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_boost_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_attack_MetaData[] = {
 		{ "Category", "VR|Inputs" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_attack = { "ia_attack", nullptr, (EPropertyFlags)0x0010000000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, ia_attack), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_attack_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_attack_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_restart_MetaData[] = {
+		{ "Category", "VR|Inputs" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_restart = { "ia_restart", nullptr, (EPropertyFlags)0x0010000000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, ia_restart), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_restart_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_restart_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_sensivility_MetaData[] = {
 		{ "Category", "VR|Inputs" },
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "//\xc8\xb8\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \n" },
 #endif
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "\xc8\xb8\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd" },
 #endif
@@ -1036,7 +1092,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 		{ "Comment", "//\xef\xbf\xbd\xce\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc6\xae\n" },
 #endif
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "\xef\xbf\xbd\xce\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc6\xae" },
 #endif
@@ -1050,7 +1106,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 		{ "Comment", "//\xef\xbf\xbd\xd9\xb6\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc6\xae\n" },
 #endif
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "\xef\xbf\xbd\xd9\xb6\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc6\xae" },
 #endif
@@ -1064,7 +1120,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 		{ "Comment", "//\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc6\xae\n" },
 #endif
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc6\xae" },
 #endif
@@ -1077,7 +1133,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "//\xef\xbf\xbd\xd2\xb8\xef\xbf\xbd\n" },
 #endif
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "\xef\xbf\xbd\xd2\xb8\xef\xbf\xbd" },
 #endif
@@ -1087,21 +1143,21 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_shootingSound_MetaData[] = {
 		{ "Category", "VR|Sounds" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_shootingSound = { "shootingSound", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, shootingSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_shootingSound_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_shootingSound_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_boostingSound_MetaData[] = {
 		{ "Category", "VR|Sounds" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_boostingSound = { "boostingSound", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, boostingSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_boostingSound_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_boostingSound_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_attackingSound_MetaData[] = {
 		{ "Category", "VR|Sounds" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_attackingSound = { "attackingSound", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, attackingSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_attackingSound_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_attackingSound_MetaData) };
@@ -1109,7 +1165,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_windSoundComp_MetaData[] = {
 		{ "Category", "VR|Sounds" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_windSoundComp = { "windSoundComp", nullptr, (EPropertyFlags)0x0010000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, windSoundComp), Z_Construct_UClass_UAudioComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_windSoundComp_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_windSoundComp_MetaData) };
@@ -1117,24 +1173,38 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_runningSoundComp_MetaData[] = {
 		{ "Category", "VR|Sounds" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_runningSoundComp = { "runningSoundComp", nullptr, (EPropertyFlags)0x0010000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, runningSoundComp), Z_Construct_UClass_UAudioComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_runningSoundComp_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_runningSoundComp_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_knifeActor_MetaData[] = {
 		{ "Category", "VR" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_knifeActor = { "knifeActor", nullptr, (EPropertyFlags)0x0014000000010001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, knifeActor), Z_Construct_UClass_UClass, Z_Construct_UClass_APlayerKnifeActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_knifeActor_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_knifeActor_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_currentHP_MetaData[] = {
+		{ "Category", "VR" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_currentHP = { "currentHP", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, currentHP), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_currentHP_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_currentHP_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_maxHP_MetaData[] = {
+		{ "Category", "VR" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_maxHP = { "maxHP", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, maxHP), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_maxHP_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_maxHP_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_bIsGrapplingR_MetaData[] = {
 		{ "Category", "TestPlayer" },
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "//\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xcc\xba\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc6\xae Visibility \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xee\xba\xaf\xef\xbf\xbd\xef\xbf\xbd \n" },
 #endif
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xcc\xba\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc6\xae Visibility \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xee\xba\xaf\xef\xbf\xbd\xef\xbf\xbd" },
 #endif
@@ -1148,7 +1218,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_bIsGrapplingL_MetaData[] = {
 		{ "Category", "TestPlayer" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	void Z_Construct_UClass_ATestPlayer_Statics::NewProp_bIsGrapplingL_SetBit(void* Obj)
@@ -1159,7 +1229,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_bIsGrappling_MetaData[] = {
 		{ "Category", "TestPlayer" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	void Z_Construct_UClass_ATestPlayer_Statics::NewProp_bIsGrappling_SetBit(void* Obj)
@@ -1173,7 +1243,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "//\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xcc\xba\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xc4\xa1\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\n" },
 #endif
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xcc\xba\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xc4\xa1\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd" },
 #endif
@@ -1183,7 +1253,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_grabPointL_MetaData[] = {
 		{ "Category", "TestPlayer" },
-		{ "ModuleRelativePath", "TestPlayer.h" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_grabPointL = { "grabPointL", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, grabPointL), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_grabPointL_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_grabPointL_MetaData) };
@@ -1207,6 +1277,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_Lshot,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_boost,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_attack,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_ia_restart,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_sensivility,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_boostComp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_windEffectComp,
@@ -1218,6 +1289,8 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_windSoundComp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_runningSoundComp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_knifeActor,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_currentHP,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_maxHP,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_bIsGrapplingR,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_bIsGrapplingL,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_bIsGrappling,
@@ -1257,15 +1330,15 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ATestPlayer);
 	ATestPlayer::~ATestPlayer() {}
-	struct Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestPlayer_h_Statics
+	struct Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_TestPlayer_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestPlayer_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATestPlayer, ATestPlayer::StaticClass, TEXT("ATestPlayer"), &Z_Registration_Info_UClass_ATestPlayer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATestPlayer), 3793860958U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_TestPlayer_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_ATestPlayer, ATestPlayer::StaticClass, TEXT("ATestPlayer"), &Z_Registration_Info_UClass_ATestPlayer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATestPlayer), 539901128U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestPlayer_h_1667008492(TEXT("/Script/TestingVR"),
-		Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestPlayer_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_TestPlayer_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_TestPlayer_h_1828663553(TEXT("/Script/TestingVR"),
+		Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_TestPlayer_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_TestPlayer_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
