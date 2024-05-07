@@ -10,12 +10,12 @@ APlayerKnifeActor::APlayerKnifeActor()
 
 	boxComp=CreateDefaultSubobject<UBoxComponent>(TEXT("Attack Collision Component"));
 	SetRootComponent(boxComp);
-	boxComp->SetRelativeScale3D(FVector(4.25f, 4.75f, 1));
+	boxComp->SetRelativeScale3D(FVector(4.25f, 4.75f, 0.7f));
 	boxComp->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 	meshComp=CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Attack Mesh Component"));
 	meshComp->SetupAttachment(RootComponent);
 	meshComp->SetRelativeLocation(FVector(0, 0, -30));
-	meshComp->SetRelativeScale3D(FVector(0.6f));
+	meshComp->SetRelativeScale3D(FVector(0.5f));
 	meshComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 }
 
@@ -30,7 +30,7 @@ void APlayerKnifeActor::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	currentTime += DeltaTime;
-	SetActorLocation(GetActorLocation() + GetActorForwardVector() * 100);
+	SetActorLocation(GetActorLocation() + GetActorForwardVector() * 10);
 
 	if (currentTime >= 1.0f)
 	{
