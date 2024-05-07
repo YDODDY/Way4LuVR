@@ -36,6 +36,13 @@ public:
 
 	UPROPERTY(EditDefaultsOnly)
 	class USkeletalMeshComponent* rightHand;
+
+	UPROPERTY(EditDefaultsOnly)
+	class UMotionControllerComponent* rightAim;
+	
+	UPROPERTY(EditDefaultsOnly)
+	class UMotionControllerComponent* leftAim;
+
 	//케이블
 	UPROPERTY(EditAnywhere,BlueprintReadOnly)
 	class UCableComponent* RcableComp;
@@ -187,6 +194,9 @@ public:
 	void ShowCrossHairR();
 	UFUNCTION()
 	void ShowCrossHairL();
+	
+	UPROPERTY(EditDefaultsOnly)
+	float kAdjustCrossJairScale = 0.1f;
 
 
 	//죽는 함수

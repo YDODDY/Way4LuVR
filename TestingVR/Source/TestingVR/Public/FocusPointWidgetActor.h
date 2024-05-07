@@ -23,4 +23,6 @@ public:
 	UPROPERTY(EditAnywhere)
 	class UStaticMeshComponent* meshComp;
 
+	UPROPERTY(EditAnywhere)
+	class USceneComponent* rootComp;
 };

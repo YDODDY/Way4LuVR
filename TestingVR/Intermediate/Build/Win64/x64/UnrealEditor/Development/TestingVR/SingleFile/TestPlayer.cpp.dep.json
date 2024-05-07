@@ -2102,7 +2102,9 @@
             "c:\\users\\admin\\desktop\\vrproject\\way4luvr\\testingvr\\source\\testingvr\\public\\playerknifeactor.h",
             "c:\\users\\admin\\desktop\\vrproject\\way4luvr\\testingvr\\intermediate\\build\\win64\\unrealeditor\\inc\\testingvr\\uht\\playerknifeactor.generated.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\components\\arrowcomponent.h",
-            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\arrowcomponent.generated.h"
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\arrowcomponent.generated.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\components\\capsulecomponent.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\capsulecomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

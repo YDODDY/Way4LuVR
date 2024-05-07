@@ -10,6 +10,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeFocusPointWidgetActor() {}
 // Cross Module References
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
+	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	TESTINGVR_API UClass* Z_Construct_UClass_AFocusPointWidgetActor();
 	TESTINGVR_API UClass* Z_Construct_UClass_AFocusPointWidgetActor_NoRegister();
@@ -33,6 +34,10 @@ void EmptyLinkFunctionForGeneratedCodeFocusPointWidgetActor() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_meshComp_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_meshComp;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_rootComp_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_rootComp;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -56,8 +61,17 @@ void EmptyLinkFunctionForGeneratedCodeFocusPointWidgetActor() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFocusPointWidgetActor_Statics::NewProp_meshComp = { "meshComp", nullptr, (EPropertyFlags)0x0010000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AFocusPointWidgetActor, meshComp), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AFocusPointWidgetActor_Statics::NewProp_meshComp_MetaData), Z_Construct_UClass_AFocusPointWidgetActor_Statics::NewProp_meshComp_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFocusPointWidgetActor_Statics::NewProp_rootComp_MetaData[] = {
+		{ "Category", "FocusPointWidgetActor" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/FocusPointWidgetActor.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFocusPointWidgetActor_Statics::NewProp_rootComp = { "rootComp", nullptr, (EPropertyFlags)0x0010000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AFocusPointWidgetActor, rootComp), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AFocusPointWidgetActor_Statics::NewProp_rootComp_MetaData), Z_Construct_UClass_AFocusPointWidgetActor_Statics::NewProp_rootComp_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AFocusPointWidgetActor_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFocusPointWidgetActor_Statics::NewProp_meshComp,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFocusPointWidgetActor_Statics::NewProp_rootComp,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AFocusPointWidgetActor_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AFocusPointWidgetActor>::IsAbstract,
@@ -97,9 +111,9 @@ void EmptyLinkFunctionForGeneratedCodeFocusPointWidgetActor() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_FocusPointWidgetActor_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AFocusPointWidgetActor, AFocusPointWidgetActor::StaticClass, TEXT("AFocusPointWidgetActor"), &Z_Registration_Info_UClass_AFocusPointWidgetActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFocusPointWidgetActor), 125656352U) },
+		{ Z_Construct_UClass_AFocusPointWidgetActor, AFocusPointWidgetActor::StaticClass, TEXT("AFocusPointWidgetActor"), &Z_Registration_Info_UClass_AFocusPointWidgetActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFocusPointWidgetActor), 3098729917U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_FocusPointWidgetActor_h_138948872(TEXT("/Script/TestingVR"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_FocusPointWidgetActor_h_1708236061(TEXT("/Script/TestingVR"),
 		Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_FocusPointWidgetActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_FocusPointWidgetActor_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

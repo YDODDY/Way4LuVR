@@ -21,6 +21,7 @@
 #include "PlayerKnifeActor.h"
 #include "Components/ArrowComponent.h"
 #include "Components/CapsuleComponent.h"
+#include <../../../../../../../Source/Runtime/Engine/Classes/Kismet/KismetMathLibrary.h>
 
 ATestPlayer::ATestPlayer()
 {
@@ -42,6 +43,14 @@ ATestPlayer::ATestPlayer()
 	rightHand = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Right Hand"));
 	rightHand->SetupAttachment(rightMotion);
 	rightHand->SetRelativeLocationAndRotation(FVector(-2.98126f, 3.5f, 4.561753f), FRotator(25, 0, 90));
+
+	rightAim = CreateDefaultSubobject<UMotionControllerComponent>(TEXT("Right Aim"));
+	rightAim ->SetupAttachment(RootComponent);
+	rightAim ->SetTrackingMotionSource(TEXT("RightAim"));
+	leftAim = CreateDefaultSubobject<UMotionControllerComponent>(TEXT("Left Aim"));
+	leftAim->SetupAttachment(RootComponent);
+	leftAim->SetTrackingMotionSource(TEXT("LeftAim"));
+
 	//오른손 케이블
 	RcableComp = CreateDefaultSubobject<UCableComponent>(TEXT("Right Cable Component"));
 	RcableComp->SetupAttachment(rightHand);
@@ -190,14 +199,15 @@ void ATestPlayer::OnIAJump(const FInputActionValue& value)
 //오른손 그래플링 훅
 void ATestPlayer::OnRightShooting(const FInputActionValue& value)
 {	
-	FVector startLocR = rightHand->GetComponentLocation();
-	FVector endLocR = startLocR + rightHand->GetRightVector() * 50000;
+	FVector startLocR = rightAim->GetComponentLocation();
+	FVector endLocR = startLocR + rightAim->GetForwardVector() * 50000;
 	FHitResult hitInfo;
-	FCollisionObjectQueryParams objQueryParams;
-	objQueryParams.AddObjectTypesToQuery(ECC_WorldStatic);
-	objQueryParams.AddObjectTypesToQuery(ECC_WorldDynamic);
+	FCollisionQueryParams params;
+	params.AddIgnoredActor(this);
+	params.AddIgnoredComponent(rightHand);
+	params.AddIgnoredComponent(leftHand);
 	//라인트레이스 발사
-	bool bResult = GetWorld()->LineTraceSingleByObjectType(hitInfo, startLocR, endLocR, objQueryParams);
+	bool bResult = GetWorld()->LineTraceSingleByChannel(hitInfo, startLocR, endLocR, ECC_Visibility,params);
 	if (bResult)
 	{
 		bIsGrapplingR = true;
@@ -234,15 +244,16 @@ void ATestPlayer::OnRightShooting(const FInputActionValue& value)
 //왼손 그래플링 훅 
 void ATestPlayer::OnLeftShooting(const FInputActionValue& value)
 {
-	FVector startLocL = leftHand->GetComponentLocation();
-	FVector endLocL = startLocL + leftHand->GetRightVector() * 50000;
+	FVector startLocL = leftAim->GetComponentLocation();
+	FVector endLocL = startLocL + leftAim->GetForwardVector()* 50000;
 	FHitResult hitInfo;
-	FCollisionObjectQueryParams objQueryParams;
-	objQueryParams.AddObjectTypesToQuery(ECC_WorldStatic);
-	objQueryParams.AddObjectTypesToQuery(ECC_WorldDynamic);
+	FCollisionQueryParams params;
+	params.AddIgnoredActor(this);
+	params.AddIgnoredComponent(rightHand);
+	params.AddIgnoredComponent(leftHand);
 
 	//왼손컴포넌트 위치에서 라인트레이스 발사
-	bool bResult = GetWorld()->LineTraceSingleByObjectType(hitInfo, startLocL, endLocL, objQueryParams);
+	bool bResult = GetWorld()->LineTraceSingleByChannel(hitInfo, startLocL, endLocL, ECC_Visibility, params);
 	if (bResult)
 	{
 		bIsGrapplingL = true;
@@ -379,23 +390,33 @@ void ATestPlayer::ShowCrossHairR()
 	{ 
 		if(bFixCrossHairR == false)
 		{ 
-			FVector startLocR = rightHand->GetComponentLocation();
-			FVector endLocR = startLocR + rightHand->GetRightVector() * 50000;
+			FVector startLocR = rightAim->GetComponentLocation();
+			FVector endLocR = startLocR + rightAim->GetForwardVector() * 50000;
 			FHitResult hitInfo;
-			FCollisionObjectQueryParams objQueryParams;
-			objQueryParams.AddObjectTypesToQuery(ECC_WorldStatic);
-			objQueryParams.AddObjectTypesToQuery(ECC_WorldDynamic);
+			FCollisionQueryParams params;
+			params.AddIgnoredActor(this);
+			params.AddIgnoredComponent(rightHand);
+			params.AddIgnoredComponent(leftHand);
+			float distance = 1.0f;
 
 			//라인트레이스 발사
-			bool bResult = GetWorld()->LineTraceSingleByObjectType(hitInfo, startLocR, endLocR, objQueryParams);
+			bool bResult = GetWorld()->LineTraceSingleByChannel(hitInfo, startLocR, endLocR, ECC_Visibility, params);
 			if (bResult)
 			{ 
 				crossHairR_inst->SetActorLocation(hitInfo.ImpactPoint);
+				distance = kAdjustCrossJairScale * hitInfo.Distance / 100;
 			}
 			else
 			{
-				crossHairR_inst->SetActorLocation((rightHand->GetRightVector()) * 50000);
+				crossHairR_inst->SetActorLocation(endLocR);
+				distance = kAdjustCrossJairScale * FVector::Dist(startLocR, endLocR) / 100;
+
 			}
+
+			crossHairR_inst->SetActorScale3D(FVector(distance));
+
+			FVector dir = crossHairR_inst->GetActorLocation() - VRcamera->GetComponentLocation();
+			crossHairR_inst->SetActorRotation(UKismetMathLibrary::MakeRotFromX(dir.GetSafeNormal()));
 		}
 	}
 }
@@ -407,23 +428,32 @@ void ATestPlayer::ShowCrossHairL()
 	{ 
 		if(bFixCrossHairL == false)
 		{ 
-			FVector startLocL = leftHand->GetComponentLocation();
-			FVector endLocL = startLocL + leftHand->GetRightVector() * 50000;
+			FVector startLocL = leftAim->GetComponentLocation();
+			FVector endLocL = startLocL + leftAim->GetForwardVector()* 50000;
 			FHitResult hitInfo;
-			FCollisionObjectQueryParams objQueryParams;
-			objQueryParams.AddObjectTypesToQuery(ECC_WorldStatic);
-			objQueryParams.AddObjectTypesToQuery(ECC_WorldDynamic);
+			FCollisionQueryParams params;
+			params.AddIgnoredActor(this);
+			params.AddIgnoredComponent(rightHand);
+			params.AddIgnoredComponent(leftHand);
+			float distance = 1.0f;
+
 
 			//라인트레이스 발사
-			bool bResult = GetWorld()->LineTraceSingleByObjectType(hitInfo, startLocL, endLocL, objQueryParams);
+			bool bResult = GetWorld()->LineTraceSingleByChannel(hitInfo, startLocL, endLocL, ECC_Visibility, params);
 			if (bResult)
 			{	
 				crossHairL_inst->SetActorLocation(hitInfo.ImpactPoint);
+				distance = kAdjustCrossJairScale * hitInfo.Distance / 100;
 			}
 			else
 			{
-				crossHairL_inst->SetActorLocation((leftHand->GetRightVector()) * 50000);
+				crossHairL_inst->SetActorLocation(endLocL);
+				distance = kAdjustCrossJairScale * FVector::Dist(startLocL, endLocL) / 100;
 			}
+			crossHairL_inst->SetActorScale3D(FVector(distance));
+
+			FVector dir = crossHairL_inst->GetActorLocation() - VRcamera->GetComponentLocation();
+			crossHairL_inst->SetActorRotation(UKismetMathLibrary::MakeRotFromX(dir.GetSafeNormal()));
 		}
 	}
 }

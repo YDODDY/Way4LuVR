@@ -727,6 +727,14 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_rightHand;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_rightAim_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_rightAim;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_leftAim_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_leftAim;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_RcableComp_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_RcableComp;
@@ -861,6 +869,10 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_grabPointL_MetaData[];
 #endif
 		static const UECodeGen_Private::FStructPropertyParams NewProp_grabPointL;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_kAdjustCrossJairScale_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_kAdjustCrossJairScale;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -940,6 +952,22 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_rightHand = { "rightHand", nullptr, (EPropertyFlags)0x0010000000090009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, rightHand), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_rightHand_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_rightHand_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_rightAim_MetaData[] = {
+		{ "Category", "TestPlayer" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_rightAim = { "rightAim", nullptr, (EPropertyFlags)0x0010000000090009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, rightAim), Z_Construct_UClass_UMotionControllerComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_rightAim_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_rightAim_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_leftAim_MetaData[] = {
+		{ "Category", "TestPlayer" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_leftAim = { "leftAim", nullptr, (EPropertyFlags)0x0010000000090009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, leftAim), Z_Construct_UClass_UMotionControllerComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_leftAim_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_leftAim_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_RcableComp_MetaData[] = {
 		{ "Category", "TestPlayer" },
@@ -1257,12 +1285,21 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_grabPointL = { "grabPointL", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, grabPointL), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_grabPointL_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_grabPointL_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestPlayer_Statics::NewProp_kAdjustCrossJairScale_MetaData[] = {
+		{ "Category", "TestPlayer" },
+		{ "ModuleRelativePath", "Public/TestPlayer.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATestPlayer_Statics::NewProp_kAdjustCrossJairScale = { "kAdjustCrossJairScale", nullptr, (EPropertyFlags)0x0010000000010001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ATestPlayer, kAdjustCrossJairScale), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ATestPlayer_Statics::NewProp_kAdjustCrossJairScale_MetaData), Z_Construct_UClass_ATestPlayer_Statics::NewProp_kAdjustCrossJairScale_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATestPlayer_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_VRcamera,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_leftMotion,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_rightMotion,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_leftHand,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_rightHand,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_rightAim,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_leftAim,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_RcableComp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_LcableComp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_crossHairR_bp,
@@ -1296,6 +1333,7 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_bIsGrappling,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_grabPointR,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_grabPointL,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestPlayer_Statics::NewProp_kAdjustCrossJairScale,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ATestPlayer_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ATestPlayer>::IsAbstract,
@@ -1335,9 +1373,9 @@ void EmptyLinkFunctionForGeneratedCodeTestPlayer() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_TestPlayer_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATestPlayer, ATestPlayer::StaticClass, TEXT("ATestPlayer"), &Z_Registration_Info_UClass_ATestPlayer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATestPlayer), 539901128U) },
+		{ Z_Construct_UClass_ATestPlayer, ATestPlayer::StaticClass, TEXT("ATestPlayer"), &Z_Registration_Info_UClass_ATestPlayer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATestPlayer), 1680351116U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_TestPlayer_h_1828663553(TEXT("/Script/TestingVR"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_TestPlayer_h_4016695009(TEXT("/Script/TestingVR"),
 		Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_TestPlayer_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_admin_Desktop_VRProject_Way4LuVR_TestingVR_Source_TestingVR_Public_TestPlayer_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
