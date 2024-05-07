@@ -54,9 +54,6 @@
     <Filter Include="Source\TestingVR\Private">
       <UniqueIdentifier>{460CE38C-3CB8-34C9-A486-3712887D1A56}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\TestingVR\Private\DamageTestActor.cpp">
-      <Filter>Source\TestingVR\Private</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\TestingVR\Private\FocusPointWidgetActor.cpp">
       <Filter>Source\TestingVR\Private</Filter>
     </ClCompile>
@@ -81,9 +78,6 @@
     <Filter Include="Source\TestingVR\Public">
       <UniqueIdentifier>{C0F7B777-B928-3EE0-87F3-4BC8C34AE3ED}</UniqueIdentifier>
     </Filter>
-    <ClInclude Include="..\..\Source\TestingVR\Public\DamageTestActor.h">
-      <Filter>Source\TestingVR\Public</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\TestingVR\Public\FocusPointWidgetActor.h">
       <Filter>Source\TestingVR\Public</Filter>
     </ClInclude>

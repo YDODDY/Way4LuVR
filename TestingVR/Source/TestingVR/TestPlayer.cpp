@@ -18,7 +18,6 @@
 #include "LeftFocusPointWidgetActor.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/BoxComponent.h"
-#include "DamageTestActor.h"
 #include "PlayerKnifeActor.h"
 #include "Components/ArrowComponent.h"
 

@@ -86,8 +86,6 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "VR|Inputs")
 	class UInputAction* ia_attack;
 
-	class ADamagetTestActor* damageActor;
-
 
 	//회전감도 
 	UPROPERTY(EditAnywhere, Category = "VR|Inputs")
