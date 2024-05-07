@@ -143,6 +143,8 @@ public:
 
 	bool bIsOnceDieMT = false;
 
+	bool bIsSpawnBlood = false;
+
 
 	//¸ñ´ú¹Ì ¸Þ½Ã
 	UPROPERTY(EditAnywhere)
@@ -218,8 +220,11 @@ public:
 	UPROPERTY(EditAnywhere, Category = "MySettings")
 	class UAnimMontage* Die4;
 
-	UPROPERTY(EditDefaultsOnly, Category = "MySettings")
-	UParticleSystem* BloodPX;
+	UPROPERTY(EditAnywhere, Category = "MySettings")
+	class UNiagaraComponent* CriticalBlood;
+
+	UPROPERTY(EditAnywhere, Category = "MySettings")
+	class UNiagaraComponent* NormalBlood;
 
 
 

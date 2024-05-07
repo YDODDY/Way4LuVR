@@ -17,7 +17,9 @@
 #include "Components/CapsuleComponent.h"
 #include "Components/SphereComponent.h"
 #include <../../../../../../../Source/Runtime/Engine/Classes/Components/StaticMeshComponent.h>
+#include "NiagaraComponent.h"
 #include "TestPlayer.h"
+#include <../../../../../../../Plugins/FX/Niagara/Source/Niagara/Public/NiagaraFunctionLibrary.h>
 
 // 생성자
 ANormalGigant1::ANormalGigant1()
@@ -286,6 +288,27 @@ ANormalGigant1::ANormalGigant1()
 
 	//어후 힘들어
 
+	CriticalBlood = CreateDefaultSubobject<UNiagaraComponent>(TEXT("CriticalBlood"));
+	CriticalBlood->SetupAttachment(BoxMesh);
+	static ConstructorHelpers::FObjectFinder<UNiagaraSystem>fx(TEXT("/Script/Niagara.NiagaraSystem'/Game/AttackTitan/Blood/CriticalBlood.CriticalBlood'"));
+	if (fx.Succeeded())
+	{
+		CriticalBlood->SetAsset(fx.Object);
+	}
+	CriticalBlood->SetAutoActivate(false);
+
+	CriticalBlood->SetRelativeLocation(FVector(0.f, -125.f, 0.f));
+	CriticalBlood->SetRelativeRotation(FRotator(-90,180, -179));
+
+	NormalBlood = CreateDefaultSubobject<UNiagaraComponent>(TEXT("NormalBlood"));
+	NormalBlood->SetupAttachment(BoxMesh);
+	static ConstructorHelpers::FObjectFinder<UNiagaraSystem>fx2(TEXT("/Script/Niagara.NiagaraSystem'/Game/AttackTitan/Blood/NormalBlood.NormalBlood'"));
+	if (fx2.Succeeded())
+	{
+		NormalBlood->SetAsset(fx.Object);
+	}
+	NormalBlood->SetAutoActivate(false);
+
 }
 
 
@@ -436,22 +459,32 @@ void ANormalGigant1::TakeCriticalDamage()
 	{
 		//애니메이션,나이아가라 수정 예정
 	}
+
 }
 
 void ANormalGigant1::OnBeginOverlapNeck(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	//객체 이름이 BP_Knife인경우에만 오버랩 이벤트 발생
-	if (OtherActor->GetName().Contains("BP_Knife") && bIsOverlappingKnife == false)
+	if (OtherActor->GetName().Contains("BP_Knife") && bIsOverlappingKnife == false && bIsSpawnBlood == false)
 	{
-		// 오버랩 상태 설정
-		bIsOverlappingKnife = true;
+		
 
 		// 피해 입히는 함수 호출
 		TakeCriticalDamage();
 
 		UE_LOG(LogTemp, Warning, TEXT("BeginOverlap"));
-	}
 
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), CriticalBlood->GetAsset(), BoxMesh->GetComponentLocation(), BoxMesh->GetComponentRotation());
+
+		bIsSpawnBlood = true;
+
+		// 오버랩 상태 설정
+		bIsOverlappingKnife = true;
+	}
+	// 충돌 지점에서 파티클 스폰 <문제가있음>
+	//FVector SpawnLocation = SweepResult.ImpactPoint + GetActorLocation();
+	//FRotator SpawnRotation = SweepResult.ImpactNormal.Rotation();
+	
 
 }
 
@@ -477,11 +510,8 @@ void ANormalGigant1::OnBeginOverlapBody(UPrimitiveComponent* OverlappedComponent
 
 		UE_LOG(LogTemp, Warning, TEXT("BeginOverlap"));
 
-
-		// 충돌 지점에서 파티클 스폰 <문제가있음>
-		FVector SpawnLocation = SweepResult.ImpactPoint;
-		FRotator SpawnRotation = SweepResult.ImpactNormal.Rotation();
-		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), BloodPX, SpawnLocation, SpawnRotation);
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NormalBlood->GetAsset(), BodyMesh->GetComponentLocation(), BodyMesh->GetComponentRotation());
+		
 	}
 }
 
@@ -504,6 +534,8 @@ void ANormalGigant1::OnBeginOverlapLeftArm(UPrimitiveComponent* OverlappedCompon
 		TakeDamage();
 
 		UE_LOG(LogTemp, Warning, TEXT("BeginOverlap"));
+
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NormalBlood->GetAsset(), LeftArm->GetComponentLocation(), LeftArm->GetComponentRotation());
 	}
 }
 
@@ -526,6 +558,7 @@ void ANormalGigant1::OnBeginOverlapRightArm(UPrimitiveComponent* OverlappedCompo
 		TakeDamage();
 
 		UE_LOG(LogTemp, Warning, TEXT("BeginOverlap"));
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NormalBlood->GetAsset(), RightArm->GetComponentLocation(), RightArm->GetComponentRotation());
 	}
 }
 
@@ -548,6 +581,8 @@ void ANormalGigant1::OnBeginOverlapLeftLeg(UPrimitiveComponent* OverlappedCompon
 		TakeDamage();
 
 		UE_LOG(LogTemp, Warning, TEXT("BeginOverlap"));
+
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NormalBlood->GetAsset(), LeftLeg->GetComponentLocation(), LeftLeg->GetComponentRotation());
 	}
 }
 
@@ -570,6 +605,8 @@ void ANormalGigant1::OnBeginOverlapRightLeg(UPrimitiveComponent* OverlappedCompo
 		TakeDamage();
 
 		UE_LOG(LogTemp, Warning, TEXT("BeginOverlap"));
+
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NormalBlood->GetAsset(), RightLeg->GetComponentLocation(), RightLeg->GetComponentRotation());
 	}
 }
 
