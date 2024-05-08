@@ -72,6 +72,16 @@ public:
 	UPROPERTY(EditAnywhere, Category = "MySettings")
 	class UAnimMontage* AttackMT8;
 
+	UPROPERTY(EditAnywhere, Category = "MySettings")
+	class UAnimMontage* AttackMT9;
+
+	UPROPERTY(EditAnywhere, Category = "MySettings")
+	class UAnimMontage* AttackMT10;
+
+
+	 UPROPERTY(EditAnywhere)
+    UAnimSequence* JumpAttack;
+
 	void SearchPlayer();
 
 	void RestartAttackFlag();

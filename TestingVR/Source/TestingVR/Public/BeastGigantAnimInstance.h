@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Animation/AnimInstance.h"
+#include "BeastGigant.h"
 #include "BeastGigantAnimInstance.generated.h"
 
 /**
@@ -14,4 +15,22 @@ class TESTINGVR_API UBeastGigantAnimInstance : public UAnimInstance
 {
 	GENERATED_BODY()
 	
+
+public:
+
+	//beginplay
+	virtual void NativeInitializeAnimation()override;
+
+	//tick
+	virtual void NativeUpdateAnimation(float DeltaSeconds)override;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MySettings")
+	EBeastGigantState currentStates;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MySettings")
+	class ABeastGigant* beastgigant;
+
+	
+	UFUNCTION()
+	void AnimNotify_AttackEnding();
 };

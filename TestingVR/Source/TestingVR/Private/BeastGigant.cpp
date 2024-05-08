@@ -4,6 +4,7 @@
 #include "BeastGigant.h"
 #include <../../../../../../../Source/Runtime/Engine/Classes/Kismet/GameplayStatics.h>
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Animation/AnimSequence.h"
 #include "Components/CapsuleComponent.h"
 
 
@@ -13,7 +14,7 @@ ABeastGigant::ABeastGigant()
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	static ConstructorHelpers::FObjectFinder<USkeletalMesh>beastGigant(TEXT("/Script/Engine.SkeletalMesh'/Game/AttackTitan/BeastGigant/BeastGigant.BeastGigant'"));
+	static ConstructorHelpers::FObjectFinder<USkeletalMesh>beastGigant(TEXT("/Script/Engine.SkeletalMesh'/Game/AttackTitan/BeastGigant/BeastGigant/GigantBeastV2.GigantBeastV2'"));
 
 	if (beastGigant.Succeeded())
 	{
@@ -38,7 +39,7 @@ void ABeastGigant::BeginPlay()
 	Super::BeginPlay();
 
 	//기본상태는 idle 상태로 초기화
-	beastState = EBeastGigantState::NORMALATTACK;
+	beastState = EBeastGigantState::IDLE;
 
 }
 
@@ -79,7 +80,7 @@ void ABeastGigant::Tick(float DeltaTime)
 	//델타타임 누적하기
 	currentTime += DeltaTime;
 
-	SearchPlayer();
+	
 }
 
 // Called to bind functionality to input
@@ -88,6 +89,7 @@ void ABeastGigant::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 }
+
 
 void ABeastGigant::SearchPlayer()
 {
@@ -162,13 +164,16 @@ void ABeastGigant::backjump()
 
 void ABeastGigant::normalattack()
 {
-	if (bIsAttack == false)
+	SearchPlayer();
+
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	if (bIsAttack == false &&AnimInstance)
 	{
-		int32 Value = FMath::RandRange(1, 8);
+		int32 Value = FMath::RandRange(1, 10);
 		{
 			if (Value == 1)
 			{
-				PlayAnimMontage(AttackMT1);
+				AnimInstance->Montage_Play(AttackMT1);
 
 				bIsAttack = true;
 
@@ -176,47 +181,62 @@ void ABeastGigant::normalattack()
 			}
 			if (Value == 2)
 			{
-				PlayAnimMontage(AttackMT2);
+				AnimInstance->Montage_Play(AttackMT2);
 
 				bIsAttack = true;
+
 			}
 			if (Value == 3)
 			{
-				PlayAnimMontage(AttackMT3);
+				AnimInstance->Montage_Play(AttackMT3);
 
 				bIsAttack = true;
 			}
 			if (Value == 4)
 			{
-				PlayAnimMontage(AttackMT4);
+				AnimInstance->Montage_Play(AttackMT4);
 
 				bIsAttack = true;
 			}
 
 			if (Value == 5)
 			{
-				PlayAnimMontage(AttackMT4);
+				AnimInstance->Montage_Play(AttackMT5);
 
 				bIsAttack = true;
 			}
 
 			if (Value == 6)
 			{
-				PlayAnimMontage(AttackMT4);
+				AnimInstance->Montage_Play(AttackMT6);
 
 				bIsAttack = true;
 			}
 
 			if (Value == 7)
 			{
-				PlayAnimMontage(AttackMT4);
+				AnimInstance->Montage_Play(AttackMT7);
 
 				bIsAttack = true;
 			}
 
 			if (Value == 8)
 			{
-				PlayAnimMontage(AttackMT4);
+				AnimInstance->Montage_Play(AttackMT8);
+
+				bIsAttack = true;
+			}
+
+			if (Value == 9)
+			{
+				AnimInstance->Montage_Play(AttackMT9);
+
+				bIsAttack = true;
+			}
+
+			if (Value == 10)
+			{
+				AnimInstance->Montage_Play(AttackMT10);
 
 				bIsAttack = true;
 			}
