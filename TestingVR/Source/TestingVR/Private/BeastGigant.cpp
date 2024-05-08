@@ -38,7 +38,7 @@ void ABeastGigant::BeginPlay()
 	Super::BeginPlay();
 
 	//기본상태는 idle 상태로 초기화
-	beastState = EBeastGigantState::IDLE;
+	beastState = EBeastGigantState::NORMALATTACK;
 
 }
 
@@ -164,7 +164,7 @@ void ABeastGigant::normalattack()
 {
 	if (bIsAttack == false)
 	{
-		int32 Value = FMath::RandRange(1, 7);
+		int32 Value = FMath::RandRange(1, 8);
 		{
 			if (Value == 1)
 			{
@@ -208,6 +208,13 @@ void ABeastGigant::normalattack()
 			}
 
 			if (Value == 7)
+			{
+				PlayAnimMontage(AttackMT4);
+
+				bIsAttack = true;
+			}
+
+			if (Value == 8)
 			{
 				PlayAnimMontage(AttackMT4);
 
