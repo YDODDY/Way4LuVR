@@ -33,4 +33,10 @@ public:
 	
 	UFUNCTION()
 	void AnimNotify_AttackEnding();
+
+	UFUNCTION()
+	void AnimNotify_AttackStart1();
+
+	UFUNCTION()
+	void AnimNotify_JumpStart();
 };

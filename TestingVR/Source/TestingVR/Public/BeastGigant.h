@@ -86,18 +86,63 @@ public:
 
 	void RestartAttackFlag();
 
+	float DistanceToPlayer();
+
+	void MoveToPlayer();
+
+	void MoveToLocationJump();
+
+	void ChangeNormalAttackJump();
+
+	void SuperJump();
+	
+
+	FVector TargetLocation;
+
+	FVector NewLocation;
+
+	float MovementSpeed = 2500.0f;
+
+	float AcceptanceRadius;
+
 	bool bIsAlreadyPlayRoar = false;
 
 	bool bIsAttack = false;
 
+	bool bIsAttackingMT = false;
+
 	bool bIsAttackAnimationPlaying = false;
 
+	bool bIsMovingNow = false;
+
+	bool bIsAnimNotify = false;
+
+	bool bIsFar = false;
+
+	bool bIsSuperJumping = false;
+
+	bool OnceJump = false;
+
 	float currentTime = 0;
+
+
+	FVector PlayerLocation;
+
+	//플레이어와 거인과의 거리벡터
+	FVector DistanceAiToCharacter;
 
 	APawn* PlayerPawn;
 
 	FTimerHandle TimerHandle_DelayAttack;
 	
+	FTimerHandle TimerHandle_MoveToPlayer;
+
+	FTimerHandle TimerHandle_ChangeNormalAttack;
+
+	FTimerHandle TimerHandle_SuperJump;
+
+	FTimerHandle TimerHandle_FK;
+
 
 	void idle(float deltaSeconds);
 	void howling(float deltaSeconds);

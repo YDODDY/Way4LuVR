@@ -412,7 +412,7 @@ void ANormalGigant1::Tick(float DeltaTime)
 
 
 	// currentHP »Æ¿Œ
-	UE_LOG(LogTemp, Warning, TEXT("Current HP: %d"), currentHP);
+	//UE_LOG(LogTemp, Warning, TEXT("Current HP: %d"), currentHP);
 
 
 }

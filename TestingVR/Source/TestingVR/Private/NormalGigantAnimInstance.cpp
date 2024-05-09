@@ -28,6 +28,8 @@ void UNormalGigantAnimInstance::AnimNotify_Attack1End()
 	//노티파이가 끝나면 false로 변경해주고 다시 실행되게 
 	normalgigant->bIsAttackAnimationPlaying = false;
 	normalgigant->gigant1State = ENormalGigan1State::ATTACK;
-
+	
 
 }
+
+

@@ -34,4 +34,6 @@ public:
 
 	UFUNCTION()
 	void AnimNotify_Attack1End();
+
+	
 };
