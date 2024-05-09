@@ -3,10 +3,13 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Animation/AnimSequence.h"
 #include "Math/Vector.h"
+#include "Components/StaticMeshComponent.h"
+#include "NiagaraComponent.h"
+#include "NiagaraFunctionLibrary.h"
 #include "Components/CapsuleComponent.h"
 
 
-// Sets default values
+// 생성자
 ABeastGigant::ABeastGigant()
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -29,6 +32,219 @@ ABeastGigant::ABeastGigant()
 	//캡슐 둘레값 설정
 	GetCapsuleComponent()->SetCapsuleRadius(389.353485f);
 
+	//거인의 오버랩 설정해주기
+	
+
+
+	//1. 레프트 포어암
+	LeftForeArmMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("LeftForeArmMesh"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh>LeftForeArm(TEXT("/Script/Engine.StaticMesh'/Engine/EngineMeshes/Cube.Cube'"));
+	if (LeftForeArm.Succeeded())
+	{
+		LeftForeArmMesh->SetStaticMesh(LeftForeArm.Object);
+	}
+	
+	LeftForeArmMesh->SetupAttachment(GetMesh());
+
+	// 소켓의 위치를 가져옴
+	FVector LeftForeArmSocketLocation = GetMesh()->GetSocketLocation(TEXT("LeftForeArmSocket"));
+
+	// 메시의 위치를 소켓의 위치로
+	LeftForeArmMesh->SetRelativeLocation(LeftForeArmSocketLocation);
+
+	// 메시를 소켓에 붙힘
+	LeftForeArmMesh->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("LeftForeArmSocket"));
+
+	LeftForeArmMesh->SetRelativeLocation(FVector(0.0f, -510.0f, 0.0f));
+	LeftForeArmMesh->SetWorldScale3D(FVector(1.0f, 3.5f, 1.0f));
+
+	LeftForeArmMesh->SetVisibility(false);
+
+	//2. 레프트 암
+	LeftArmMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("LeftArmMesh"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh>LeftArm(TEXT("/Script/Engine.StaticMesh'/Engine/EngineMeshes/Cube.Cube'"));
+	if (LeftArm.Succeeded())
+	{
+		LeftArmMesh->SetStaticMesh(LeftArm.Object);
+	}
+
+	LeftArmMesh->SetupAttachment(GetMesh());
+
+	// 소켓의 위치를 가져옴
+	FVector LeftArmSocketLocation = GetMesh()->GetSocketLocation(TEXT("LeftArmSocket"));
+
+	// 메시의 위치를 소켓의 위치로
+	LeftArmMesh->SetRelativeLocation(LeftArmSocketLocation);
+
+	// 메시를 소켓에 붙힘
+	LeftArmMesh->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("LeftArmSocket"));
+
+	LeftArmMesh->SetRelativeLocation(FVector(0.0f, -180.0f, 0.0f));
+	LeftArmMesh->SetWorldScale3D(FVector(1.0f, 2.25f, 1.0f));
+
+	LeftArmMesh->SetVisibility(false);
+
+	//3. 라이트 포어 암
+	RightForeArmMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("RightForeArmMesh"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh>RightForeArm(TEXT("/Script/Engine.StaticMesh'/Engine/EngineMeshes/Cube.Cube'"));
+	if (RightForeArm.Succeeded())
+	{
+		RightForeArmMesh->SetStaticMesh(RightForeArm.Object);
+	}
+
+	RightForeArmMesh->SetupAttachment(GetMesh());
+
+	// 소켓의 위치를 가져옴
+	FVector RightForeArmSocketLocation = GetMesh()->GetSocketLocation(TEXT("RightForeArmSocket"));
+
+	// 메시의 위치를 소켓의 위치로
+	RightForeArmMesh->SetRelativeLocation(RightForeArmSocketLocation);
+
+	// 메시를 소켓에 붙힘
+	RightForeArmMesh->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("RightForeArmSocket"));
+
+	RightForeArmMesh->SetRelativeLocation(FVector(0.0f, -510.0f, 0.0f));
+	RightForeArmMesh->SetWorldScale3D(FVector(1.0f, 3.5f, 1.0f));
+
+	RightForeArmMesh->SetVisibility(false);
+
+	//4. 라이트 암
+	RightArmMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("RightArmMesh"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh>RightArm(TEXT("/Script/Engine.StaticMesh'/Engine/EngineMeshes/Cube.Cube'"));
+	if (RightArm.Succeeded())
+	{
+		RightArmMesh->SetStaticMesh(RightArm.Object);
+	}
+
+	RightArmMesh->SetupAttachment(GetMesh());
+
+	// 소켓의 위치를 가져옴
+	FVector RightArmSocketLocation = GetMesh()->GetSocketLocation(TEXT("RightArmSocket"));
+
+	// 메시의 위치를 소켓의 위치로
+	RightArmMesh->SetRelativeLocation(RightArmSocketLocation);
+
+	// 메시를 소켓에 붙힘
+	RightArmMesh->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("RightArmSocket"));
+
+	RightArmMesh->SetRelativeLocation(FVector(0.0f, -180.0f, 0.0f));
+	RightArmMesh->SetWorldScale3D(FVector(1.0f, 2.25f, 1.0f));
+
+	RightArmMesh->SetVisibility(false);
+
+	//5. 레트프레그
+	LeftLegMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("LeftLegMesh"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh>LeftLeg(TEXT("/Script/Engine.StaticMesh'/Engine/EngineMeshes/Cube.Cube'"));
+	if (LeftLeg.Succeeded())
+	{
+		LeftLegMesh->SetStaticMesh(LeftLeg.Object);
+	}
+
+	LeftLegMesh->SetupAttachment(GetMesh());
+
+	// 소켓의 위치를 가져옴
+	FVector LeftLegSocketLocation = GetMesh()->GetSocketLocation(TEXT("LeftLegSocket"));
+
+	// 메시의 위치를 소켓의 위치로
+	LeftLegMesh->SetRelativeLocation(LeftLegSocketLocation);
+
+	// 메시를 소켓에 붙힘
+	LeftLegMesh->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("LeftLegSocket"));
+
+	LeftLegMesh->SetWorldScale3D(FVector(1.0f, 3.5f, 1.0f));
+
+	LeftLegMesh->SetVisibility(false);
+
+	//6. 라이트레그
+	RightLegMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("RightLegMesh"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh>RightLeg(TEXT("/Script/Engine.StaticMesh'/Engine/EngineMeshes/Cube.Cube'"));
+	if (RightLeg.Succeeded())
+	{
+		RightLegMesh->SetStaticMesh(RightLeg.Object);
+	}
+
+	RightLegMesh->SetupAttachment(GetMesh());
+
+	// 소켓의 위치를 가져옴
+	FVector RightLegSocketLocation = GetMesh()->GetSocketLocation(TEXT("RightLegSocket"));
+
+	// 메시의 위치를 소켓의 위치로
+	RightLegMesh->SetRelativeLocation(RightLegSocketLocation);
+
+	// 메시를 소켓에 붙힘
+	RightLegMesh->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("RightLegSocket"));
+
+	RightLegMesh->SetWorldScale3D(FVector(1.0f, 3.5f, 1.0f));
+
+	RightLegMesh->SetVisibility(false);
+
+	//7. 몸통
+	BodyMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BodyMesh"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh>Body(TEXT("/Script/Engine.StaticMesh'/Engine/EngineMeshes/Cube.Cube'"));
+	if (Body.Succeeded())
+	{
+		BodyMesh->SetStaticMesh(Body.Object);
+	}
+
+	BodyMesh->SetupAttachment(GetMesh());
+
+	// 소켓의 위치를 가져옴
+	FVector BodySocketLocation = GetMesh()->GetSocketLocation(TEXT("Spine1Socket"));
+
+	// 메시의 위치를 소켓의 위치로
+	BodyMesh->SetRelativeLocation(BodySocketLocation);
+
+	// 메시를 소켓에 붙힘
+	BodyMesh->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("Spine1Socket"));
+
+	BodyMesh->SetRelativeLocation(FVector(0.0f, 70.0f, 30.0f));
+	BodyMesh->SetWorldScale3D(FVector(2.75f, 4.25f, 1.75f));
+
+	BodyMesh->SetVisibility(false);
+
+	//8. 목
+	NeckMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("NeckMesh"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh>Neck(TEXT("/Script/Engine.StaticMesh'/Engine/EngineMeshes/Cube.Cube'"));
+	if (Neck.Succeeded())
+	{
+		NeckMesh->SetStaticMesh(Neck.Object);
+	}
+
+	NeckMesh->SetupAttachment(GetMesh());
+
+	// 소켓의 위치를 가져옴
+	FVector NeckSocketLocation = GetMesh()->GetSocketLocation(TEXT("NeckSocket"));
+
+	// 메시의 위치를 소켓의 위치로
+	NeckMesh->SetRelativeLocation(NeckSocketLocation);
+
+	// 메시를 소켓에 붙힘
+	NeckMesh->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("NeckSocket"));
+
+	NeckMesh->SetWorldScale3D(FVector(2.0f, 1.0f, 1.0f));
+
+	NeckMesh->SetVisibility(false);
+
+	CriticalBlood = CreateDefaultSubobject<UNiagaraComponent>(TEXT("CriticalBlood"));
+	CriticalBlood->SetupAttachment(NeckMesh);
+	static ConstructorHelpers::FObjectFinder<UNiagaraSystem>fx(TEXT("/Script/Niagara.NiagaraSystem'/Game/AttackTitan/Blood/CriticalBloodGigantBig.CriticalBloodGigantBig'"));
+	if (fx.Succeeded())
+	{
+		CriticalBlood->SetAsset(fx.Object);
+	}
+	CriticalBlood->SetAutoActivate(false);
+
+	CriticalBlood->SetRelativeLocation(FVector(0.f, -125.f, 0.f));
+	CriticalBlood->SetRelativeRotation(FRotator(-90, 180, -179));
+
+	NormalBlood = CreateDefaultSubobject<UNiagaraComponent>(TEXT("NormalBlood"));
+	NormalBlood->SetupAttachment(NeckMesh);
+	static ConstructorHelpers::FObjectFinder<UNiagaraSystem>fx2(TEXT("/Script/Niagara.NiagaraSystem'/Game/AttackTitan/Blood/CriticalBloodGigant.CriticalBloodGigant'"));
+	if (fx2.Succeeded())
+	{
+		NormalBlood->SetAsset(fx.Object);
+	}
+	NormalBlood->SetAutoActivate(false);
 }
 
 // Called when the game starts or when spawned
@@ -38,6 +254,30 @@ void ABeastGigant::BeginPlay()
 
 	//기본상태는 idle 상태로 초기화
 	beastState = EBeastGigantState::IDLE;
+
+	LeftForeArmMesh->OnComponentBeginOverlap.AddDynamic(this, &ABeastGigant::OnBeginOverLeftForeArm);
+	LeftForeArmMesh->OnComponentEndOverlap.AddDynamic(this, &ABeastGigant::OnEndOverlapLeftForeArm);
+
+	LeftArmMesh->OnComponentBeginOverlap.AddDynamic(this, &ABeastGigant::OnBeginOverlapLeftArm);
+	LeftArmMesh->OnComponentEndOverlap.AddDynamic(this, &ABeastGigant::OnEndOverlapLeftArm);
+
+	RightForeArmMesh->OnComponentBeginOverlap.AddDynamic(this, &ABeastGigant::OnBeginOverlapRightForeArm);
+	RightForeArmMesh->OnComponentEndOverlap.AddDynamic(this, &ABeastGigant::OnEndOverlapRightForeArm);
+
+	RightArmMesh->OnComponentBeginOverlap.AddDynamic(this, &ABeastGigant::OnBeginOverlapRightArm);
+	RightArmMesh->OnComponentEndOverlap.AddDynamic(this, &ABeastGigant::OnEndOverlapRightArm);
+
+	LeftLegMesh->OnComponentBeginOverlap.AddDynamic(this, &ABeastGigant::OnBeginOverlapLeftLeg);
+	LeftLegMesh->OnComponentEndOverlap.AddDynamic(this, &ABeastGigant::OnEndOverlapLeftLeg);
+
+	RightLegMesh->OnComponentBeginOverlap.AddDynamic(this, &ABeastGigant::OnBeginOverlapRightLeg);
+	RightLegMesh->OnComponentEndOverlap.AddDynamic(this, &ABeastGigant::OnEndOverlapRightLeg);
+
+	BodyMesh->OnComponentBeginOverlap.AddDynamic(this, &ABeastGigant::OnBeginOverlapBody);
+	BodyMesh->OnComponentEndOverlap.AddDynamic(this, &ABeastGigant::OnEndOverlapBody);
+
+	NeckMesh->OnComponentBeginOverlap.AddDynamic(this, &ABeastGigant::OnBeginOverlapNeck);
+	NeckMesh->OnComponentEndOverlap.AddDynamic(this, &ABeastGigant::OnEndOverlapNeck);
 
 
 }
@@ -102,6 +342,11 @@ void ABeastGigant::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+
+void ABeastGigant::TakeDamage()
+{
 }
 
 
@@ -409,4 +654,211 @@ void ABeastGigant::groggy()
 
 void ABeastGigant::die()
 {
+}
+
+//레프트 포어암
+void ABeastGigant::OnBeginOverLeftForeArm(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	//객체 이름이 BP_Knife인경우에만 오버랩 이벤트 발생
+	if (OtherActor->GetName().Contains("BP_Knife") && bIsOverlappingKnife == false)
+	{
+		// 오버랩 상태 설정
+		bIsOverlappingKnife = true;
+
+		// 피해 입히는 함수 호출
+		TakeDamage();
+
+		UE_LOG(LogTemp, Warning, TEXT("BeginOverlapLeftForeArm"));
+
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NormalBlood->GetAsset(), LeftForeArmMesh->GetComponentLocation(), BodyMesh->GetComponentRotation());
+
+	}
+}
+
+void ABeastGigant::OnEndOverlapLeftForeArm(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	bIsOverlappingKnife = false;
+	UE_LOG(LogTemp, Warning, TEXT("EndOverlapLeftForeArm"));
+}
+
+
+//레프트 암
+void ABeastGigant::OnBeginOverlapLeftArm(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	//객체 이름이 BP_Knife인경우에만 오버랩 이벤트 발생
+	if (OtherActor->GetName().Contains("BP_Knife") && bIsOverlappingKnife == false)
+	{
+		// 오버랩 상태 설정
+		bIsOverlappingKnife = true;
+
+		// 피해 입히는 함수 호출
+		TakeDamage();
+
+		UE_LOG(LogTemp, Warning, TEXT("BeginOverlapLeftForeArm"));
+
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NormalBlood->GetAsset(), LeftArmMesh->GetComponentLocation(), BodyMesh->GetComponentRotation());
+
+	}
+}
+
+void ABeastGigant::OnEndOverlapLeftArm(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	bIsOverlappingKnife = false;
+	UE_LOG(LogTemp, Warning, TEXT("EndOverlapLeftForeArm"));
+}
+
+
+//라이트 포어암
+void ABeastGigant::OnBeginOverlapRightForeArm(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	//객체 이름이 BP_Knife인경우에만 오버랩 이벤트 발생
+	if (OtherActor->GetName().Contains("BP_Knife") && bIsOverlappingKnife == false)
+	{
+		// 오버랩 상태 설정
+		bIsOverlappingKnife = true;
+
+		// 피해 입히는 함수 호출
+		TakeDamage();
+
+		UE_LOG(LogTemp, Warning, TEXT("BeginOverlapLeftForeArm"));
+
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NormalBlood->GetAsset(), RightForeArmMesh->GetComponentLocation(), BodyMesh->GetComponentRotation());
+
+	}
+}
+
+void ABeastGigant::OnEndOverlapRightForeArm(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	bIsOverlappingKnife = false;
+	UE_LOG(LogTemp, Warning, TEXT("EndOverlapLeftForeArm"));
+}
+
+
+//라이트암
+void ABeastGigant::OnBeginOverlapRightArm(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	//객체 이름이 BP_Knife인경우에만 오버랩 이벤트 발생
+	if (OtherActor->GetName().Contains("BP_Knife") && bIsOverlappingKnife == false)
+	{
+		// 오버랩 상태 설정
+		bIsOverlappingKnife = true;
+
+		// 피해 입히는 함수 호출
+		TakeDamage();
+
+		UE_LOG(LogTemp, Warning, TEXT("BeginOverlapLeftForeArm"));
+
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NormalBlood->GetAsset(), RightArmMesh->GetComponentLocation(), BodyMesh->GetComponentRotation());
+
+	}
+}
+
+void ABeastGigant::OnEndOverlapRightArm(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	bIsOverlappingKnife = false;
+	UE_LOG(LogTemp, Warning, TEXT("EndOverlapLeftForeArm"));
+}
+
+
+//레프트 레그
+void ABeastGigant::OnBeginOverlapLeftLeg(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	//객체 이름이 BP_Knife인경우에만 오버랩 이벤트 발생
+	if (OtherActor->GetName().Contains("BP_Knife") && bIsOverlappingKnife == false)
+	{
+		// 오버랩 상태 설정
+		bIsOverlappingKnife = true;
+
+		// 피해 입히는 함수 호출
+		TakeDamage();
+
+		UE_LOG(LogTemp, Warning, TEXT("BeginOverlapLeftForeArm"));
+
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NormalBlood->GetAsset(), LeftLegMesh->GetComponentLocation(), BodyMesh->GetComponentRotation());
+
+	}
+}
+
+void ABeastGigant::OnEndOverlapLeftLeg(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	bIsOverlappingKnife = false;
+	UE_LOG(LogTemp, Warning, TEXT("EndOverlapLeftForeArm"));
+}
+
+
+//라이트 레그
+void ABeastGigant::OnBeginOverlapRightLeg(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	//객체 이름이 BP_Knife인경우에만 오버랩 이벤트 발생
+	if (OtherActor->GetName().Contains("BP_Knife") && bIsOverlappingKnife == false)
+	{
+		// 오버랩 상태 설정
+		bIsOverlappingKnife = true;
+
+		// 피해 입히는 함수 호출
+		TakeDamage();
+
+		UE_LOG(LogTemp, Warning, TEXT("BeginOverlapLeftForeArm"));
+
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NormalBlood->GetAsset(), RightLegMesh->GetComponentLocation(), BodyMesh->GetComponentRotation());
+
+	}
+}
+
+void ABeastGigant::OnEndOverlapRightLeg(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	bIsOverlappingKnife = false;
+	UE_LOG(LogTemp, Warning, TEXT("EndOverlapLeftForeArm"));
+}
+
+
+//몸통
+void ABeastGigant::OnBeginOverlapBody(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	//객체 이름이 BP_Knife인경우에만 오버랩 이벤트 발생
+	if (OtherActor->GetName().Contains("BP_Knife") && bIsOverlappingKnife == false)
+	{
+		// 오버랩 상태 설정
+		bIsOverlappingKnife = true;
+
+		// 피해 입히는 함수 호출
+		TakeDamage();
+
+		UE_LOG(LogTemp, Warning, TEXT("BeginOverlapLeftForeArm"));
+
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), CriticalBlood->GetAsset(), BodyMesh->GetComponentLocation(), BodyMesh->GetComponentRotation());
+
+	}
+}
+
+void ABeastGigant::OnEndOverlapBody(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	bIsOverlappingKnife = false;
+	UE_LOG(LogTemp, Warning, TEXT("EndOverlapLeftForeArm"));
+}
+
+
+//목
+void ABeastGigant::OnBeginOverlapNeck(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	//객체 이름이 BP_Knife인경우에만 오버랩 이벤트 발생
+	if (OtherActor->GetName().Contains("BP_Knife") && bIsOverlappingKnife == false)
+	{
+		// 오버랩 상태 설정
+		bIsOverlappingKnife = true;
+
+		// 피해 입히는 함수 호출
+		TakeDamage();
+
+		UE_LOG(LogTemp, Warning, TEXT("BeginOverlapLeftForeArm"));
+
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), NormalBlood->GetAsset(), NeckMesh->GetComponentLocation(), BodyMesh->GetComponentRotation());
+
+	}
+}
+
+void ABeastGigant::OnEndOverlapNeck(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	bIsOverlappingKnife = false;
+	UE_LOG(LogTemp, Warning, TEXT("EndOverlapLeftForeArm"));
 }

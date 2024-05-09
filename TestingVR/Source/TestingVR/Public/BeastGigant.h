@@ -78,8 +78,122 @@ public:
 	UPROPERTY(EditAnywhere, Category = "MySettings")
 	class UAnimMontage* AttackMT10;
 
+	
 
-	 UPROPERTY(EditAnywhere)
+	UFUNCTION()
+	void TakeDamage();
+
+	// 거인 오버랩 이벤트 <히트>
+
+
+	//레프트 포어암
+	UPROPERTY(EditAnywhere)
+	class UStaticMeshComponent* LeftForeArmMesh;
+
+	//레프트 암
+	UPROPERTY(EditAnywhere)
+	class UStaticMeshComponent* LeftArmMesh;
+
+	//라이트 포어 암
+	UPROPERTY(EditAnywhere)
+	class UStaticMeshComponent* RightForeArmMesh;
+
+	//라이트 암
+	UPROPERTY(EditAnywhere)
+	class UStaticMeshComponent* RightArmMesh;
+
+	//레프트 레그
+	UPROPERTY(EditAnywhere)
+	class UStaticMeshComponent* LeftLegMesh;
+
+	//라이트 레그
+	UPROPERTY(EditAnywhere)
+	class UStaticMeshComponent* RightLegMesh;
+
+	//몸통
+	UPROPERTY(EditAnywhere)
+	class UStaticMeshComponent* BodyMesh;
+
+	//목
+	UPROPERTY(EditAnywhere)
+	class UStaticMeshComponent* NeckMesh;
+
+	UPROPERTY(EditAnywhere, Category = "MySettings")
+	class UNiagaraComponent* NormalBlood;
+
+	UPROPERTY(EditAnywhere, Category = "MySettings")
+	class UNiagaraComponent* CriticalBlood;
+
+
+
+	//비긴오버랩 , 엔드오버랩
+
+	//레프트 포어암
+	UFUNCTION()
+	void OnBeginOverLeftForeArm(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void OnEndOverlapLeftForeArm(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
+
+	//레프트 암
+	UFUNCTION()
+	void OnBeginOverlapLeftArm(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void OnEndOverlapLeftArm(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
+
+	//라이트 포어암
+	UFUNCTION()
+	void OnBeginOverlapRightForeArm(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void OnEndOverlapRightForeArm(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
+
+	//라이트 암
+	UFUNCTION()
+	void OnBeginOverlapRightArm(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void OnEndOverlapRightArm(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+	
+
+
+	UFUNCTION()
+	void OnBeginOverlapLeftLeg(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void OnEndOverlapLeftLeg(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
+
+	//라이트 레그
+	UFUNCTION()
+	void OnBeginOverlapRightLeg(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void OnEndOverlapRightLeg(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
+
+
+	//몸통
+	UFUNCTION()
+	void OnBeginOverlapBody(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void OnEndOverlapBody(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
+
+	//목
+	UFUNCTION()
+	void OnBeginOverlapNeck(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void OnEndOverlapNeck(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
+
+
     UAnimSequence* JumpAttack;
 
 	void SearchPlayer();
@@ -122,6 +236,8 @@ public:
 	bool bIsSuperJumping = false;
 
 	bool OnceJump = false;
+
+	bool bIsOverlappingKnife = false;
 
 	float currentTime = 0;
 
