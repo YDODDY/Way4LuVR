@@ -52,6 +52,8 @@ ANormalGigant1::ANormalGigant1()
 	//Ä¸½¶ µÑ·¹°ª ¼³Á¤
 	GetCapsuleComponent()->SetCapsuleRadius(120.046379f);
 
+	GetCapsuleComponent()->SetWorldScale3D(FVector(2.0f, 2.0f, 2.0f));
+
 
 
 	//0. ¸ñ´ú¹Ì!!

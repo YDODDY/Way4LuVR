@@ -43,3 +43,9 @@ void UBeastGigantAnimInstance::AnimNotify_JumpStart()
 	beastgigant->bIsMovingNow = true;
 	UE_LOG(LogTemp, Warning, TEXT("t11111"));
 }
+
+void UBeastGigantAnimInstance::AnimNotify_BeastDie()
+{
+	beastgigant->bIsGigantDieStill=true;
+	UE_LOG(LogTemp, Warning, TEXT("666666666666"));
+}

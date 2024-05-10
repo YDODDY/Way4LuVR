@@ -78,10 +78,17 @@ public:
 	UPROPERTY(EditAnywhere, Category = "MySettings")
 	class UAnimMontage* AttackMT10;
 
-	
+
+	UPROPERTY(EditAnywhere, Category = "MySettings")
+	class UAnimMontage* StandStillMT;
+
+	bool bIsGigantDie = false;
 
 	UFUNCTION()
 	void TakeDamage();
+
+	UFUNCTION()
+	void TakeCriticalDamagae();
 
 	// 거인 오버랩 이벤트 <히트>
 
@@ -124,7 +131,8 @@ public:
 	UPROPERTY(EditAnywhere, Category = "MySettings")
 	class UNiagaraComponent* CriticalBlood;
 
-
+	UPROPERTY(EditAnywhere, Category = "MySettings")
+	class UAnimMontage* Die1;
 
 	//비긴오버랩 , 엔드오버랩
 
@@ -209,6 +217,18 @@ public:
 	void ChangeNormalAttackJump();
 
 	void SuperJump();
+
+	void DieDestroy();
+
+	void StandStill();
+
+	
+
+	//로켓단함수
+	//void Throw(const FVector& throwDir, float throwPower);
+	int32 currentHP = 0;
+
+	int32 maxHP = 500;
 	
 
 	FVector TargetLocation;
@@ -239,8 +259,13 @@ public:
 
 	bool bIsOverlappingKnife = false;
 
+	bool bIsOnceDieMT = false;
+
+	bool bIsGigantDieStill = false;
+
 	float currentTime = 0;
 
+	class ABeastGigantAIController* aiCon;
 
 	FVector PlayerLocation;
 
@@ -258,6 +283,12 @@ public:
 	FTimerHandle TimerHandle_SuperJump;
 
 	FTimerHandle TimerHandle_FK;
+
+	FTimerHandle TimerHandle_Die1Destroy;
+
+	FTimerHandle TimerHandle_StopAnimation;
+
+	FTimerHandle TimerHandle_DieStill;
 
 
 	void idle(float deltaSeconds);

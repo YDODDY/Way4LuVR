@@ -6,6 +6,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "NiagaraComponent.h"
 #include "NiagaraFunctionLibrary.h"
+#include "BeastGigantAIController.h"
 #include "Components/CapsuleComponent.h"
 
 
@@ -14,6 +15,10 @@ ABeastGigant::ABeastGigant()
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+	
+	aiCon = Cast<ABeastGigantAIController>(GetController());
+
 
 	static ConstructorHelpers::FObjectFinder<USkeletalMesh>beastGigant(TEXT("/Script/Engine.SkeletalMesh'/Game/AttackTitan/BeastGigant/BeastGigant/GigantBeastV2.GigantBeastV2'"));
 
@@ -279,7 +284,11 @@ void ABeastGigant::BeginPlay()
 	NeckMesh->OnComponentBeginOverlap.AddDynamic(this, &ABeastGigant::OnBeginOverlapNeck);
 	NeckMesh->OnComponentEndOverlap.AddDynamic(this, &ABeastGigant::OnEndOverlapNeck);
 
+	currentHP = maxHP;
 
+	// 로켓단 함수 호출
+// 	Throw(GetActorForwardVector(), 1000);
+// 	FVector throwDirection = FRotator(45.0f, 0.0f, 0.0f).RotateVector(GetActorForwardVector());
 }
 
 // Called every frame
@@ -333,7 +342,8 @@ void ABeastGigant::Tick(float DeltaTime)
 
 	SuperJump();
 
-
+	 //currentHP 확인
+	UE_LOG(LogTemp, Warning, TEXT("Current HP: %d"), currentHP);
 
 }
 
@@ -347,6 +357,38 @@ void ABeastGigant::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 
 void ABeastGigant::TakeDamage()
 {
+	// 현재 HP를 2 감소
+	currentHP = FMath::Clamp(currentHP - 2, 0, maxHP);
+
+	// 캐릭터가 여전히 생존 중인지 확인
+	if (currentHP <= 0)
+	{
+		bIsGigantDie = true;
+		// HP가 0 이하면 캐릭터가 죽은 것으로 처리
+		beastState = EBeastGigantState::DIE;
+	}
+	else
+	{
+		//애니메이션,나이아가라 수정 예정
+	}
+}
+
+void ABeastGigant::TakeCriticalDamagae()
+{
+	// 현재 HP를 50 감소
+	currentHP = FMath::Clamp(currentHP - 50, 0, maxHP);
+
+	// 캐릭터가 여전히 생존 중인지 확인
+	if (currentHP <= 0)
+	{
+		bIsGigantDie = true;
+		// HP가 0 이하면 캐릭터가 죽은 것으로 처리
+		beastState = EBeastGigantState::DIE;
+	}
+	else
+	{
+		//애니메이션,나이아가라 수정 예정
+	}
 }
 
 
@@ -471,6 +513,34 @@ void ABeastGigant::SuperJump()
 // 	}
 
 }
+
+void ABeastGigant::DieDestroy()
+{
+	Destroy();
+}
+
+void ABeastGigant::StandStill()
+{
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	AnimInstance -> Montage_Play(StandStillMT);
+}
+
+
+
+//로켓단함수
+// void ABeastGigant::Throw(const FVector& throwDir, float throwPower)
+// {
+// 	// 피직스가 off 상태라면 on 상태로 전환한다.
+// 	if (!GetCapsuleComponent()->IsSimulatingPhysics())
+// 	{
+// 		GetCapsuleComponent()->SetSimulatePhysics(true);
+// 	}
+// 
+// 	// 45도 각도로 방향을 조정하여 Impulse를 추가
+// 	FVector adjustedThrowDir = FRotator(45.0f, 0.0f, 0.0f).RotateVector(throwDir);
+// 	GetCapsuleComponent()->AddImpulse(adjustedThrowDir * throwPower);
+// 
+// }
 
 void ABeastGigant::idle(float deltaSeconds)
 {
@@ -654,6 +724,48 @@ void ABeastGigant::groggy()
 
 void ABeastGigant::die()
 {
+	
+
+
+
+	if (bIsGigantDie)
+	{
+		UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+		float Duration = 0.0f; // 애니메이션 몽타쥬의 재생 시간
+		UAnimMontage* SelectedMontage = nullptr;
+
+		if (AnimInstance && !bIsOnceDieMT)
+		{
+			SelectedMontage = Die1;
+			bIsGigantDie = false;
+			bIsOnceDieMT = true;
+		}
+			
+		if (SelectedMontage)
+		{
+			
+			//Duration = SelectedMontage->CalculateSequenceLength() - 0.25f;
+			AnimInstance->Montage_Play(SelectedMontage, 1.0f);
+
+			
+				
+			//코드 개판이라 수정좀 할께요..나중에 ㅠ
+			
+// 			else // bIsGigantDieStill이 true일 때
+// 			{
+// 				if (AnimInstance->Montage_IsPlaying(SelectedMontage))
+// 				{
+// 					AnimInstance->Montage_Pause(SelectedMontage);
+// 					UE_LOG(LogTemp, Warning, TEXT("1212121212"));
+// 					
+// 					aiCon->UnPossess();
+// 				}
+// 			}
+
+			// 애니메이션 재생이 끝난 후에 오브젝트를 제거하기 위해 타이머 설정
+			GetWorldTimerManager().SetTimer(TimerHandle_Die1Destroy, this, &ABeastGigant::DieDestroy, 15.0f, false);
+		}
+	}
 }
 
 //레프트 포어암
@@ -848,7 +960,7 @@ void ABeastGigant::OnBeginOverlapNeck(UPrimitiveComponent* OverlappedComponent, 
 		bIsOverlappingKnife = true;
 
 		// 피해 입히는 함수 호출
-		TakeDamage();
+		TakeCriticalDamagae();
 
 		UE_LOG(LogTemp, Warning, TEXT("BeginOverlapLeftForeArm"));
 

@@ -39,4 +39,7 @@ public:
 
 	UFUNCTION()
 	void AnimNotify_JumpStart();
+
+	UFUNCTION()
+	void AnimNotify_BeastDie();
 };
