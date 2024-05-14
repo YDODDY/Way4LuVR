@@ -30,6 +30,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MySettings")
 	class ABeastGigant* beastgigant;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MySettings")
+	class ABP_Rock1* rock;
+
 	
 	UFUNCTION()
 	void AnimNotify_AttackEnding();
@@ -42,4 +45,10 @@ public:
 
 	UFUNCTION()
 	void AnimNotify_BeastDie();
+
+	UFUNCTION()
+	void AnimNotify_PitchingAttack();
+
+	UFUNCTION()
+	void AnimNotify_RockOn();
 };

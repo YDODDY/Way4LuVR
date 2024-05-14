@@ -35,5 +35,17 @@ public:
 	UFUNCTION()
 	void AnimNotify_Attack1End();
 
+	UFUNCTION()
+	void AnimNotify_AttackMTStart();
+
+	UFUNCTION()
+	void AnimNotify_AttackMTStart2();
+
+	UFUNCTION()
+	void AnimNotify_AttackMTStart3();
+
+	UFUNCTION()
+	void AnimNotify_AttackMTStart4();
+
 	
 };

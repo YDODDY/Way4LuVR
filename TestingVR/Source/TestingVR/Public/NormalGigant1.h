@@ -47,6 +47,10 @@ public:
 
 	float DistanceToPlayerTo;
 
+	UPROPERTY(EditAnywhere, Category="MySettings")
+	float GigantAttackDistance = 800.0f;
+
+
 	float AngleToPlayer;
 
 	FVector  DistanceToDistance;
@@ -60,6 +64,7 @@ public:
 	FVector DistanceVector;
 
 	//플레이어와 거인과의 거리벡터
+	
 	FVector DistanceAiToCharacter;
 
 	FVector RightDirection;
@@ -108,6 +113,10 @@ public:
 
 	void DieDestroy();
 
+	void IgnoreChannel();
+
+	void CancelIgnoreChannel();
+
 
 
 	//거인의 탐지범위
@@ -144,6 +153,8 @@ public:
 	bool bIsOnceDieMT = false;
 
 	bool bIsSpawnBlood = false;
+
+	bool bGigantDie = false;
 
 
 	//목덜미 메시
@@ -190,7 +201,7 @@ public:
 
 	float traceSpeed = 750.0f;
 
-	UPROPERTY(EditAnywhere, Category = "MySettings")
+	
 	float attackDistance = 170.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MySettings")
@@ -279,6 +290,8 @@ public:
 	UFUNCTION()
 	void OnAttackBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
+
+	
 
 protected:
 	// Called when the game starts or when spawned

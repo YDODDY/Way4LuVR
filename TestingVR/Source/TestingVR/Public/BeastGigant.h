@@ -82,6 +82,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = "MySettings")
 	class UAnimMontage* StandStillMT;
 
+	UPROPERTY(EditAnywhere, Category = "MySettings")
+	class UAnimMontage* StandAttackMT;
+
 	bool bIsGigantDie = false;
 
 	UFUNCTION()
@@ -125,6 +128,10 @@ public:
 	UPROPERTY(EditAnywhere)
 	class UStaticMeshComponent* NeckMesh;
 
+	//돌덩이
+	UPROPERTY(EditAnywhere)
+	class UStaticMeshComponent* RockMesh;
+
 	UPROPERTY(EditAnywhere, Category = "MySettings")
 	class UNiagaraComponent* NormalBlood;
 
@@ -133,6 +140,17 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = "MySettings")
 	class UAnimMontage* Die1;
+
+	UPROPERTY(EditAnywhere, Category="MySettings")
+	class UArrowComponent* ArrowComp;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MySettings")
+	class ABP_Rock1* rock1;
+
+	UPROPERTY(EditAnywhere, Category = "MySettings")
+	TSubclassOf<class ABP_Rock1> rockactor;
+
+
 
 	//비긴오버랩 , 엔드오버랩
 
@@ -222,6 +240,11 @@ public:
 
 	void StandStill();
 
+	UFUNCTION(BlueprintCallable)
+	void SpawnStone();
+
+	UFUNCTION(BlueprintCallable)
+	void SpawnExtraStone();
 	
 
 	//로켓단함수
@@ -229,7 +252,14 @@ public:
 	int32 currentHP = 0;
 
 	int32 maxHP = 500;
-	
+	// ArrowComp의 위치를 가져와서 X축 방향으로 10만큼 이동
+// 	FVector SpawnLocationX10 = ArrowComp->GetComponentLocation() + ArrowComp->GetForwardVector() * 10.0f;
+// 
+// 	FVector SpawnLocationX15 = ArrowComp->GetComponentLocation() + ArrowComp->GetForwardVector() * 15.0f;
+// 
+// 	FVector SpawnLocationXM10 = ArrowComp->GetComponentLocation() + ArrowComp->GetForwardVector() * -10.0f;
+// 
+// 	FVector SpawnLocationXM15 = ArrowComp->GetComponentLocation() + ArrowComp->GetForwardVector() * -15.0f;
 
 	FVector TargetLocation;
 
@@ -263,6 +293,8 @@ public:
 
 	bool bIsGigantDieStill = false;
 
+	bool bIsGigantStoneAttack = false;
+
 	float currentTime = 0;
 
 	class ABeastGigantAIController* aiCon;
@@ -273,6 +305,8 @@ public:
 	FVector DistanceAiToCharacter;
 
 	APawn* PlayerPawn;
+
+	
 
 	FTimerHandle TimerHandle_DelayAttack;
 	

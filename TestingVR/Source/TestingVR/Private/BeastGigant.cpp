@@ -8,6 +8,8 @@
 #include "NiagaraFunctionLibrary.h"
 #include "BeastGigantAIController.h"
 #include "Components/CapsuleComponent.h"
+#include "BP_Rock1.h"
+#include <../../../../../../../Source/Runtime/Engine/Classes/Components/ArrowComponent.h>
 
 
 // 생성자
@@ -18,6 +20,60 @@ ABeastGigant::ABeastGigant()
 
 	
 	aiCon = Cast<ABeastGigantAIController>(GetController());
+
+
+	ArrowComp = CreateDefaultSubobject<UArrowComponent>(TEXT("ArrowComp"));
+	ArrowComp->SetupAttachment(GetMesh());
+
+	// 소켓의 위치를 가져옴
+	FVector RightHandSocketLocation = GetMesh()->GetSocketLocation(TEXT("RightHandSocket"));
+
+	// 메시의 위치를 소켓의 위치로
+	ArrowComp->SetRelativeLocation(RightHandSocketLocation);
+
+	// 메시를 소켓에 붙힘
+	ArrowComp->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("RightHandSocket"));
+
+	ArrowComp->SetRelativeLocation(FVector(0.0f, -130.0f, 80.0f));
+	ArrowComp->SetRelativeRotation(FRotator(0.0f, -90.f, 0.0f));
+	ArrowComp->SetWorldScale3D(FVector(1.0f, 1.0f, 1.0f));
+
+	ArrowComp->SetVisibility(true);
+	
+	//ArrowComp->SetRelativeLocation(FVector()*/
+	
+	RockMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("RockMesh"));
+	
+	static ConstructorHelpers::FObjectFinder<UStaticMesh>Rock3(TEXT("/Script/Engine.StaticMesh'/Game/Megascans/3D_Assets/Small_Sandstone_vd5scdo/S_Small_Sandstone_vd5scdo_lod5_Var1.S_Small_Sandstone_vd5scdo_lod5_Var1'"));
+
+	if (Rock3.Succeeded())
+	{
+		RockMesh->SetStaticMesh(Rock3.Object);
+	}
+
+	RockMesh->SetupAttachment(GetMesh());
+
+	// 소켓의 위치를 가져옴
+	FVector RightHand2SocketLocation = GetMesh()->GetSocketLocation(TEXT("RightHandSocket"));
+
+	// 메시의 위치를 소켓의 위치로
+	RockMesh->SetRelativeLocation(RightHand2SocketLocation);
+
+	// 메시를 소켓에 붙힘
+	RockMesh->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("RightHandSocket"));
+
+	RockMesh->SetRelativeLocation(FVector(-60.0f, -100.0f, 50.0f));
+	RockMesh->SetWorldScale3D(FVector(14.0f, 14.0f, 20.0f));
+
+	RockMesh->SetVisibility(false);
+
+
+
+
+
+
+
+
 
 
 	static ConstructorHelpers::FObjectFinder<USkeletalMesh>beastGigant(TEXT("/Script/Engine.SkeletalMesh'/Game/AttackTitan/BeastGigant/BeastGigant/GigantBeastV2.GigantBeastV2'"));
@@ -257,8 +313,10 @@ void ABeastGigant::BeginPlay()
 {
 	Super::BeginPlay();
 
+	
+	
 	//기본상태는 idle 상태로 초기화
-	beastState = EBeastGigantState::IDLE;
+	beastState = EBeastGigantState::STONEATTACK;
 
 	LeftForeArmMesh->OnComponentBeginOverlap.AddDynamic(this, &ABeastGigant::OnBeginOverLeftForeArm);
 	LeftForeArmMesh->OnComponentEndOverlap.AddDynamic(this, &ABeastGigant::OnEndOverlapLeftForeArm);
@@ -334,8 +392,8 @@ void ABeastGigant::Tick(float DeltaTime)
 	//플레이어와 ai사이의 거리
 	UE_LOG(LogTemp, Warning, TEXT("Distance to Player: %f"), DistanceAiToCharacter.Length());
 
-	FString strState = UEnum::GetValueAsString(beastState);
-	DrawDebugString(GetWorld(), GetActorLocation(), strState, nullptr, FColor::Red, 0, true, 1);
+	//FString strState = UEnum::GetValueAsString(beastState);
+	//DrawDebugString(GetWorld(), GetActorLocation(), strState, nullptr, FColor::Red, 0, true, 1);
 
 
 
@@ -523,6 +581,52 @@ void ABeastGigant::StandStill()
 {
 	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
 	AnimInstance -> Montage_Play(StandStillMT);
+}
+
+void ABeastGigant::SpawnStone()
+{
+	FActorSpawnParameters SpawnParams;
+	SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+	FTransform spawnTrans;
+	spawnTrans.SetLocation(ArrowComp->GetComponentLocation());
+	spawnTrans.SetRotation(ArrowComp->GetComponentQuat());
+
+	rock1 = GetWorld()->SpawnActor<ABP_Rock1>(rockactor, spawnTrans, SpawnParams);
+	if (rock1 != nullptr)
+	{
+		rock1->AttachToComponent(ArrowComp, FAttachmentTransformRules::KeepWorldTransform);
+	}
+}
+
+void ABeastGigant::SpawnExtraStone()
+{
+	FActorSpawnParameters SpawnParams;
+	SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+
+	for (int32 i = 0; i < 20; ++i)
+	{
+		// ArrowComp의 위치를 가져와서 X, Y, Z축 방향으로 최대 20만큼 랜덤하게 이동
+		FVector RandomOffset = FVector(
+			FMath::RandRange(-20.0f, 20.0f),
+			FMath::RandRange(-20.0f, 20.0f),
+			FMath::RandRange(-20.0f, 20.0f)
+		);
+
+		FVector SpawnLocation = ArrowComp->GetComponentLocation() + RandomOffset;
+
+		// 변환을 설정
+		FTransform spawnTrans;
+		spawnTrans.SetLocation(SpawnLocation);
+		spawnTrans.SetRotation(ArrowComp->GetComponentQuat());
+
+		// rock1을 스폰
+		ABP_Rock1* rock = GetWorld()->SpawnActor<ABP_Rock1>(rockactor, spawnTrans, SpawnParams);
+		if (rock != nullptr)
+		{
+			// rock1을 ArrowComp에 부착
+			rock->AttachToComponent(ArrowComp, FAttachmentTransformRules::KeepWorldTransform);
+		}
+	}
 }
 
 
@@ -714,6 +818,16 @@ void ABeastGigant::normalattack()
 
 void ABeastGigant::stoneattack()
 {
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	if (AnimInstance && !bIsGigantStoneAttack)
+	{
+		AnimInstance->Montage_Play(StandAttackMT);
+
+		
+		bIsGigantStoneAttack = true;
+		UE_LOG(LogTemp, Warning, TEXT("!!"));
+	}
+	
 }
 
 void ABeastGigant::groggy()
